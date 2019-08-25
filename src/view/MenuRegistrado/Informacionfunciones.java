@@ -8,6 +8,7 @@ package view.MenuRegistrado;
 import controller.ControladorVista;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.*;
 import javax.swing.JLabel;
@@ -86,7 +87,7 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
          */
         @Override
         public void setController(ControladorVista[] controllers){
-        go.addActionListener(controllers[0]);
+        go.addActionListener((ActionListener) controllers[0]);
         }
         
        /**
@@ -94,10 +95,9 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
         * @param textoParaMostrar 
         */
        @Override
-        public muestraDatos(String textoParaMostrar){
+        public void muestraDatos(String textoParaMostrar){
             
          JLabel texto= new JLabel(textoParaMostrar);
-         return   
         } 
         
         
