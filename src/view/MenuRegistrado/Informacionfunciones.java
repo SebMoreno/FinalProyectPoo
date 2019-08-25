@@ -5,6 +5,7 @@
  */
 package view.MenuRegistrado;
 
+import controller.ControladorVista;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JButton;
@@ -55,6 +56,16 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
 		add(panel_izq, BorderLayout.WEST);
 		add(panel_der, BorderLayout.CENTER);
 		/* Fin Agregado de Componentes */
+	}
+
+	@Override
+	public void setController(ControladorVista[] controllers) {
+
+	}
+
+	@Override
+	public void muestraDatos(String textoParaMostrar) {
+
 	}
 
 	private class PanelFunciones extends JPanel {
