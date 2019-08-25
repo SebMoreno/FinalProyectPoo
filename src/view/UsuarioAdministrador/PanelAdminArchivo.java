@@ -3,7 +3,7 @@ package view.UsuarioAdministrador;
 import javax.swing.*;
 import java.awt.*;
 
-public class AdminArchivo extends JPanel {
+public class PanelAdminArchivo extends JPanel {
 	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
         JPanel panel_center = new JPanel();
         JPanel panel_down = new JPanel();
@@ -13,7 +13,7 @@ public class AdminArchivo extends JPanel {
         JButton salir = new JButton("Salir");
 	/* Fin declaraciÃ³n */
 
-	public AdminArchivo(){
+	public PanelAdminArchivo(){
 		/* OrganizaciÃ³n de Layout */
                 this.setLayout(new BorderLayout(7,15));
                 panel_down.setLayout(new BorderLayout(7,15));

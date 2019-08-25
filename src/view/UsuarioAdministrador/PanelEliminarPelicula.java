@@ -7,7 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class EliminarPelicula extends JPanel {
+public class PanelEliminarPelicula extends JPanel {
 	/**
 	 * cosas que contiene el panel
 	 */
@@ -20,7 +20,7 @@ public class EliminarPelicula extends JPanel {
 	/**
 	 * constructor que agrega todas las cosas al panel
 	 */
-	public EliminarPelicula() {
+	public PanelEliminarPelicula() {
 
 		this.setLayout(new BorderLayout(7, 15));
 		/* Operaciones Adicionales */

@@ -3,7 +3,7 @@ package view.UsuarioAdministrador;
 import javax.swing.*;
 import java.awt.*;
 
-public class Error_AñadirPelicula extends JPanel {      
+public class PanelError_AñadirPelicula extends JPanel {      
 //Este panel aparecerá cuando se ingrese una pelicula ya ingresada en AñadirPelicula
     
 	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
@@ -17,7 +17,7 @@ public class Error_AñadirPelicula extends JPanel {
         private JButton aceptar = new JButton("aceptar");
 	/* Fin declaraciÃ³n */
 
-	public Error_AñadirPelicula(){
+	public PanelError_AñadirPelicula(){
 		/* OrganizaciÃ³n de Layout */
                 this.setLayout(new BorderLayout(7,15));
                 panel_center.setLayout(new BorderLayout(7,15));

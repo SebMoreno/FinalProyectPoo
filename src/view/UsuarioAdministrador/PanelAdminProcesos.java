@@ -3,39 +3,41 @@ package view.UsuarioAdministrador;
 import javax.swing.*;
 import java.awt.*;
 
-public class AdminAyuda extends JPanel {
+public class PanelAdminProcesos extends JPanel {  //al iniciar sesion por defecto se muestra esta pantalla
 	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
-        JLabel titulo = new JLabel("Autores");
-        String [] autores = {"Mariana Betancur Florez", "Jairo Cortés Roncancio", "Juan Sebastián Moreno Ruiz", "Cristian Mejía Martínez"};
-        JButton salir = new JButton("Salir");
+        
+        
         JPanel panel_sup = new JPanel();
         JPanel panel_center = new JPanel();
         JPanel panel_down = new JPanel();
+        String [] buttons = {"Mostrar listado de películas", "Mostrar listado de funciones", "Añadir Película", "Eliminar Película", "Crear Función", "Eliminar Función"};
+        JButton salir = new JButton("Salir");
 	/* Fin declaraciÃ³n */
 
-	public AdminAyuda(){
+	public PanelAdminProcesos(){
 		/* OrganizaciÃ³n de Layout */
                 this.setLayout(new BorderLayout(7,15));
                 panel_sup.setLayout(new BorderLayout(7,15));
-                panel_center.setLayout(new FlowLayout(FlowLayout.LEADING, 10, 10));
+                panel_center.setLayout(new GridLayout(3,2));
                 panel_down.setLayout(new BorderLayout(7,15));
 		/* Fin Layout */
 
 		/* Operaciones Adicionales */
-		/* Fin Operaciones Adicionales */
+                /* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */
-                panel_sup.add(titulo, BorderLayout.CENTER);
+                //this.setJMenuBar(barra); hay que hacer esto con el JFrame
+                
+                panel_sup.add(new JLabel("Opciones de Administrador"), BorderLayout.CENTER);
                 this.add(panel_sup, BorderLayout.NORTH);
                 
-                for (String i:autores){
-                    panel_center.add(new JLabel(i));
+                for (String i:buttons){
+                    panel_center.add(new JButton(i));
                 }
                 this.add(panel_center, BorderLayout.CENTER);
                 
                 panel_down.add(salir, BorderLayout.CENTER);
                 this.add(panel_down, BorderLayout.SOUTH);
-                
 		/* Fin Agregado de Componentes */
 
 

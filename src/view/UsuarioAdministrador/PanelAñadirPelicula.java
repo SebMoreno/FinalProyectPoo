@@ -3,40 +3,37 @@ package view.UsuarioAdministrador;
 import javax.swing.*;
 import java.awt.*;
 
-public class AdminProcesos extends JPanel {  //al iniciar sesion por defecto se muestra esta pantalla
+public class PanelAñadirPelicula extends JPanel {
 	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
-        
-        
-        JPanel panel_sup = new JPanel();
-        JPanel panel_center = new JPanel();
-        JPanel panel_down = new JPanel();
-        String [] buttons = {"Mostrar listado de películas", "Mostrar listado de funciones", "Añadir Película", "Eliminar Película", "Crear Función", "Eliminar Función"};
-        JButton salir = new JButton("Salir");
+        private JLabel ingrese_datos = new JLabel("Ingrese los siguientes datos");
+        private String datos = "Datos";
+        private String valor = "Valor";
+        private String [] lista_datos = {"Nombre de la Película","Género","Clasificación","Duración","Idioma"};
+        private JPanel panel_sup = new JPanel();
+        private JPanel panel_center = new JPanel();
+        private JPanel panel_down = new JPanel();
+        private JButton boton = new JButton("Ingresar Datos");
 	/* Fin declaraciÃ³n */
 
-	public AdminProcesos(){
+	public PanelAñadirPelicula(){
 		/* OrganizaciÃ³n de Layout */
                 this.setLayout(new BorderLayout(7,15));
                 panel_sup.setLayout(new BorderLayout(7,15));
-                panel_center.setLayout(new GridLayout(3,2));
                 panel_down.setLayout(new BorderLayout(7,15));
 		/* Fin Layout */
 
 		/* Operaciones Adicionales */
-                /* Fin Operaciones Adicionales */
+		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */
-                //this.setJMenuBar(barra); hay que hacer esto con el JFrame
-                
-                panel_sup.add(new JLabel("Opciones de Administrador"), BorderLayout.CENTER);
+                panel_sup.add(ingrese_datos, BorderLayout.CENTER);
                 this.add(panel_sup, BorderLayout.NORTH);
                 
-                for (String i:buttons){
-                    panel_center.add(new JButton(i));
-                }
+                FieldPanel panelField = new FieldPanel(datos, lista_datos, valor, null);
+                panel_center = panelField;
                 this.add(panel_center, BorderLayout.CENTER);
                 
-                panel_down.add(salir, BorderLayout.CENTER);
+                panel_down.add(boton, BorderLayout.CENTER);
                 this.add(panel_down, BorderLayout.SOUTH);
 		/* Fin Agregado de Componentes */
 
