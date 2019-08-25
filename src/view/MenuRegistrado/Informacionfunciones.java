@@ -27,6 +27,7 @@ public class Informacionfunciones extends JPanel{
      */
    
     public Informacionfunciones(){
+     inicializador();
      iniciarComponentes();
      add(panel1 , BorderLayout.EAST);
      add(panel2, BorderLayout.WEST);
@@ -60,7 +61,7 @@ public class Informacionfunciones extends JPanel{
          */
         c=new Choice();
         panel1.add(c,BorderLayout.CENTER);
-        go.add(go , BorderLayout.CENTER);
+        panel1.add(go , BorderLayout.CENTER);
         
         /**
          * Panel para las funciones 
