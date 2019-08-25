@@ -10,7 +10,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import javax.swing.*;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import view.InterfazPanel;
@@ -59,6 +59,31 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
 		/* Fin Agregado de Componentes */
 	}
 
+	/**
+	 * Metodo de los controladores
+	 *
+	 * @param controllers se necesita un actionListener para el boton go este boton debe mostrar la informacion de las funciones seleccionadas anteriormente
+	 */
+	@Override
+	public void setController(ControladorVista[] controllers) {
+		go.addActionListener((ActionListener) controllers[0]);
+	}
+
+	/**
+	 * IMPLEMENTACION METODO DE LA INTERFAZ
+	 */
+
+	/**
+	 * METODO QUE MUESTRA TODA LA INFORMACION NECESARIA
+	 *
+	 * @param textoParaMostrar
+	 */
+	@Override
+	public void muestraDatos(String textoParaMostrar) {
+
+		JLabel texto = new JLabel(textoParaMostrar);
+	}
+
 	private class PanelFunciones extends JPanel {
 
 		JPanel auxiliar = new JPanel();
@@ -74,34 +99,8 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
 
 
 	}
-        
-        /**
-         * IMPLEMENTACION METODO DE LA INTERFAZ
-         */
-        
-        /**
-         *Metodo de los controladores
-         * @param controllers 
-         * se necesita un actionListener para el boton go este boton debe mostrar la informacion de las funciones seleccionadas anteriormente 
-         * 
-         */
-        @Override
-        public void setController(ControladorVista[] controllers){
-        go.addActionListener((ActionListener) controllers[0]);
-        }
-        
-       /**
-        * METODO QUE MUESTRA TODA LA INFORMACION NECESARIA
-        * @param textoParaMostrar 
-        */
-       @Override
-        public void muestraDatos(String textoParaMostrar){
-            
-         JLabel texto= new JLabel(textoParaMostrar);
-        } 
-        
-        
-        
+
+
 }
 
 

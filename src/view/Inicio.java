@@ -7,25 +7,31 @@ import controller.ControladorVista;
 import java.awt.*;
 
 public class Inicio extends JFrame implements InterfazPanel {
-	JButton button1 = new JButton("Haga clic para ver fotos de los autores del sistema");
-	// button1.setMaximumSize(new Dimension(200,100));
-	// botonPrueba2.setMinimumSize(new Dimension(20,20));
-	JButton button2 = new JButton();
-	JButton button3 = new JButton();
-	JButton button4 = new JButton();
-	Container container;
+	/**
+	 * cosas que contiene el panel
+	 */
 
-	public Inicio() {
+	private JButton button1 = new JButton("Haga clic para ver fotos de los autores del sistema");
+	private JButton button2 = new JButton();
+	private JButton button3 = new JButton();
+	private JButton button4 = new JButton();
+
+	private JPanel panel1 = new JPanel();// primer contenedor.
+	private JPanel panel2 = new JPanel();
+	private JPanel panel3 = new JPanel();
+	private JPanel panel4 = new JPanel();// segundo contenedor.
+	private JPanel panel5 = new JPanel();
+	private JPanel panel6 = new JPanel();
+	/**
+	 * contructor de la clase , organiza los paneles
+	 */
+	public Inicio(int sizeVertical, int sizeHorizontal) {
 		super("Cine X");
-		JPanel panel1 = new JPanel();// primer contenedor.
-		JPanel panel2 = new JPanel();
-		JPanel panel3 = new JPanel();
-		JPanel panel4 = new JPanel();// segundo contenedor.
-		JPanel panel5 = new JPanel();
-		// JPanel panel6 = new JPanel();
+		setSize(sizeVertical, sizeHorizontal);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+
 		JScrollPane panelgamma = new JScrollPane(new JTextArea("Manueal de usuario"));
 
-		container = this.getContentPane();
 		panel1.setLayout(new BorderLayout(10, 10));
 		panel1.add(panel2, BorderLayout.WEST);
 		panel2.add(panel3);
@@ -47,9 +53,9 @@ public class Inicio extends JFrame implements InterfazPanel {
 		panel5.add(panelgamma, BorderLayout.CENTER);
 		// TODO panel FIELD de cristo poner los otros tres botones
 
-		container.setLayout(new BorderLayout(10, 10));
-		container.add(panel1, BorderLayout.WEST);
-		container.add(panel4, BorderLayout.EAST);
+		getContentPane().setLayout(new BorderLayout(10, 10));
+		add(panel1, BorderLayout.WEST);
+		add(panel4, BorderLayout.EAST);
 		setVisible(true);
 		setSize(500, 500);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -57,10 +63,19 @@ public class Inicio extends JFrame implements InterfazPanel {
 	}
 
 	public void setController(ControladorVista[] controllers) {
-		// TODO hacer lso metodos
+		// TODO hacer metodo
 	}
 
 	public void muestraDatos(String textoParaMostrar) {
-		// TODO hacer metodos
+		// TODO hacer metodo
 	}
+
+	public void run() {
+		setLocationRelativeTo(null);
+		setVisible(true);
+		pack();
+	}
+
+
+
 }
