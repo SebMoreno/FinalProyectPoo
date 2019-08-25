@@ -45,7 +45,7 @@ public class Inicio extends JFrame implements InterfazPanel {
 
 		panel5.setLayout(new BorderLayout(10, 10));
 		panel5.add(panelgamma, BorderLayout.CENTER);
-		// todo panel FIELD de cristo
+		// todo panel FIELD de cristo poner los otros tres botones
 
 		container.setLayout(new BorderLayout(10, 10));
 		container.add(panel1, BorderLayout.WEST);
