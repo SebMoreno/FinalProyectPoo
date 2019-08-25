@@ -8,6 +8,8 @@ import model.cine.Pelicula;
 
 public class Administrador extends Usuario {
 
+	private String[] capacidades = {"Listado de Películas", "Listado de Funciones", "Añadir Película", "Eliminar Película", "Crear Función", "Eliminar Función"};
+
 	public Administrador(String usuario, String clave) {
 		this(usuario, clave, "NA");
 	}
@@ -24,5 +26,13 @@ public class Administrador extends Usuario {
 	//TODO Mira esta belleza de metodo, es increibleamazing
 	private void createmovie(String titulo, String genero, String clasificacion, String duracion, String idioma) { //de qui en adelante con los metodos que necesitan las opciones que hacen que el administrador para editar otras funciones
 		Pelicula nueva = new Pelicula(titulo, genero, clasificacion, duracion, idioma);
+	}
+
+	public String[] getCapacidades() {
+		return capacidades;
+	}
+
+	public void setCapacidades(String[] capacidades) {
+		this.capacidades = capacidades;
 	}
 }
