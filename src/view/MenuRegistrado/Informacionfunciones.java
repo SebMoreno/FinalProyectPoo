@@ -5,10 +5,12 @@
  */
 package view.MenuRegistrado;
 
+import java.awt.*;
+import controller.ControladorVista;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
+import javax.swing.*;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import view.InterfazPanel;
@@ -72,6 +74,35 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
 
 
 	}
+        
+        /**
+         * IMPLEMENTACION METODO DE LA INTERFAZ
+         */
+        
+        /**
+         *Metodo de los controladores
+         * @param controllers 
+         * se necesita un actionListener para el boton go este boton debe mostrar la informacion de las funciones seleccionadas anteriormente 
+         * 
+         */
+        @Override
+        public void setController(ControladorVista[] controllers){
+        go.addActionListener(controllers[0]);
+        }
+        
+       /**
+        * METODO QUE MUESTRA TODA LA INFORMACION NECESARIA
+        * @param textoParaMostrar 
+        */
+       @Override
+        public muestraDatos(String textoParaMostrar){
+            
+         JLabel texto= new JLabel(textoParaMostrar);
+         return   
+        } 
+        
+        
+        
 }
 
 
