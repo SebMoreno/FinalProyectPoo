@@ -19,6 +19,7 @@ public class Informacionfunciones extends JPanel{
     private JPanel panel1 ;
     private JButton go;
     private Choice c;
+    private JPanel panel2 ;
     
     /**
      * Constructor de la vista
@@ -28,8 +29,15 @@ public class Informacionfunciones extends JPanel{
     public Informacionfunciones(){
      iniciarComponentes();
      add(panel1 , BorderLayout.EAST);
+     add(panel2, BorderLayout.WEST);
      
     }
+    private void inicializador(){
+        setBounds(10, 170, 375, 150);
+       setBackground(Color.WHITE);
+       setVisible(true);
+    
+}
     
     private void iniciarComponentes() {
         /**
@@ -54,6 +62,11 @@ public class Informacionfunciones extends JPanel{
         panel1.add(c,BorderLayout.CENTER);
         go.add(go , BorderLayout.CENTER);
         
+        /**
+         * Panel para las funciones 
+         */
+        panel2= new JPanel();
+        panel1.setBackground(Color.gray);
         
         
         
