@@ -3,7 +3,7 @@ package view.UsuarioAdministrador;
 import javax.swing.*;
 import java.awt.*;
 
-public class PanelComprarBoleta extends JPanel {
+public class ComprarBoleta extends JPanel {
 	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
         public JTextField entrada = new JTextField(); // sera el campo de texto donde el usuario ingrese lo solicitado
         //los eventos se controlarán cuando el usuario presione enter
@@ -14,7 +14,7 @@ public class PanelComprarBoleta extends JPanel {
         private JPanel panel_der = new JPanel();
 	/* Fin declaraciÃ³n */
 
-	public PanelComprarBoleta(){
+	public ComprarBoleta(){
 		/* OrganizaciÃ³n de Layout */
                 this.setLayout(new BorderLayout(7,15));
 		/* Fin Layout */

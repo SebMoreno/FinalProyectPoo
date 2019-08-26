@@ -8,7 +8,7 @@ package view.UsuarioAdministrador;
 import javax.swing.JPanel;
 
 
-public class PanelCrearFuncion extends JPanel {
+public class CrearFuncion extends JPanel {
 
 
 }
