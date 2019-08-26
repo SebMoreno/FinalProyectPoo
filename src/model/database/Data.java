@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import model.ExceptionsApp.WrongCredentialsException;
 import model.cine.Boleta;
 import model.cine.Funcion;
 import model.cine.Pelicula;
@@ -100,6 +101,25 @@ public class Data {
 		Invitado.setMenu(new MenuDeConsola(options));
 	}
 */
+	public static String[] login(String usuario, String clave, String rol) throws WrongCredentialsException {
+		try (BufferedReader br = new BufferedReader(new FileReader("src/temp/" + "usuarios.txt"))) {
+			String line = br.readLine();
+
+			while (line != null) {
+				String[] datos = line.split(" ");
+				if (datos[0].equals(usuario) && datos[1].equals(clave) && datos[2].equals(rol)) {
+					return new String[]{datos[3], datos[4]};
+				}
+				line = br.readLine();
+			}
+			throw new WrongCredentialsException();
+		} catch (IOException e) {
+			//TODO Que hacer cuando no se puede leer el archivo se usuarios
+
+		}
+		return null;
+	}
+
 	private static void readAllTxt() {//metodo que lee todos los archivos txt
 		Usuario.RT();
 		Cuenta.RT();

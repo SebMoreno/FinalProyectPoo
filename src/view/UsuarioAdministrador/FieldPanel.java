@@ -48,7 +48,7 @@ public class FieldPanel extends JPanel {
 
 
 	public String getValue(String criterio) {
-		return "Esta malo pai"; // TODO Cristo arreglelo pai
+		return ""; // TODO Cristo arreglelo pai
 	}
 
 }

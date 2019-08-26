@@ -1,6 +1,8 @@
 package model.user;
 
 import java.util.HashMap;
+import model.ExceptionsApp.WrongCredentialsException;
+import model.database.Data;
 
 import static model.database.Data.readTxt;
 import static model.database.Data.writeTxt;
@@ -12,7 +14,7 @@ esta sera mi super clase por eso tiene  lo que puede hacer un usuario
 */
 public abstract class Usuario {
 
-	public static Usuario usuarioActivo;
+	private static Usuario usuarioActivo;
 	private static HashMap<String, String[]> usersList = new HashMap<>(); // key: usuario    value: clave, rol, nombre, email
 	private final String usuario;
 	private final String rol;
@@ -31,6 +33,15 @@ public abstract class Usuario {
 			usersList.put(usuario, aux);
 			writeTxt("usuarios.txt", usersList);
 		}
+	}
+
+	protected Usuario(String usuario, String clave, String rol) throws WrongCredentialsException {
+		String[] aux = Data.login(usuario,clave,rol);
+		this.clave = clave;
+		this.rol = rol;
+		this.usuario = usuario;
+		this.nombre = aux[0];
+		this.email = aux[1];
 	}
 
 	public static void RT() {//metodo para leer la informacion del txt , presente en todas las clases que se guardan en un txt
@@ -67,5 +78,13 @@ public abstract class Usuario {
 
 	public void setClave(String clave) {
 		this.clave = clave;
+	}
+
+	public static Usuario getUsuarioActivo() {
+		return usuarioActivo;
+	}
+
+	public static void setUsuarioActivo(Usuario usuarioActivo) {
+		Usuario.usuarioActivo = usuarioActivo;
 	}
 }

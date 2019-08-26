@@ -18,7 +18,7 @@ public class Main {
 		 */
 
 		Inicio i = new Inicio();
-		ControladorInicio.setControladoresVistaInicial(i);
+		ControladorInicio.setControladoresVistaInicial(i.getBotonSalir());
 		i.run();
 
 
