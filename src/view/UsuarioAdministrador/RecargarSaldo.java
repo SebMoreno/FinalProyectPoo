@@ -3,7 +3,7 @@ package view.UsuarioAdministrador;
 import java.awt.*;
 import javax.swing.*;
 
-public class PanelRecargarSaldo extends JPanel{
+public class RecargarSaldo extends JPanel{
     /* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
         private JPanel panel_sup = new JPanel();
         private JPanel panel_center = new JPanel();
@@ -17,7 +17,7 @@ public class PanelRecargarSaldo extends JPanel{
         //los eventos se controlarán cuando el usuario presione enter
 	/* Fin declaraciÃ³n */
 
-	public PanelRecargarSaldo(){
+	public RecargarSaldo(){
 		/* OrganizaciÃ³n de Layout */
                 this.setLayout(new BorderLayout(7,15));
                 panel_sup.setLayout(new BorderLayout(7,15));

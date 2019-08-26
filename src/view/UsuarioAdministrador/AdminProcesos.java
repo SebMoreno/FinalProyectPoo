@@ -3,7 +3,7 @@ package view.UsuarioAdministrador;
 import javax.swing.*;
 import java.awt.*;
 
-public class PanelAdminProcesos extends JPanel {  //al iniciar sesion por defecto se muestra esta pantalla
+public class AdminProcesos extends JPanel {  //al iniciar sesion por defecto se muestra esta pantalla
 	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
         
         
@@ -14,7 +14,7 @@ public class PanelAdminProcesos extends JPanel {  //al iniciar sesion por defect
         JButton salir = new JButton("Salir");
 	/* Fin declaraciÃ³n */
 
-	public PanelAdminProcesos(){
+	public AdminProcesos(){
 		/* OrganizaciÃ³n de Layout */
                 this.setLayout(new BorderLayout(7,15));
                 panel_sup.setLayout(new BorderLayout(7,15));

@@ -3,7 +3,7 @@ package view.UsuarioAdministrador;
 import javax.swing.*;
 import java.awt.*;
 
-public class PanelAdminAyuda extends JPanel {
+public class AdminAyuda extends JPanel {
 	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
         JLabel titulo = new JLabel("Autores");
         String [] autores = {"Mariana Betancur Florez", "Jairo Cortés Roncancio", "Juan Sebastián Moreno Ruiz", "Cristian Mejía Martínez"};
@@ -13,7 +13,7 @@ public class PanelAdminAyuda extends JPanel {
         JPanel panel_down = new JPanel();
 	/* Fin declaraciÃ³n */
 
-	public PanelAdminAyuda(){
+	public AdminAyuda(){
 		/* OrganizaciÃ³n de Layout */
                 this.setLayout(new BorderLayout(7,15));
                 panel_sup.setLayout(new BorderLayout(7,15));
