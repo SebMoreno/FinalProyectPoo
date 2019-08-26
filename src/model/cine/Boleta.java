@@ -1,4 +1,5 @@
-/* en este paquete se maneja todas las clses con respecto al cine (Autores : todo el equipo) */
+/* en este paquete se maneja todas las clses con respecto al cine (@author : El equipo completo) */
+
 package model.cine;
 
 

@@ -12,7 +12,9 @@ public class ControlSalida implements ActionListener, ControladorVista {
 		i.muestraDatos("¿Desea salir del programa?");
 		if
 		(i.quiereSalir() == InterfazPanel.Salir){
-			// TODO Hacer que se salga el programa guardando todo
+
+			System.exit(0);
+			// TODO Hacer que se salga el programa GUARDANDO todo
 		}
 	}
 }
