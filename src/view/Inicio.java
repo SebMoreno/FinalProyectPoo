@@ -1,65 +1,80 @@
 package view;
 
-import javax.swing.*;
-
 import controller.ControladorVista;
-
-import java.awt.*;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.Image;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
+import view.UsuarioAdministrador.FieldPanel;
 
 public class Inicio extends JFrame implements InterfazPanel {
+	protected JLabel Bienvenida = new JLabel("¡Bienvenido!", SwingConstants.CENTER);
 	/**
 	 * cosas que contiene el panel
 	 */
+	private JTextArea Descripcion = new JTextArea("Manual de usuario", 5, 30);
+	private JButton FotoAutores = new JButton();
+	private JButton botonAdmin = new JButton("Administrador");
+	private JButton botonCliente = new JButton("Usuario Común");
 
-	private JButton button1 = new JButton("Haga clic para ver fotos de los autores del sistema");
-	private JButton button2 = new JButton();
-	private JButton button3 = new JButton();
-	private JButton button4 = new JButton();
+	private JPanel panelIz = new JPanel();// primer contenedor.
+	private JPanel panelCenter = new JPanel();// segundo contenedor.
+	private JPanel panelBienvenida = new JPanel();
+	private JPanel panelFoto = new JPanel();
+	private JPanel panelUsuarios = new JPanel();
+	private JPanel panelBotones = new JPanel();
+	private JScrollPane panelDescripcion = new JScrollPane(Descripcion);
+	private JPasswordField campoPass = new JPasswordField();
+	private FieldPanel FormularioInicio = new FieldPanel("Ingrese su código de usuario y su clave", new String[]{"Código de Usuario", "Clave"}, "", new String[]{"usuario", "contraseña"}, null);
 
-	private JPanel panel1 = new JPanel();// primer contenedor.
-	private JPanel panel2 = new JPanel();
-	private JPanel panel3 = new JPanel();
-	private JPanel panel4 = new JPanel();// segundo contenedor.
-	private JPanel panel5 = new JPanel();
-	private JPanel panel6 = new JPanel();
 	/**
 	 * contructor de la clase , organiza los paneles
 	 */
-	public Inicio(int sizeVertical, int sizeHorizontal) {
+	public Inicio() {
 		super("Cine X");
-		setSize(sizeVertical, sizeHorizontal);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
+		setSize(200, 200);
 
-		JScrollPane panelgamma = new JScrollPane(new JTextArea("Manueal de usuario"));
 
-		panel1.setLayout(new BorderLayout(10, 10));
-		panel1.add(panel2, BorderLayout.WEST);
-		panel2.add(panel3);
-		panel1.add(panel4, BorderLayout.CENTER);
-		panel4.add(panel5);
-		// panel4.add(panel6);
+		setLayout(new BorderLayout(10, 10));
+		panelIz.setLayout(new BorderLayout(10, 10));
+		panelCenter.setLayout(new BorderLayout(10, 10));
+		panelBienvenida.setLayout(new BorderLayout());
+		panelFoto.setLayout(new BorderLayout());
+		panelBotones.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 5));
+		panelUsuarios.setLayout(new BorderLayout(10, 10));
 
-		panel2.setLayout(new GridLayout(2, 1));
-		panel2.add(button1);
+		Descripcion.setLineWrap(true);
+		JPanel aux = (JPanel) FormularioInicio.getComponent(1);
+		aux.remove(3);
+		aux.add(campoPass);
+		FotoAutores.setBorder(null);
+		FotoAutores.setSize(638, 638);
+		FotoAutores.setContentAreaFilled(false);
+		FotoAutores.setIcon(new ImageIcon(new ImageIcon("temp\\1.gif").getImage().getScaledInstance(FotoAutores.getWidth(), FotoAutores.getHeight(), Image.SCALE_DEFAULT)));
 
-		panel3.setLayout(new GridLayout(1, 1));
-		// panel3.setBackground(Color.GREEN);
-		panel3.add(new JLabel("Bienvenido"));
-		button1.setSize(50000, 500);
+		panelBienvenida.add(Bienvenida, BorderLayout.CENTER);
+		panelFoto.add(FotoAutores, BorderLayout.CENTER);
+		panelIz.add(panelBienvenida, BorderLayout.CENTER);
+		panelIz.add(panelFoto, BorderLayout.SOUTH);
 
-		panel4.setLayout(new GridLayout(2, 1));
+		panelBotones.add(botonAdmin);
+		panelBotones.add(botonCliente);
+		panelUsuarios.add(panelBotones, BorderLayout.NORTH);
+		panelUsuarios.add(FormularioInicio, BorderLayout.CENTER);
+		panelCenter.add(panelDescripcion, BorderLayout.NORTH);
+		panelCenter.add(panelUsuarios, BorderLayout.CENTER);
 
-		panel5.setLayout(new BorderLayout(10, 10));
-		panel5.add(panelgamma, BorderLayout.CENTER);
-		// TODO panel FIELD de cristo poner los otros tres botones
-
-		getContentPane().setLayout(new BorderLayout(10, 10));
-		add(panel1, BorderLayout.WEST);
-		add(panel4, BorderLayout.EAST);
-		setVisible(true);
-		setSize(500, 500);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+		add(panelIz, BorderLayout.WEST);
+		add(panelCenter, BorderLayout.CENTER);
 	}
 
 	public void setController(ControladorVista[] controllers) {
@@ -75,7 +90,6 @@ public class Inicio extends JFrame implements InterfazPanel {
 		setVisible(true);
 		pack();
 	}
-
 
 
 }
