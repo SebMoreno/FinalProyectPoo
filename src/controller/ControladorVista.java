@@ -1,6 +1,10 @@
 package controller;
 
-public abstract class ControladorVista{
+public interface ControladorVista {
+
 	// TODO InterfazPanel vista
 	// TODO definir variable modelo
+
+
+
 }

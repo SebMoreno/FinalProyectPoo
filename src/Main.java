@@ -1,3 +1,4 @@
+import controller.ControladorInicio;
 import view.Inicio;
 
 public class Main {
@@ -15,7 +16,9 @@ public class Main {
 
 		Run
 		 */
+
 		Inicio i = new Inicio();
+		ControladorInicio.setControladoresVistaInicial(i);
 		i.run();
 
 
