@@ -63,6 +63,8 @@ public class Inicio extends JFrame {
 		JPanel aux = (JPanel) FormularioInicio.getComponent(1);
 		aux.remove(3);
 		aux.add(campoPass);
+		FormularioInicio.getTextFields().remove(1);
+		FormularioInicio.getTextFields().add(campoPass);
 		fotoAutores.setBorder(null);
 		fotoAutores.setSize(638, 638);
 		fotoAutores.setContentAreaFilled(false);
@@ -154,6 +156,9 @@ public class Inicio extends JFrame {
 
 		public void mostrarError(String error, String titulo, int icono) {
 			JOptionPane.showMessageDialog(Inicio.this, error, titulo, icono);
+		}
+		public JFrame getActualFrame(){
+			return Inicio.this;
 		}
 
 		private String isCampoLleno(String campo) throws NotFillFieldsAdminException, NotFillFieldsClientException {

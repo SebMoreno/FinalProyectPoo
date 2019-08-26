@@ -65,4 +65,7 @@ public class FieldPanel extends JPanel {
                 return TextFields.get(index).getText();
 	}
 
+	public ArrayList<JTextField> getTextFields() {
+		return TextFields;
+	}
 }

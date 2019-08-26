@@ -76,11 +76,13 @@ public class RecargarSaldo extends JPanel implements InterfazPanel{
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
+		/*
             //en caso de haber un error
             JOptionPane.showMessageDialog(boton,textoParaMostrar, "ERROR", JOptionPane.WARNING_MESSAGE);
             //en caso de exito
             JOptionPane.showMessageDialog(boton,textoParaMostrar);
-		
+            TODO Arreglar metodo
+		*/
 	}
     
         

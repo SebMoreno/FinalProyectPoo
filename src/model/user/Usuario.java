@@ -1,5 +1,6 @@
 package model.user;
 
+import java.io.IOException;
 import java.util.HashMap;
 import model.ExceptionsApp.WrongCredentialsException;
 import model.database.Data;
@@ -35,7 +36,7 @@ public abstract class Usuario {
 		}
 	}
 
-	protected Usuario(String usuario, String clave, String rol) throws WrongCredentialsException {
+	protected Usuario(String usuario, String clave, String rol) throws WrongCredentialsException, IOException {
 		String[] aux = Data.login(usuario,clave,rol);
 		this.clave = clave;
 		this.rol = rol;

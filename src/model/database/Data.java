@@ -101,26 +101,21 @@ public class Data {
 		Invitado.setMenu(new MenuDeConsola(options));
 	}
 */
-	public static String[] login(String usuario, String clave, String rol) throws WrongCredentialsException {
-		try (BufferedReader br = new BufferedReader(new FileReader("src/temp/" + "usuarios.txt"))) {
-			String line = br.readLine();
+	public static String[] login(String usuario, String clave, String rol) throws WrongCredentialsException, IOException {
+		BufferedReader br = new BufferedReader(new FileReader("temp/" + "usuarios.txt"));
+		String line = br.readLine();
 
-			while (line != null) {
-				String[] datos = line.split(" ");
-				if (datos[0].equals(usuario) && datos[1].equals(clave) && datos[2].equals(rol)) {
-					return new String[]{datos[3], datos[4]};
-				}
-				line = br.readLine();
+		while (line != null) {
+			String[] datos = line.split(" ");
+			if (datos[0].equals(usuario) && datos[1].equals(clave) && datos[2].equals(rol)) {
+				return new String[]{datos[3], datos[4]};
 			}
-			throw new WrongCredentialsException();
-		} catch (IOException e) {
-			//TODO Que hacer cuando no se puede leer el archivo se usuarios
-
+			line = br.readLine();
 		}
-		return null;
+		throw new WrongCredentialsException();
 	}
 
-	private static void readAllTxt() {//metodo que lee todos los archivos txt
+	public static void readAllTxt() {//metodo que lee todos los archivos txt
 		Usuario.RT();
 		Cuenta.RT();
 		Silla.RT();
@@ -147,7 +142,7 @@ public class Data {
 	}
 
 	public static void readTxt(String archivo, HashMap<String, String[]> lista) {//lee linea por linea el txt y lo guarda en el arreglo datos, luego utuliza aux como value del hash y el primer indice de datos com key
-		try (BufferedReader br = new BufferedReader(new FileReader("src/temp/" + archivo))) {
+		try (BufferedReader br = new BufferedReader(new FileReader("temp/" + archivo))) {
 			String line = br.readLine();
 
 			while (line != null) {

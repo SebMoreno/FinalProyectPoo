@@ -4,12 +4,13 @@ package model.user;
 //clase que genera objetos tipo administrador heredada de usuarios
 //ESTRUCTURAS: estan en la clase padre
 
+import java.io.IOException;
 import model.ExceptionsApp.WrongCredentialsException;
 import model.cine.Pelicula;
 
 public class Administrador extends Usuario {
 
-	private String[] capacidades = {"Listado de Películas", "Listado de Funciones", "Añadir Película", "Eliminar Película", "Crear Función", "Eliminar Función"};
+	private static String[] capacidades = {"Listado de Películas", "Listado de Funciones", "Añadir Película", "Eliminar Película", "Crear Función", "Eliminar Función"};
 
 
 
@@ -18,7 +19,7 @@ public class Administrador extends Usuario {
 		super(usuario, clave, "admin", nombre, email, existe);
 		// opciones     "cerrar sesion","actualizar menu","editar pelicula"
 	}
-	public Administrador(String usuario, String clave) throws WrongCredentialsException{
+	public Administrador(String usuario, String clave) throws WrongCredentialsException, IOException {
 		super(usuario,clave,"admin");
 	}
 
@@ -27,11 +28,11 @@ public class Administrador extends Usuario {
 		Pelicula nueva = new Pelicula(titulo, genero, clasificacion, duracion, idioma);
 	}
 
-	public String[] getCapacidades() {
-		return capacidades;
+	public static void setCapacidades(String[] capacidades) {
+		Administrador.capacidades = capacidades;
 	}
 
-	public void setCapacidades(String[] capacidades) {
-		this.capacidades = capacidades;
+	public static String[] getCapacidades() {
+		return capacidades;
 	}
 }

@@ -1,6 +1,7 @@
 package view;
 
 
+import javax.swing.JFrame;
 import model.ExceptionsApp.NotFillFieldsAdminException;
 import model.ExceptionsApp.NotFillFieldsClientException;
 
@@ -16,7 +17,10 @@ public interface InterfazBotonInicio extends InterfazPanel {
 
 	void mostrarError(String error, String titulo, int icono);
 
+	JFrame getActualFrame();
+
 	String getUsuario()throws NotFillFieldsAdminException, NotFillFieldsClientException;
 
 	String getClave()throws NotFillFieldsAdminException, NotFillFieldsClientException;
+
 }

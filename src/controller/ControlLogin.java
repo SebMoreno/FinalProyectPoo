@@ -3,14 +3,18 @@ package controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 import model.ExceptionsApp.NotFillFieldsAdminException;
 import model.ExceptionsApp.NotFillFieldsClientException;
 import model.ExceptionsApp.WrongCredentialsException;
 import model.user.Administrador;
+import model.user.Cliente;
 import model.user.Usuario;
 import view.InterfazBotonInicio;
+import view.MenuRegistrado.Informacionfunciones;
+import view.VistaPrincipal;
 
 public class ControlLogin implements ActionListener, ControladorVista {
 	private static int loginAdmin;
@@ -39,28 +43,38 @@ public class ControlLogin implements ActionListener, ControladorVista {
 					String clave = i.getClave();
 					String user = i.getUsuario();
 					Usuario.setUsuarioActivo(new Administrador(user, clave));
+					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new Informacionfunciones());//TODO Colocar ventana de bienvenida
+					i.getActualFrame().dispose();
+					inicia.run();
 				} catch (NotFillFieldsAdminException | NotFillFieldsClientException e) {
 					i.mostrarError(e.getMessage(), "Algún campo está sin rellenar", JOptionPane.WARNING_MESSAGE);
 					loginAdmin--;
 					loginCliente++;
-				}catch (WrongCredentialsException e){
+				} catch (WrongCredentialsException e) {
 					i.mostrarError(e.getMessage(), "Credenciales Incorrectas", JOptionPane.ERROR_MESSAGE);
 					loginAdmin--;
 					loginCliente++;
+				} catch (IOException e) {
+					//TODO que hacer cuando no se puede hacer login por falta de archivo txt
 				}
 			} else if (loginCliente == 2) {
 				try {
 					String clave = i.getClave();
 					String user = i.getUsuario();
-					Usuario.setUsuarioActivo(new Administrador(user, clave));//TODO cambiar a Cliente
+					Usuario.setUsuarioActivo(new Cliente(user, clave));
+					VistaPrincipal inicia = new VistaPrincipal(user, Cliente.getCapacidades(), new Informacionfunciones());//TODO Colocar ventana de bienvenida
+					i.getActualFrame().dispose();
+					inicia.run();
 				} catch (NotFillFieldsAdminException | NotFillFieldsClientException e) {
 					i.mostrarError(e.getMessage(), "Algún campo está sin rellenar", JOptionPane.WARNING_MESSAGE);
 					loginCliente--;
 					loginAdmin++;
-				}catch (WrongCredentialsException e){
+				} catch (WrongCredentialsException e) {
 					i.mostrarError(e.getMessage(), "Credenciales Incorrectas", JOptionPane.ERROR_MESSAGE);
 					loginCliente--;
 					loginAdmin++;
+				} catch (IOException e) {
+					//TODO que hacer cuando no se puede hacer login por falta de archivo txt
 				}
 			}
 		}
@@ -71,9 +85,9 @@ public class ControlLogin implements ActionListener, ControladorVista {
 
 	private boolean initialFieds(InterfazBotonInicio i) {
 		i.apareceFormulario();
-		if (loginAdmin ==1){
+		if (loginAdmin == 1) {
 			loginCliente++;
-		}else {
+		} else {
 			loginAdmin++;
 		}
 		return true;
