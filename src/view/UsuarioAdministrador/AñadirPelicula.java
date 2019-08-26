@@ -72,9 +72,9 @@ public class AñadirPelicula extends JPanel implements InterfazPanel  {
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
              //en caso de haber un error
-            JOptionPane.showMessageDialog(null, "INFORMACION INCORRECTA , VUELVALO A INTENATAR", "ERROR", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(boton,textoParaMostrar, "ERROR", JOptionPane.WARNING_MESSAGE);
             //en caso de exito
-            JOptionPane.showMessageDialog(null,"CREACIÓN EXITOSA");
+            JOptionPane.showMessageDialog(boton,textoParaMostrar);
 		
 	}
 

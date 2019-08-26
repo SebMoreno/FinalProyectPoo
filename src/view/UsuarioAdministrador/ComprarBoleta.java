@@ -1,9 +1,16 @@
+/**
+ * Vista de la opcion de menu que permite al administrador crear funciones
+ * @author Cristian Mejia
+ */
 package view.UsuarioAdministrador;
 
 import javax.swing.*;
 import java.awt.*;
+import controller.ControladorVista;
+import java.awt.event.ActionListener;
+import view.InterfazPanel;
 
-public class ComprarBoleta extends JPanel {
+public class ComprarBoleta extends JPanel implements InterfazPanel {
 	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
         public JTextField entrada = new JTextField(); // sera el campo de texto donde el usuario ingrese lo solicitado
         //los eventos se controlarán cuando el usuario presione enter
@@ -14,7 +21,11 @@ public class ComprarBoleta extends JPanel {
         private JPanel panel_der = new JPanel();
 	/* Fin declaraciÃ³n */
 
-	public ComprarBoleta(){
+        /**
+         * Constructor de la clase , agrega los objetos mencionados anteriormente en el panel
+         */
+        
+        public ComprarBoleta(){
 		/* OrganizaciÃ³n de Layout */
                 this.setLayout(new BorderLayout(7,15));
 		/* Fin Layout */
@@ -39,26 +50,39 @@ public class ComprarBoleta extends JPanel {
                 panel_der.add(panel_der_center, BorderLayout.CENTER);
                 
                 this.add(panel_der, BorderLayout.EAST);
-		/* Fin Agregado de Componentes */
-
-
-		//Si es un JFrame colocar lo siguiente
-		/*
-
-
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);   //Ojo con esta linea, eliminar al finalizar el diseÃ±o
-		setSize(700, 500);                                         // setSize(int tamaÃ±oX, int tamaÃ±oY);
-		setVisible(true);
-
-		 */
+	
 	}
-
-	/* Metodos auxiliares */
-	/* Fin Metodos auxiliares */
-
+        /**
+         * inicio implementacion metodos de la interfaz
+         */
+        
+        /**
+	 * Metodo de los controladores
+	 *
+	 * @param controllers 
+         * 
+	 */
+	@Override
+	public void setController(ControladorVista[] controllers) {
+		
+	}
+        
+        /**
+	 * METODO QUE MUESTRA TODA LA INFORMACION NECESARIA
+	 *
+	 * @param textoParaMostrar
+         * 
+	 */
+	@Override
+	public void muestraDatos(String textoParaMostrar) {
+            
+	}	
 
 }
+/**
+ * clase auxiliar para la creacion de paneles 
+ * @author Cristian mejia
+ */
 
 class PanelTexto extends JPanel{
     /* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
@@ -81,20 +105,9 @@ class PanelTexto extends JPanel{
                 this.add(impresion, BorderLayout.CENTER);
 		/* Fin Agregado de Componentes */
 
+}
+        
 
-		//Si es un JFrame colocar lo siguiente
-		/*
-
-
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);   //Ojo con esta linea, eliminar al finalizar el diseÃ±o
-		setSize(700, 500);                                         // setSize(int tamaÃ±oX, int tamaÃ±oY);
-		setVisible(true);
-
-		 */
-	}
-
-	/* Metodos auxiliares */
-	/* Fin Metodos auxiliares */
+	
 
 }
