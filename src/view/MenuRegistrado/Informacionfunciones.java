@@ -59,7 +59,11 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
 		/* Fin Agregado de Componentes */
 	}
 
-	/**
+        /**
+	 * IMPLEMENTACION METODOS DE LA INTERFAZ
+	 */
+        
+        /**
 	 * Metodo de los controladores
 	 *
 	 * @param controllers se necesita un actionListener para el boton go este boton debe mostrar la informacion de las funciones seleccionadas anteriormente
@@ -68,10 +72,6 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
 	public void setController(ControladorVista[] controllers) {
 		go.addActionListener((ActionListener) controllers[0]);
 	}
-
-	/**
-	 * IMPLEMENTACION METODO DE LA INTERFAZ
-	 */
 
 	/**
 	 * METODO QUE MUESTRA TODA LA INFORMACION NECESARIA
