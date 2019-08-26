@@ -1,10 +1,18 @@
+/**
+ * vista de la opcion de menu añadir pelicula
+ * @author Cristian Mejia
+ */
+
 package view.UsuarioAdministrador;
 
 import javax.swing.*;
+import controller.ControladorVista;
+import view.InterfazPanel;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
-public class AñadirPelicula extends JPanel {
-	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
+public class AñadirPelicula extends JPanel implements InterfazPanel  {
+	/* Empieza declaracion de subobjetos pertenencientes a este objeto principal */
         private JLabel ingrese_datos = new JLabel("Ingrese los siguientes datos");
         private String datos = "Datos";
         private String valor = "Valor";
@@ -14,16 +22,16 @@ public class AñadirPelicula extends JPanel {
         private JPanel panel_down = new JPanel();
         private JButton boton = new JButton("Ingresar Datos");
 	/* Fin declaraciÃ³n */
-
+        
+        /**
+         * Constructor de la clase agrega los objetos mencionados anteriormente al constructor
+         */
 	public AñadirPelicula(){
 		/* OrganizaciÃ³n de Layout */
                 this.setLayout(new BorderLayout(7,15));
                 panel_sup.setLayout(new BorderLayout(7,15));
                 panel_down.setLayout(new BorderLayout(7,15));
 		/* Fin Layout */
-
-		/* Operaciones Adicionales */
-		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */
                 panel_sup.add(ingrese_datos, BorderLayout.CENTER);
@@ -38,20 +46,37 @@ public class AñadirPelicula extends JPanel {
 		/* Fin Agregado de Componentes */
 
 
-		//Si es un JFrame colocar lo siguiente
-		/*
-
-
-		setLocationRelativeTo(null);
-		setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);   //Ojo con esta linea, eliminar al finalizar el diseÃ±o
-		setSize(700, 500);                                         // setSize(int tamaÃ±oX, int tamaÃ±oY);
-		setVisible(true);
-
-		 */
 	}
-
-	/* Metodos auxiliares */
-	/* Fin Metodos auxiliares */
+        
+        /**
+         * inicio implementacion metodos de la interfaz
+         */
+        
+        /**
+	 * Metodo de los controladores
+	 *
+	 * @param controllers 
+         * TODO hay que programar el controlador boton que summit la informacion rellenada en lo campos anteriores y crea la pelicula o activa el mensaje de error
+	 */
+	@Override
+	public void setController(ControladorVista[] controllers) {
+		boton.addActionListener((ActionListener) controllers[0]);
+	}
+        
+        /**
+	 * METODO QUE MUESTRA TODA LA INFORMACION NECESARIA
+	 *
+	 * @param textoParaMostrar
+         * TODO se tiene que verificar que la informacion suminisrada sea valida para ver cual option pane agregar
+	 */
+	@Override
+	public void muestraDatos(String textoParaMostrar) {
+             //en caso de haber un error
+            JOptionPane.showMessageDialog(null, "INFORMACION INCORRECTA , VUELVALO A INTENATAR", "ERROR", JOptionPane.WARNING_MESSAGE);
+            //en caso de exito
+            JOptionPane.showMessageDialog(null,"CREACIÓN EXITOSA");
+		
+	}
 
 
 }
