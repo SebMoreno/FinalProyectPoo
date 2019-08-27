@@ -26,7 +26,71 @@ public class Inicio extends JFrame {
 	 * cosas que contiene el panel
 	 */
 
-	private JTextArea Descripcion = new JTextArea("Manual de usuario", 5, 30);
+	private JTextArea Descripcion = new JTextArea("Bienvenido a CINEX\n" +
+"\n" +
+"En este apartado encontraras el manual de usuario. Lee con detenimiento las siguientes instrucciones y podrás disfrutar esta aplicación al máximo, recuerde que este sistema es traído a sus manos por:\n" +
+"Mariana Betancur, Cristian Mejia, Sebastian Moreno y Jairo Andres Cortez.\n" +
+"Comencemos:\n" +
+"1.	En este momento se encuentra en la ventana principal de inicio aquí podrá seleccionar su tipo de usuario, sea ADMINISTRADOR O USUARIO COMUN.\n" +
+"\n" +
+"Si pasa el mouse por el recuadro de bienvenida podrá ver como la letra cambia de color a azul únicamente cuando el mouse este sobre ella\n" +
+"\n" +
+"El botón que dice “Haga click para ver los autores del sistema” cuando haga click sobre el boton (oprimir con el mouse) se mostrara foto de los autores del sistema, lo mismo para el segundo click , la tercera vez volverá a aparecer el botón mencionado anteriormente.\n" +
+"\n" +
+"Además al escoger su tipo de usuario en la parte de debajo de este recuadro (ojo no al interior) deberá llenar los datos correspondientes NO PUEDE AVANZAR EN SU INTERRACION CON EL PROGRAMA SI NO LO HACE \n" +
+"\n" +
+"2.	Luego de hacer lo planteado anteriormente se desplegará una nueva vista DEPENDIENDO DEL USUARIO ELEGIDO ANTERIORMENTE, hay una ventana que le advierte si se quiere salir, es su decisión si lo quiere hacer.\n" +
+"Antes de proseguir se dividirán LAS FUNCIONALIDADES DEL SISTEMA POR TIPO DE USUARIO, LEA MUY BIEN LAS SIGUIENTES LISTAS PARA SABER QUE PUEDE REALIZAR CON ESTE SISTEMA:\n" +
+"\n" +
+"USUARIO COMUN: INFORMACION PELICULAS, INFORMACION FUNCIONES, RECARGAR SALDO, COMPRAR BOLETA, INFORMACION CUENTA.\n" +
+"\n" +
+"ADMINISTRADOR: INFORMACION PELICULAS, INFORMACION FUNCIONES, ANADIR FUNCIONES, ANADIR PELICULAS, ELIMINAR PELICULAS.\n" +
+"\n" +
+"Ahora se procederá a explicar cada vista, se comenzará con USUARIO COMUN\n" +
+"\n" +
+"•	En la parte superior de la ventana aparece el nombre del usuario que este activo en ese momento, en este caso aparecerá su nombre \n" +
+"•	Hay tres apartados en su menú \n" +
+"ARCHIVO: podrá ver su información tal como su nombre , cedula , saldo , boletas compradas .\n" +
+"PROCESOS Y CONSULTAS: aparecen las consultas que puede tener este usuario. PARA MAYOR ENTENDIMIENTO SE VOLVERAN A LISTAR A CONTINUACION INFORMACION PELICULAS, INFORMACION FUNCIONES, RECARGAR SALDO, COMPRAR BOLETA.\n" +
+"\n" +
+"AYUDA: nombre de los autores de la aplicación mencionados en el inicio \n" +
+"•	Dependiendo de la opción que hubiese elegido se mostrara en esa misma vista lo que puede hacer en la opción elegida\n" +
+"•	Los resultados de la consulta se mostrarán en la parte inferior de la pantalla.\n" +
+"\n" +
+"Se hará una descripción de cada opción de menú (DEL USUARIO COMUN) a continuación:\n" +
+"\n" +
+"-INFORMACION PELICULAS: se desplegará una ventana con la información de todas las películas existentes en nuestro sistema con la siguiente información: TITULO, GENERO, IDIOMA, CLASIFICACION y DURACION no necesariamente en ese orden.\n" +
+"\n" +
+"-INFORMACION FUNCIONES: lo primero que tiene que hacer es escoger la película de la cual quiere saber la información de las funciones disponibles en nuestro sistema con la siguiente información: SALA, SILLAS DISPONIBLE, ID DE LA FUNCION, HORA, PELICULA no necesariamente en ese orden.\n" +
+"\n" +
+"-RECARGAR SALDO: permite recargar el saldo ya presente en la cuenta, antes te muestra el saldo actual \n" +
+"\n" +
+"                             -COMPRAR BOLETA: permite comprar boleta de la película y la función seleccionada\n" +
+"Ahora se describirá ADMINISTRADOR:\n" +
+"•	En la parte superior de la ventana aparece el nombre del usuario que este activo en ese momento, en este caso aparecerá su nombre \n" +
+"•	Hay tres apartados en su menú\n" +
+"ARCHIVO: podrá ver su información tal como su nombre , saldo , boletas compradas .\n" +
+"              PROCESOS Y CONSULTAS: aparecen las consultas que puede tener este usuario. PARA MAYOR \n" +
+"              ENTENDIMIENTO\n" +
+"AYUDA: nombre de los autores de la aplicación mencionados en el inicio INFORMACION PELICULAS, INFORMACION FUNCIONES, ANADIR FUNCIONES, ANADIR PELICULAS, ELIMINAR PELICULAS.\n" +
+"\n" +
+"•	Dependiendo de la opción que hubiese elegido se mostrara en esa misma vista lo que puede hacer en la opción elegida\n" +
+"•	Los resultados de la consulta se mostrarán en la parte inferior de la pantalla.\n" +
+"\n" +
+"Se hará una descripción de cada opción de menú (DEL USUARIO COMUN) a continuación:\n" +
+"\n" +
+"-INFORMACION PELICULAS: se desplegará una ventana con la información de todas las películas existentes en nuestro sistema con la siguiente información: TITULO, GENERO, IDIOMA, CLASIFICACION y DURACION no necesariamente en ese orden.\n" +
+"\n" +
+"-INFORMACION FUNCIONES: lo primero que tiene que hacer es escoger la película de la cual quiere saber la información de las funciones disponibles en nuestro sistema con la siguiente información: SALA, SILLAS DISPONIBLE, ID DE LA FUNCION, HORA, PELICULA no necesariamente en ese orden.\n" +
+"\n" +
+"-ELIMINAR PELICULAS: escoja en el apartado la película que desea y hunda el botón eliminar.\n" +
+"\n" +
+"-AÑADIR PELICULAS: pide la información correspondiente de una película en nuestro sistema: TITULO, GENERO, IDIOMA, CLASIFICACION y DURACION no necesariamente en ese orden.\n" +
+"\n" +
+"-AÑADIR FUNCIONES: pide la información correspondiente de una FUNCIONES en nuestro sistema: SALA, SILLAS DISPONIBLE, ID DE LA FUNCION, HORA, PELICULA.\n" +
+"\n" +
+"Ahora tiene la información necesaria para manejar nuestra aplicación de manera correcta,DISFRUTE!\n" +
+"", 5, 30);
 	private JButton fotoAutores = new JButton();
 	private JPanel panelIz = new JPanel();// primer contenedor.
 	private JPanel panelCenter = new JPanel();// segundo contenedor.
