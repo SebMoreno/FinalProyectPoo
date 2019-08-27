@@ -110,7 +110,7 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 		for(int i = 0; i<datos.length;i++) {
 			String DatosCompletos = datos[0];
 			String data [] = DatosCompletos.split(" ");
-			funcio.append("TITULO PELICULA: "+data[2]+ " FUNCION: "+data[0]+" SALA: "+data[1]+" HORA: "+data[3]);
+			funcio.append("TITULO PELICULA: "+data[0]+ " GENERO: "+data[1]+" CLASIFICACION: "+data[2]+" DURACION: "+data[3]);
 		}
 		panel_der.add(panelDescripcion, BorderLayout.CENTER);
 	}
