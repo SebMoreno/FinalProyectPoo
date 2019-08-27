@@ -30,7 +30,6 @@ public class Cliente extends Usuario {
 	}
 
 
-
 	public static java.lang.String[] getCapacidades() {
 		return capacidades;
 	}

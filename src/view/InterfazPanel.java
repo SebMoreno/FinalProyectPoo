@@ -4,6 +4,7 @@ import controller.ControladorVista;
 
 public interface InterfazPanel {
 	int Salir = 0;
+
 	/*
 	 * Metodo que relaciona cada componente que necesita ser controlado con su respectiva clase controladora (Listener)
 	 */

@@ -13,14 +13,13 @@ public class Administrador extends Usuario {
 	private static String[] capacidades = {"Listado de Películas", "Listado de Funciones", "Añadir Película", "Eliminar Película", "Crear Función", "Eliminar Función"};
 
 
-
-
 	public Administrador(String usuario, String clave, String nombre, String email, boolean existe) {
 		super(usuario, clave, "admin", nombre, email, existe);
 		// opciones     "cerrar sesion","actualizar menu","editar pelicula"
 	}
+
 	public Administrador(String usuario, String clave) throws WrongCredentialsException, IOException {
-		super(usuario,clave,"admin");
+		super(usuario, clave, "admin");
 	}
 
 	//TODO Mira esta belleza de metodo, es increibleamazing

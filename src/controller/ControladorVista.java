@@ -6,5 +6,4 @@ public interface ControladorVista {
 	// TODO definir variable modelo
 
 
-
 }

@@ -37,7 +37,7 @@ public abstract class Usuario {
 	}
 
 	protected Usuario(String usuario, String clave, String rol) throws WrongCredentialsException, IOException {
-		String[] aux = Data.login(usuario,clave,rol);
+		String[] aux = Data.login(usuario, clave, rol);
 		this.clave = clave;
 		this.rol = rol;
 		this.usuario = usuario;

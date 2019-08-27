@@ -11,7 +11,7 @@ public class ControlSalida implements ActionListener, ControladorVista {
 		InterfazBotonInicio i = (InterfazBotonInicio) actionEvent.getSource();
 		i.muestraDatos("¿Desea salir del programa?");
 		if
-		(i.quiereSalir() == InterfazPanel.Salir){
+		(i.quiereSalir() == InterfazPanel.Salir) {
 
 			System.exit(0);
 			// TODO Hacer que se salga el programa GUARDANDO todo

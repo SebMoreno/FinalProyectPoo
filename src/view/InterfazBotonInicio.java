@@ -19,8 +19,8 @@ public interface InterfazBotonInicio extends InterfazPanel {
 
 	JFrame getActualFrame();
 
-	String getUsuario()throws NotFillFieldsAdminException, NotFillFieldsClientException;
+	String getUsuario() throws NotFillFieldsAdminException, NotFillFieldsClientException;
 
-	String getClave()throws NotFillFieldsAdminException, NotFillFieldsClientException;
+	String getClave() throws NotFillFieldsAdminException, NotFillFieldsClientException;
 
 }
