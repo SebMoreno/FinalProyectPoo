@@ -13,6 +13,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
 import view.InterfazPanel;
 
 public class Informacionfunciones extends JPanel implements InterfazPanel {
@@ -81,25 +84,15 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
 
+		JTextArea funcio = new JTextArea();
+		JScrollPane panelDescripcion = new JScrollPane();
 		String[] datos = textoParaMostrar.split("\n");
-                for (int i =0 ; i<datos.length;i++){
-                    String DatosCompletos = datos[0];
-                    String Data []= DatosCompletos.split(" ");
-                    JLabel TITULO = new JLabel ("TITULO");
-                    JLabel titulo = new JLabel (Data[2]);
-                    JLabel SALA = new JLabel("SALA");
-                    JLabel sala = new JLabel (Data[1]);
-                    JLabel HORA = new JLabel("HORA");
-                    JLabel hora = new JLabel (Data[3]);
-                    JPanel auxiliar =new PanelFunciones();
-                    auxiliar.add(TITULO);
-                    auxiliar.add(titulo);
-                    auxiliar.add(SALA);
-                    auxiliar.add(sala);
-                    auxiliar.add(HORA);
-                    auxiliar.add(hora);
-                    }
-                 panel_der.add(new PanelFunciones(), BorderLayout.CENTER); 
+		for(int i = 0; i<datos.length;i++) {
+			String DatosCompletos = datos[0];
+			String data [] = DatosCompletos.split(" ");
+			funcio.append("TITULO PELICULA: "+data[2]+ " FUNCION: "+data[0]+" SALA: "+data[1]+" HORA: "+data[3]);
+		}
+		panel_der.add(panelDescripcion, BorderLayout.CENTER);
 	}
 
 	private class PanelFunciones extends JPanel {

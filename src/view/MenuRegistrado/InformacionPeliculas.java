@@ -7,6 +7,8 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 
 import controller.ControladorVista;
 import view.InterfazPanel;
@@ -75,34 +77,42 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
 
-		//String[] datos = textoParaMostrar.split("\n");
-		String[]datos = "EndGame acci贸n PG13 3:03 ingl茅s\r\nAladin infantil PG13 2:00 espa帽ol\r\nAvatar acci贸n R 2:30 ingl茅s".split("\n");
-		for (int i = 0; i < datos.length; i++) {
-			String peliculis = datos[0];
-			String[] lista2 = peliculis.split(" ");
-			JLabel NOMBRE = new JLabel("Pelicula");
-			JLabel nombre = new JLabel(lista2[0]);
-			JLabel GENERO = new JLabel("Genero");
-			JLabel genero = new JLabel(lista2[1]);
-			JLabel CLASIFICACION = new JLabel("Clacificai髇");
-			JLabel clasificacion = new JLabel(lista2[2]);
-			JLabel DURACION = new JLabel("Duraci髇");
-			JLabel duracion = new JLabel(lista2[3]);
-			JLabel IDIOMA = new JLabel("Idioma");
-			JLabel idioma = new JLabel(lista2[4]);
-			JPanel auxiliar = new PanelFunciones();
-			auxiliar.add(NOMBRE);
-			auxiliar.add(nombre);
-			auxiliar.add(GENERO	);
-			auxiliar.add(genero);
-			auxiliar.add(CLASIFICACION);
-			auxiliar.add(clasificacion);
-			auxiliar.add(DURACION);
-			auxiliar.add(duracion);
-			auxiliar.add(IDIOMA);
-			auxiliar.add(idioma);
+//		String[] datos = textoParaMostrar.split("\n");
+//		String[]datos = "EndGame acci贸n PG13 3:03 ingl茅s\r\nAladin infantil PG13 2:00 espa帽ol\r\nAvatar acci贸n R 2:30 ingl茅s".split("\n");
+//		for (int i = 0; i < datos.length; i++) {
+//			String peliculis = datos[0];
+//			String[] lista2 = peliculis.split(" ");
+//			JLabel NOMBRE = new JLabel("Pelicula");
+//			JLabel nombre = new JLabel(lista2[0]);
+//			JLabel GENERO = new JLabel("Genero");
+//			JLabel genero = new JLabel(lista2[1]);
+//			JLabel CLASIFICACION = new JLabel("Clacificai髇");
+//			JLabel clasificacion = new JLabel(lista2[2]);
+//			JLabel DURACION = new JLabel("Duraci髇");
+//			JLabel duracion = new JLabel(lista2[3]);
+//			JLabel IDIOMA = new JLabel("Idioma");
+//			JLabel idioma = new JLabel(lista2[4]);
+//			JPanel auxiliar = new PanelFunciones();
+//			auxiliar.add(NOMBRE);
+//			auxiliar.add(nombre);
+//			auxiliar.add(GENERO	);
+//			auxiliar.add(genero);
+//			auxiliar.add(CLASIFICACION);
+//			auxiliar.add(clasificacion);
+//			auxiliar.add(DURACION);
+//			auxiliar.add(duracion);
+//			auxiliar.add(IDIOMA);
+//			auxiliar.add(idioma);
+//		}
+		JTextArea funcio = new JTextArea();
+		JScrollPane panelDescripcion = new JScrollPane();
+		String[] datos = textoParaMostrar.split("\n");
+		for(int i = 0; i<datos.length;i++) {
+			String DatosCompletos = datos[0];
+			String data [] = DatosCompletos.split(" ");
+			funcio.append("TITULO PELICULA: "+data[2]+ " FUNCION: "+data[0]+" SALA: "+data[1]+" HORA: "+data[3]);
 		}
-		panel_der.add(new PanelFunciones(), BorderLayout.CENTER);
+		panel_der.add(panelDescripcion, BorderLayout.CENTER);
 	}
 
 	public class PanelFunciones extends JPanel {
