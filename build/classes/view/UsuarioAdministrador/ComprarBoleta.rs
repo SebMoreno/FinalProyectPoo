@@ -1,0 +1,2 @@
+view.UsuarioAdministrador.ComprarBoleta
+view.UsuarioAdministrador.PanelTexto
