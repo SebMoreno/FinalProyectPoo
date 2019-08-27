@@ -3,11 +3,15 @@ package view.UsuarioAdministrador;
 
 import java.awt.BorderLayout;
 import java.awt.Choice;
+import controller.ControladorVista;
+import java.awt.event.ActionListener;
+import view.InterfazPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class EliminarPelicula extends JPanel {
+public class EliminarPelicula extends JPanel implements InterfazPanel {
 	/**
 	 * cosas que contiene el panel
 	 */
@@ -40,5 +44,37 @@ public class EliminarPelicula extends JPanel {
 
 
 	}
+         /**
+         * inicio implementacion metodos de la interfaz
+         */
+        
+        /**
+	 * Metodo de los controladores
+	 *
+	 * @param controllers 
+         * BOTON QUE ACTIVA EL BORRADO
+	 */
+	@Override
+	public void setController(ControladorVista[] controllers) {
+		go.addActionListener((ActionListener) controllers[0]);
+	}
+        
+        /**
+	 * METODO QUE MUESTRA TODA LA INFORMACION NECESARIA
+	 *
+	 * @param textoParaMostrar
+         * TODO se tiene que verificar que la informacion suminisrada sea valida para ver cual option pane agregar
+	 */
+	@Override
+	public void muestraDatos(String textoParaMostrar) {
+             //en caso de exito
+            JOptionPane.showMessageDialog(go,textoParaMostrar);
+		
+	}
+        
+        
+        
+        
+        
 
 }
