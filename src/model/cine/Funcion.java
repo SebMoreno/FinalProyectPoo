@@ -1,3 +1,11 @@
+/**
+ *Clase con las funciones del cinema , necesario para la compra de boletas
+ *ESTRUCTURAS:ESTRUCTURAS:HashMap<String, String[]> funcionesList
+ * @author: Sebastian Moreno , Cristian Mejia, Mariana Betancur , Jairo cortez
+ */
+
+
+
 package model.cine;
 
 
@@ -5,8 +13,7 @@ import java.util.HashMap;
 import java.util.Map;
 import model.database.Data;
 
-//Clase con las funciones del cinema , necesario para la compra de boletas
-//ESTRUCTURAS:HashMap<String, String[]> funcionesList,
+//Campos de la clase
 public class Funcion {
 
 	private final static HashMap<String, String[]> funcionesList = new HashMap<>(); // key: idFuncion     value: idSala, tituloPelicula, hora, sillasOcupadas
@@ -15,8 +22,13 @@ public class Funcion {
 	private Pelicula pelicula;
 	private String hora;
 	private Short sillasOcupadas;
+        
+        /**
 
-	public Funcion(String idFuncion) {//Constructor para crear objetos que ya estan en los Txt, dado que se necesite para llamar algo metodo
+     *Constructor para crear objetos que ya estan en los Txt, dado que se necesite para llamar algo metodo
+     * @param String 
+     */
+    public Funcion(String idFuncion) {
 		sala = new Sala(funcionesList.get(idFuncion)[0]);
 		pelicula = new Pelicula(funcionesList.get(idFuncion)[1]);
 		hora = funcionesList.get(idFuncion)[2];
@@ -24,8 +36,14 @@ public class Funcion {
 		this.idFuncion = Integer.parseInt(idFuncion);
 
 	}
+         /**
 
-	public Funcion(Sala sala, String hora, Pelicula pelicula) {//crear objetos que si se quieren guardar en el txt
+     *metodo que permite crear objetos que si se quieren guardar en el txt
+     * @param (Sala sala, String hora, Pelicula pelicula) 
+     * @see baseDeDatos.Data#writeTxt(java.lang.String, java.util.HashMap) 
+     */
+    
+    public Funcion(Sala sala, String hora, Pelicula pelicula) {
 		this.sala = sala;
 		this.hora = hora;
 		this.pelicula = pelicula;
@@ -41,16 +59,27 @@ public class Funcion {
 		funcionesList.put(Integer.toString(idFuncion), valor);
 		Data.writeTxt("funciones.txt", funcionesList);
 	}
+     /**
+
+     *cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+     * @see baseDeDatos.Data#readTxt(String archivo, HashMap<String, String[]> lista)
+     */
+    
 
 	public static void RT() {////cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
 		Data.readTxt("funciones.txt", funcionesList);
 	}
 
+        
+        
 	public static HashMap<String, String[]> getFuncionesList() {
 		return funcionesList;
 	}
-
-	public static void deleteFuncion(String id) {//El administrador puede hacer esto , entonces la remueve de el hashmap y en esa opcion de menu(en el ui main)vuelve a escribir el archivo
+   /**
+    * El administrador puede hacer esto , entonces la remueve de el hashmap y en esa opcion de menu(en el ui main)vuelve a escribir el archivo
+    * @param id 
+    */
+	public static void deleteFuncion(String id) {
 		if (funcionesList.containsKey(id)) {
 			funcionesList.remove(id);
 			System.out.println("La función ha sido eliminada exitosamente.");

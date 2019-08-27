@@ -1,5 +1,8 @@
-/* en este paquete se maneja todas las clses con respecto al cine (@author : El equipo completo) */
-
+/**
+ *Esta clase crea las boletas que se general cuando se compra , esta guardada tambien en la cuenta de su respectivo usuario
+ *ESTRUCTURAS:HashMap<String, String[]> boletasList(para registro de las boletas)
+ * @author: Sebastian Moreno , Cristian Mejia, Mariana Betancur , Jairo cortez
+ */
 package model.cine;
 
 
@@ -10,8 +13,7 @@ import model.user.Cliente;
 import model.user.Cuenta;
 import model.user.Usuario;
 
-//Esta clase crea las boletas que se general cuando se compra , esta guardada tambien en la cuenta de su respectivo usuario
-//ESTRUCTURAS:HashMap<String, String[]> boletasList(para registro de las boletas),
+//Campos de la clase
 public class Boleta {
 
 	private final static HashMap<String, String[]> boletasList = new HashMap<>(); // key: idBoleta     value: usuario, idFuncion, posicionSilla, precio
@@ -21,8 +23,18 @@ public class Boleta {
 	private final Silla silla;
 	private final int precio;
 
+  /**
 
-	public Boleta(String idBoleta) {//constructor solo con id , accediendo al hash puede obtener usuario , clave , nombre , email,silla , precio, ademas crea propietario con el booleano existe en true(explicacion en su respectivo contructor)
+     * Constructor para la clase boleta
+     * constructor solo con id , accediendo al hash puede obtener usuario , clave , nombre , email,silla , precio, 
+     * ademas crea propietario con el booleano existe en true(explicacion en su respectivo contructor).
+     * @param idBoleta
+      
+
+     */
+        
+        
+	public Boleta(String idBoleta) {
 		String usuario = boletasList.get(idBoleta)[0];
 		String clave = Usuario.getUsersList().get(usuario)[0];
 		String nombre = Usuario.getUsersList().get(usuario)[2];
@@ -35,8 +47,19 @@ public class Boleta {
 		silla = funcion.getSala().getSilla(posicionSilla.charAt(0), posicionSilla.charAt(2));
 		precio = Integer.parseInt(boletasList.get(idBoleta)[3]);
 	}
+        /**
 
-	public Boleta(Cuenta duenio, Funcion funcion, Silla silla) {//Constructor originial de boleta y la guarda en su respectivo txt
+     * Constructor para la clase boleta
+     * Constructor originial de boleta y la guarda en su respectivo txt
+     * @param dueño
+     * @param funcion
+     * @param silla
+     * @see baseDeDatos.Data#writeTxt(java.lang.String, java.util.HashMap) 
+     * 
+     */
+    
+
+	public Boleta(Cuenta duenio, Funcion funcion, Silla silla) {
 		this.duenio = duenio;
 		this.funcion = funcion;
 		this.silla = silla;
@@ -63,25 +86,45 @@ public class Boleta {
 		silla.setOcupada(true);
 	}
 
-	//cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+	 /**
+     *cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+     * @see baseDeDatos.Data#readTxt(String , HashMap<String, String[]> lista)
+     */
 	public static void RT() {
 		Data.readTxt("boletas.txt", boletasList);
 	}
-
+        /**
+     * Devuelve el hash de las boletas 
+     * @return boletasList 
+     */
 
 	public static HashMap<String, String[]> getBoletasList() {
 		return boletasList;
 	}
 
+         /**
+     * Devuelve el dueño
+     * @return dueño
+     */
 	public Cuenta getDuenio() {
 		return duenio;
 
 	}
+        
+          /**
+     * Devuelve la funcion
+     * @return funcion
+     */
 
-	public Funcion getFuncion() {
+        public Funcion getFuncion() {
 		return funcion;
 	}
-
+    /**
+   * Devuelve el precio
+   * @return precio
+   */
+        
+        
 	public int getPrecio() {
 		return precio;
 	}
