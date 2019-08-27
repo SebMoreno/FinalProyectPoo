@@ -1,3 +1,9 @@
+/**
+ *clase encarga de crear las salas , necesaria para las clases funciones y sillas , tambien necesaria para comprar boletas
+ *ESTRUCTRAS:HashMap<String, String[]> salasList (guardar los datos en el txt), Silla[][] sillas(como esta arreglada la sala)
+ * @author: Sebastian Moreno , Cristian Mejia, Mariana Betancur , Jairo cortez
+ */
+
 package model.cine;
 
 
@@ -6,9 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import model.database.Data;
 
-
-//clase encarga de crear las salas , necesaria para las clases funciones y sillas , tambien necesaria para comprar boletas
-//ESSTRUCTRAS:HashMap<String, String[]> salasList (guardar los datos en el txt), Silla[][] sillas(como esta arreglada la sala)
+//Campos de la clase
 public class Sala {
 
 	private final static HashMap<String, String[]> salasList = new HashMap<>(); // key: idSala     value: precio, tipo, capacidad, sizeV, sizeH, idSilla[0][0], idSilla [0][1], ... , idSilla[n][n]
@@ -17,7 +21,10 @@ public class Sala {
 	private final int capacidad;
 	private final Silla[][] sillas;
 	private int precio;
-
+         /**
+     * Constructor para crear objetos que ya estan en los Txt
+     * @param idSala 
+     */
 	public Sala(String idSala) {//Constructor para crear objetos que ya estan en los Txt
 		this.idSala = Integer.parseInt(idSala);
 		precio = Integer.parseInt(salasList.get(idSala)[0]);
@@ -30,8 +37,16 @@ public class Sala {
 			}
 		}
 	}
-
-	public Sala(String tipo, int sizeVertical, int sizeHorizontal, int filasVibrosound, int filasPreferencial) {//constructor para guardar en el txt, depende del tipo de la sala cambia el precio
+ /**
+     * constructor para guardar en el txt, depende del tipo de la sala cambia el precio
+     * @param tipo
+     * @param tamañoVertical
+     * @param tamañoHorizontal
+     * @param filasVibrosound
+     * @param filasPreferencial 
+     * @see baseDeDatos.Data#writeTxt(java.lang.String, java.util.HashMap) 
+     */
+	public Sala(String tipo, int sizeVertical, int sizeHorizontal, int filasVibrosound, int filasPreferencial) {
 		this.sillas = crearMatrizSillas(sizeVertical, sizeHorizontal, filasVibrosound, filasPreferencial);
 		this.capacidad = sizeVertical * sizeHorizontal;
 		/*Se le asigna un ID nuevo a la sala*/
@@ -92,7 +107,11 @@ public class Sala {
 		salasList.put(Integer.toString(idSala), value);
 		Data.writeTxt("salas.txt", salasList);
 	}
+/**
 
+     *cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+     * @see baseDeDatos.Data#readTxt(String , HashMap<String, String[]> lista)
+     */
 	public static void RT() {//cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
 		Data.readTxt("salas.txt", salasList);
 	}
@@ -100,6 +119,15 @@ public class Sala {
 	public static HashMap<String, String[]> getSalasList() {
 		return salasList;
 	}
+        
+         /**
+     * crea las matrices de silla y devuelve es matriz
+     * @param tamañoVertical
+     * @param tamañoHorizontal
+     * @param filasVibrosound
+     * @param filasPreferencial
+     * @return Silla[][] s
+     */
 
 	private Silla[][] crearMatrizSillas(int sizeVertical, int sizeHorizontal, int filasVibrosound, int filasPreferencial) {//crea las matrices de silla y devuelve es matriz
 		Silla[][] s = new Silla[sizeVertical][sizeHorizontal];
@@ -141,21 +169,44 @@ public class Sala {
 		return s;
 	}
 
+         /**
+     * Devuelve el precio de la sala
+     * @return precio
+     */
+        
 	public int getPrecio() {
 		return precio;
 	}
-
-	public String getTipo() {
+    /**
+     *Devuelve el tipo de la sala
+     * @return 
+     */
+        
+        public String getTipo() {
 		return tipo;
 	}
-
+/**
+     * Devulve la capacidad de la sala
+     * @return capacidad
+     */
 	public int getCapacidad() {
 		return capacidad;
 	}
-
+/**
+     * Devuelve el ID de la sala
+     * @return 
+     */
 	public int getIdSala() {
 		return idSala;
 	}
+        
+          /**
+     * busca la silla en la posicion indicada y devuelve null si no la encuentra
+     * verifica que no entran errores en esta busqueda
+     * @param posicionX
+     * @param posicionY
+     * @return null si no encuentra la silla
+     */
 
 	public Silla getSilla(int posicionX, int posicionY) {
 		if (posicionX <= sillas.length) {
