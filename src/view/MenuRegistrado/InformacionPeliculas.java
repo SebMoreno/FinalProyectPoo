@@ -38,7 +38,7 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 		Descripcion.setText("INFORMACIÓN PELICULAS");
 
 		// TODO EL BOTON JComboBox HAY QUE LLENARLO CON LAS PELICULAS A ESCOGER
-		setPreferredSize(new Dimension(500, 500));
+		setPreferredSize(new Dimension(400, 400));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

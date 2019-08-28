@@ -42,7 +42,7 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 		/* Operaciones Adicionales */
 		panel_izq.setLayout(new BorderLayout(7, 15));
 		panel_der.setLayout(new BorderLayout(7, 15));
-		setPreferredSize(new Dimension(500, 500));
+		setPreferredSize(new Dimension(400, 400));
 		Titulo.setText("ELIJA SU FUNCION");
 		Descripcion.setText("INFORMACIÓN FUNCIONES");
 
