@@ -8,6 +8,7 @@ import model.cine.Funcion;
 import model.cine.Pelicula;
 import model.cine.Sala;
 import model.exceptionsapp.DatoNoExistenteException;
+import model.exceptionsapp.NotFillFieldsAdminException;
 import model.exceptionsapp.PeliculaYaExistenteException;
 import view.UsuarioAdministrador.AñadirPelicula;
 import view.UsuarioAdministrador.CrearFuncion;
@@ -27,6 +28,8 @@ public class ControlAñadir extends ControladorVista implements ActionListener {
 						((AñadirPelicula) ControladorVista.getPantallaActual()).getFieldPanel().getValue("Idioma"));
 				ControladorVista.getPantallaActual().muestraDatos("Película creada con éxito");
 			} catch (PeliculaYaExistenteException e) {
+				ControladorVista.getPantallaActual().muestraDatos(e.getMessage());
+			} catch (NotFillFieldsAdminException e){
 				ControladorVista.getPantallaActual().muestraDatos(e.getMessage());
 			}
 		} else {

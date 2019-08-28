@@ -5,11 +5,8 @@ import controller.ControladorVista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
-import model.database.Data;
-import model.exceptionsapp.DatoNoExistenteException;
-import view.UsuarioAdministrador.RecargarSaldo;
-import controller.ControladorVista.*;
 import model.user.Usuario;
+import view.UsuarioAdministrador.RecargarSaldo;
 
 
 
@@ -24,8 +21,9 @@ public class ControlRecargar extends ControladorVista implements ActionListener 
                 Usuario activo = ControladorVista.getUsuarioActivo();
                 String Valor;
                 Valor = panel.campo_texto.getText();
-                
+                /*
                 try {
+
 				if (Data.deleteInTxt("funciones.txt",(String) panel.getFuncionElegida().getSelectedItem())) {
 					ControladorVista.getPantallaActual().muestraDatos("Su saldo fue recargado con exito");
 					
@@ -34,7 +32,7 @@ public class ControlRecargar extends ControladorVista implements ActionListener 
 
 			} catch (DatoNoExistenteException e) {
 				//TODO que hacer cuando no se encuentra un dato de Funcion
-			}
+			}*/
         }
                 
                 

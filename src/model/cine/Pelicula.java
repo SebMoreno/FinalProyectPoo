@@ -11,6 +11,7 @@ package model.cine;
 import java.util.HashMap;
 import model.database.Data;
 import model.exceptionsapp.DatoNoExistenteException;
+import model.exceptionsapp.NotFillFieldsAdminException;
 import model.exceptionsapp.PeliculaYaExistenteException;
 
 
@@ -58,19 +59,23 @@ public class Pelicula {
 	 * @param idioma
 	 * @see baseDeDatos.Data#writeTxt(java.lang.String, java.util.HashMap)
 	 */
-	public Pelicula(String titulo, String genero, String clasificacion, String duracion, String idioma) throws PeliculaYaExistenteException {//contructor que escribe en los txt
-		try {
-			Data.searchInTxt("peliculas.txt", titulo);
-			throw new PeliculaYaExistenteException();
-		}catch (DatoNoExistenteException e) {
-			this.genero = genero;
-			this.clasificacion = clasificacion;
-			this.titulo = titulo;
-			this.duracion = duracion;
-			this.idioma = idioma;
-			String[] aux = {genero, clasificacion, duracion, idioma};
-			pelisList.put(titulo, aux);
-			Data.writeTxt("peliculas.txt", pelisList);
+	public Pelicula(String titulo, String genero, String clasificacion, String duracion, String idioma) throws PeliculaYaExistenteException, NotFillFieldsAdminException {//contructor que escribe en los txt
+		if(!titulo.trim().equals("") && !genero.trim().equals("") && !clasificacion.trim().equals("") && !duracion.trim().equals("") && !idioma.trim().equals("")) {
+			try {
+				Data.searchInTxt("peliculas.txt", titulo);
+				throw new PeliculaYaExistenteException();
+			} catch (DatoNoExistenteException e) {
+				this.genero = genero;
+				this.clasificacion = clasificacion;
+				this.titulo = titulo;
+				this.duracion = duracion;
+				this.idioma = idioma;
+				String[] aux = {genero, clasificacion, duracion, idioma};
+				pelisList.put(titulo, aux);
+				Data.writeTxt("peliculas.txt", pelisList);
+			}
+		}else {
+			throw new NotFillFieldsAdminException();
 		}
 	}
 
