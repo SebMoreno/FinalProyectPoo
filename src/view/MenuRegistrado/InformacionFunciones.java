@@ -46,7 +46,6 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 		Titulo.setText("ELIJA SU FUNCION");
 		Descripcion.setText("INFORMACIÓN FUNCIONES");
 
-		// TODO EL BOTON JComboBox HAY QUE LLENARLO CON LAS FUNCIONES A ESCOGER
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

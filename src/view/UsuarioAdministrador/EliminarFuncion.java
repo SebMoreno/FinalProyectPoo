@@ -13,14 +13,14 @@ import javax.swing.JPanel;
 import view.InterfazPanel;
 
 public class EliminarFuncion extends JPanel implements InterfazPanel {
+	private final static HashMap<String, String[]> functionList = new HashMap<>();
 	/**
 	 * cosas que contiene el panel
 	 */
-	private JButton boton = new JButton("Eliminar");
+	private JButton go = new JButton("Eliminar Funcion");
 	private JComboBox elegir_funcion = new JComboBox();
 	private JLabel Titulo = new JLabel();
 	private JPanel panel_izq = new JPanel();
-	private final static HashMap<String, String[]> functionList = new HashMap<>();
 
 	/**
 	 * constructor que agrega todas las cosas al panel
@@ -36,7 +36,7 @@ public class EliminarFuncion extends JPanel implements InterfazPanel {
 
 		/* Agregado de Componentes */
 		panel_izq.add(Titulo, BorderLayout.NORTH);
-		panel_izq.add(boton, BorderLayout.SOUTH);
+		panel_izq.add(go, BorderLayout.SOUTH);
 		/**
 		 * peliculas añadidas
 		 */
@@ -56,7 +56,7 @@ public class EliminarFuncion extends JPanel implements InterfazPanel {
 	 */
 	@Override
 	public void setController(ControladorVista[] controllers) {
-		boton.addActionListener((ActionListener) controllers[0]);
+		go.addActionListener((ActionListener) controllers[0]);
 	}
 
 	/**
@@ -66,21 +66,25 @@ public class EliminarFuncion extends JPanel implements InterfazPanel {
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
-		String[] datos = textoParaMostrar.split("\n");
-		if (datos[0] == "funcion") {
-			for (int i = 0; i < datos.length; i++) {
-				String DatosCompletos = datos[0];
-				String data[] = DatosCompletos.split(" ");
-				elegir_funcion.addItem(data[0]);
 
+
+		String[] funciones = textoParaMostrar.split("\n");
+		String[] datosfuncion;
+		if (funciones[0].equals("Las_Funciones_son:")) {
+			elegir_funcion.removeAllItems();
+
+			for (int i = 1; i < funciones.length; i++) {
+				datosfuncion = funciones[i].split(" ");
+
+				elegir_funcion.addItem(datosfuncion[0]);
 			}
 
 		} else {
-
-			JOptionPane.showMessageDialog(boton, textoParaMostrar);
-
+			JOptionPane.showMessageDialog(this, textoParaMostrar, "¡Alerta!", JOptionPane.WARNING_MESSAGE);
 		}
+	}
 
-
+	public JComboBox getFuncionElegida() {
+		return elegir_funcion;
 	}
 }

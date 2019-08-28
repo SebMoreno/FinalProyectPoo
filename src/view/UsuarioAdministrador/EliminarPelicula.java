@@ -16,7 +16,7 @@ public class EliminarPelicula extends JPanel implements InterfazPanel {
 	/**
 	 * cosas que contiene el panel
 	 */
-	private JButton go = new JButton("Eliminar");
+	private JButton go = new JButton("Eliminar Pelicula");
 	private JComboBox elegir_pelicula = new JComboBox();
 	private JLabel Titulo = new JLabel();
 	private JPanel panel_izq = new JPanel();
@@ -66,21 +66,25 @@ public class EliminarPelicula extends JPanel implements InterfazPanel {
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
-		String[] datos = textoParaMostrar.split("\n");
-		if (datos[0] == "pelicula") {
-			for (int i = 0; i < datos.length; i++) {
-				String DatosCompletos = datos[0];
-				String data[] = DatosCompletos.split(" ");
-				elegir_pelicula.addItem(data[0]);
 
+
+		String[] peliculas = textoParaMostrar.split("\n");
+		String[] datospelicula;
+		if (peliculas[0].equals("Las_Peliculas_son:")) {
+			elegir_pelicula.removeAllItems();
+
+
+			for (int i = 1; i < peliculas.length; i++) {
+				datospelicula = peliculas[i].split(" ");
+
+				elegir_pelicula.addItem(datospelicula[0]);
 			}
 
 		} else {
-
-			JOptionPane.showMessageDialog(go, textoParaMostrar);
-
+			JOptionPane.showMessageDialog(this, textoParaMostrar, "¡Alerta!", JOptionPane.WARNING_MESSAGE);
 		}
-
-
+	}
+	public JComboBox getPeliculaElegida() {
+		return elegir_pelicula;
 	}
 }

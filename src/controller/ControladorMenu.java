@@ -2,6 +2,7 @@ package controller;
 
 import controller.menu.ControlLogout;
 import controller.menu.ControladorMenuUserYHelp;
+import controller.menu.procesos.ControlEliminar;
 import controller.menu.procesos.ControlInfoFuncionesYPeliculas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -46,26 +47,30 @@ public class ControladorMenu extends ControladorVista implements ActionListener 
 				ControladorVista.getPantallaActual().muestraDatos("Las_Funciones_son:\n" + Data.getAllInTxt("funciones.txt"));
 				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlInfoFuncionesYPeliculas()});
 				break;
-			case "Comprar Boleta":
+			case "Comprar Boleta":  //TODO hacer funcionalidad
 				ControladorVista.setPantallaActual(new ComprarBoleta());
 				break;
-			case "Mostrar la Información de mi cuenta":
+			case "Mostrar la Información de mi cuenta":  //TODO hacer funcionalidad
 				ControladorVista.setPantallaActual(new InformacionCuenta());
 				break;
-			case "Recargar Saldo":
+			case "Recargar Saldo":  //TODO hacer funcionalidad
 				ControladorVista.setPantallaActual(new RecargarSaldo());
 				break;
-			case "Añadir Película":
+			case "Añadir Película":  //TODO hacer funcionalidad
 				ControladorVista.setPantallaActual(new AñadirPelicula());
 				break;
-			case "Eliminar Película":
+			case "Eliminar Película":  //TODO hacer funcionalidad
 				ControladorVista.setPantallaActual(new EliminarPelicula());
+				ControladorVista.getPantallaActual().muestraDatos("Las_Peliculas_son:\n" + Data.getAllInTxt("peliculas.txt"));
+				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlEliminar()});
 				break;
-			case "Crear Función":
+			case "Crear Función":  //TODO hacer funcionalidad
 				ControladorVista.setPantallaActual(new CrearFuncion());
 				break;
-			case "Eliminar Función":
+			case "Eliminar Función":  //TODO hacer funcionalidad
 				ControladorVista.setPantallaActual(new EliminarFuncion());
+				ControladorVista.getPantallaActual().muestraDatos("Las_Funciones_son:\n" + Data.getAllInTxt("funciones.txt"));
+				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlEliminar()});
 				break;
 		}
 	}

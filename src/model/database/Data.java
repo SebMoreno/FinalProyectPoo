@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 import model.cine.Boleta;
@@ -236,6 +237,42 @@ public class Data {
 		} catch (IOException e) {
 			return null;
 		}
+	}
+
+	public static boolean deleteInTxt(String archivo, String claveBusqueda) throws DatoNoExistenteException {
+		boolean borrado = false;
+		try {
+
+			File inFile = new File("temp/" + archivo);
+
+			File tempFile = new File(inFile.getAbsolutePath() + ".tmp");
+
+			BufferedReader br = new BufferedReader(new FileReader("temp/" + archivo));
+			PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
+
+			String line = null;
+
+			//Read from the original file and write to the new
+			//unless content matches data to be removed.
+			while ((line = br.readLine()) != null) {
+				if (!line.split(" ")[0].equals(claveBusqueda)) {
+					pw.println(line);
+					pw.flush();
+				} else {
+					borrado = true;
+				}
+			}
+			pw.close();
+			br.close();
+			inFile.delete();
+			tempFile.renameTo(inFile);
+			if (!borrado) {
+				throw new DatoNoExistenteException();
+			}
+		} catch (IOException ex) {
+			ex.printStackTrace();
+		}
+		return borrado;
 	}
 
 	/**
