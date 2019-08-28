@@ -2,7 +2,6 @@ package view.UsuarioAdministrador;
 
 import controller.ControladorVista;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
@@ -28,7 +27,6 @@ public class AdminArchivo extends JPanel implements InterfazPanel {
 		/* Fin Layout */
 
 		/* Operaciones Adicionales */
-                setPreferredSize(new Dimension(600,800));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

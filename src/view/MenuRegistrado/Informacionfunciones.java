@@ -8,7 +8,6 @@ package view.MenuRegistrado;
 import controller.ControladorVista;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -43,7 +42,7 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
 		/* Operaciones Adicionales */
 		panel_izq.setLayout(new BorderLayout(7, 15));
 		panel_der.setLayout(new BorderLayout(7, 15));
-                setPreferredSize(new Dimension(600,800));
+
 		Titulo.setText("ELIJA SU PELICULA");
 		Descripcion.setText("INFORMACIÓN FUNCIONES");
 

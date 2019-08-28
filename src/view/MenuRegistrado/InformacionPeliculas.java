@@ -11,7 +11,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import controller.ControladorVista;
-import java.awt.Dimension;
 import view.InterfazPanel;
 import view.MenuRegistrado.InformacionPeliculas.PanelFunciones;
 
@@ -36,10 +35,9 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 		panel_der.setLayout(new BorderLayout(7, 15));
 
 		Titulo.setText("ELIJA SU PELICULA");
-		Descripcion.setText("INFORMACIï¿½N PELICULAS");
+		Descripcion.setText("INFORMACIÓN PELICULAS");
 
 		// TODO EL BOTON JComboBox HAY QUE LLENARLO CON LAS PELICULAS A ESCOGER
-                setPreferredSize(new Dimension(600,800));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

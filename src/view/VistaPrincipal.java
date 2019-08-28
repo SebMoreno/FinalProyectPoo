@@ -2,7 +2,6 @@ package view;
 
 
 import controller.ControladorVista;
-import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -29,7 +28,6 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setJMenuBar(capacidadesUsuario);
 		setVistaActual(vistaActual);
-                setPreferredSize(new Dimension(600,800));
 	}
 
 	public void setVistaActual(InterfazPanel vistaActual) {
