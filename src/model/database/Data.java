@@ -1,5 +1,5 @@
 /**
- * Esta clase tiene como finalidad manejar todo lo relacionado con la base de datos y los menus (creacion y generacion de ellos en pantalla)
+ * Esta clase tiene como finalidad manejar lo relacionado con la base de datos y los menus (creacion y generacion de ellos en pantalla)
  * Estructuras relevantes :HashMap<String, OpcionDeMenu> menu_generico (contiene todas las opciones de menu),
  * ArrayList<OpcionDeMenu> options(neccesario para el constructor de menu de consola)
  *

@@ -11,6 +11,7 @@ import view.MenuRegistrado.InformacionPeliculas;
 import view.UsuarioAdministrador.AñadirPelicula;
 import view.UsuarioAdministrador.ComprarBoleta;
 import view.UsuarioAdministrador.CrearFuncion;
+import view.UsuarioAdministrador.EliminarFuncion;
 import view.UsuarioAdministrador.EliminarPelicula;
 import view.UsuarioAdministrador.RecargarSaldo;
 import view.VistaPrincipal;
@@ -43,7 +44,7 @@ public class ControladorMenu implements ControladorVista, ActionListener {
 				source.setVistaActual(new ComprarBoleta());
 				break;
 			case "Mostrar la Información de mi cuenta":
-				source.setVistaActual(new InformacionCuenta());//TODO falta panel de la vista Informacion cuenta
+				source.setVistaActual(new InformacionCuenta());
 				break;
 			case "Recargar Saldo":
 				source.setVistaActual(new RecargarSaldo());
@@ -58,7 +59,7 @@ public class ControladorMenu implements ControladorVista, ActionListener {
 				source.setVistaActual(new CrearFuncion());
 				break;
 			case "Eliminar Función":
-				source.setVistaActual(new InformacionPeliculas());//TODO falta panel de la vista Eliminar funcion
+				source.setVistaActual(new EliminarFuncion());
 				break;
 		}
 	}

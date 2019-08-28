@@ -26,14 +26,14 @@ public class AñadirPelicula extends JPanel implements InterfazPanel {
 	private JPanel panel_center = new JPanel();
 	private JPanel panel_down = new JPanel();
 	private JButton boton = new JButton("Ingresar Datos");
-	/* Fin declaraciÃ³n */
+	/* Fin declaración */
 
 	/**
 	 * Constructor de la clase agrega los objetos mencionados anteriormente al constructor
 	 */
 	public AñadirPelicula() {
 		setPreferredSize(new Dimension(600, 800));
-		/* OrganizaciÃ³n de Layout */
+		/* Organización de Layout */
 		this.setLayout(new BorderLayout(7, 15));
 		panel_sup.setLayout(new BorderLayout(7, 15));
 		panel_down.setLayout(new BorderLayout(7, 15));

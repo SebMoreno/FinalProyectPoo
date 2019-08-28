@@ -2,8 +2,7 @@ package controller;
 
 public interface ControladorVista {
 
-	// TODO InterfazPanel vista
-	// TODO definir variable modelo
+	// TODO Hacer que la interfaz sirva de algo
 
 
 }

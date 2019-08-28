@@ -91,7 +91,6 @@ public class ControlLogin implements ActionListener, ControladorVista {
 		}
 
 		i.packInicio();
-		// TODO hacer que se inicie la sesion Y la excepcion
 	}
 
 	private boolean initialFieds(InterfazBotonInicio i) {
