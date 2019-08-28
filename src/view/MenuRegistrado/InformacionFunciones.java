@@ -25,7 +25,7 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 	 */
 	private JButton go = new JButton("GO");
 	private JLabel Descripcion = new JLabel();
-	private JComboBox elegir_pelicula = new JComboBox();
+	private JComboBox elegir_funcion = new JComboBox();
 	private JLabel Titulo = new JLabel();
 	private JPanel panel_izq = new JPanel();
 	private JPanel panel_der = new JPanel();
@@ -42,16 +42,16 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 		/* Operaciones Adicionales */
 		panel_izq.setLayout(new BorderLayout(7, 15));
 		panel_der.setLayout(new BorderLayout(7, 15));
-		setPreferredSize(new Dimension(600, 800));
-		Titulo.setText("ELIJA SU PELICULA");
+		setPreferredSize(new Dimension(500, 500));
+		Titulo.setText("ELIJA SU FUNCION");
 		Descripcion.setText("INFORMACIÓN FUNCIONES");
 
-		// TODO EL BOTON JComboBox HAY QUE LLENARLO CON LAS PELICULAS A ESCOGER
+		// TODO EL BOTON JComboBox HAY QUE LLENARLO CON LAS FUNCIONES A ESCOGER
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */
 		panel_izq.add(Titulo, BorderLayout.NORTH);
-		panel_izq.add(elegir_pelicula, BorderLayout.CENTER);
+		panel_izq.add(elegir_funcion, BorderLayout.CENTER);
 		panel_izq.add(go, BorderLayout.SOUTH);
 
 		panel_der.add(Descripcion, BorderLayout.NORTH);

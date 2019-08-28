@@ -50,3 +50,4 @@ build/classes/view/MenuRegistrado/Informacionfunciones$PanelFunciones.class
 *.class
 build/classes/view/UsuarioAdministrador/Bienvenida.class
 build/classes/controller/inicio/ControlLogin.class
+build/classes/view/MenuRegistrado/InformacionPeliculas.class
