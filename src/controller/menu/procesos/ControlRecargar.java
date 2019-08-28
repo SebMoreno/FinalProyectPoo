@@ -29,7 +29,8 @@ public class ControlRecargar extends ControladorVista implements ActionListener 
                 String saldo = cuenta[0];
                 try {
 				if (Data.searchInTxt("cuentas.txt", activo.getUsuario()).equals(activo + " " + saldo)) {
-                                        //saldo = toString(parseInt(saldo)+ parseInt(Valor));
+                                        int saldoAux = parseInt(saldo)+ parseInt(Valor);
+                                        saldo = Integer.toString(saldoAux);
 					ControladorVista.getPantallaActual().muestraDatos("Su saldo fue recargado con exito");
 					
 				}
