@@ -55,7 +55,6 @@ public class Bienvenida extends JPanel implements InterfazPanel {
                         JPanel panel = new JPanel();
                         panel.setLayout(new BorderLayout(7,15));
                         panel.setOpaque(false);
-                        panel.add(boton, BorderLayout.SOUTH);
                         add(panel);
                     }
                     else{
