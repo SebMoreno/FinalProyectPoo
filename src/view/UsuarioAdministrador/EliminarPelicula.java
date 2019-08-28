@@ -1,25 +1,30 @@
 package view.UsuarioAdministrador;
 
-
+import model.cine.Pelicula.*;
+import model.database.Data.*;
 import java.awt.BorderLayout;
 import java.awt.Choice;
+import java.util.Map;
 import controller.ControladorVista;
 import java.awt.event.ActionListener;
+import java.util.HashMap;
 import view.InterfazPanel;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import model.database.Data;
 
 public class EliminarPelicula extends JPanel implements InterfazPanel {
 	/**
 	 * cosas que contiene el panel
 	 */
 	private JButton go = new JButton("Eliminar");
-	private Choice elegir_pelicula = new Choice();
+	private JComboBox elegir_pelicula = new JComboBox();
 	private JLabel Titulo = new JLabel();
 	private JPanel panel_izq = new JPanel();
-
+        private final static HashMap<String, String[]> pelisList = new HashMap<>();
 
 	/**
 	 * constructor que agrega todas las cosas al panel
@@ -37,9 +42,9 @@ public class EliminarPelicula extends JPanel implements InterfazPanel {
 		panel_izq.add(Titulo, BorderLayout.NORTH);
 		panel_izq.add(go, BorderLayout.SOUTH);
 		/**
-		 * EL BOTON CHOICE HAY QUE LLENARLO CON LAS PELICULAS A ESCOGER
+		 * peliculas añadidas
 		 */
-		panel_izq.add(elegir_pelicula, BorderLayout.CENTER);
+                panel_izq.add(elegir_pelicula, BorderLayout.CENTER);
 		this.add(panel_izq, BorderLayout.CENTER);
 
 
@@ -67,7 +72,18 @@ public class EliminarPelicula extends JPanel implements InterfazPanel {
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
-             //en caso de exito
+            String[] datos = textoParaMostrar.split("\n");
+            if (datos[0]=="pelicula"){
+             for (int i =0; i< datos.length;i++){
+                 String DatosCompletos = datos[0];
+                 String data [] = DatosCompletos.split(" ");
+                 elegir_pelicula.addItem(data[0]);
+                 
+             }
+            
+             }
+            else{
+           
             JOptionPane.showMessageDialog(go,textoParaMostrar);
 		
 	}
@@ -77,4 +93,5 @@ public class EliminarPelicula extends JPanel implements InterfazPanel {
         
         
 
+}
 }
