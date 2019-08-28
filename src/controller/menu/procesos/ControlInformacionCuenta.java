@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import model.database.Data;
 import model.exceptionsapp.DatoNoExistenteException;
+import model.user.Usuario;
 import view.MenuRegistrado.InformacionCuenta;
 
 public class ControlInformacionCuenta extends ControladorVista implements ActionListener {
@@ -13,6 +14,8 @@ public class ControlInformacionCuenta extends ControladorVista implements Action
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
 		JButton source = (JButton) actionEvent.getSource();
+                Usuario activo = ControladorVista.getUsuarioActivo();
+                
 
 		InformacionCuenta panel = (InformacionCuenta) ControladorVista.getPantallaActual();
 		try {

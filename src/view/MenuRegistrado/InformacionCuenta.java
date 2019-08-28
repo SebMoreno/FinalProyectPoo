@@ -8,6 +8,9 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import model.user.Usuario;
 import view.InterfazPanel;
 
 public class InformacionCuenta extends JPanel implements InterfazPanel {
@@ -17,9 +20,10 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 
 	private JLabel elegir_usuario = new JLabel();
 	private JLabel Titulo = new JLabel();
+        Usuario activo = ControladorVista.getUsuarioActivo();
 	private JPanel panel_izq = new JPanel();
 	private JPanel panel_der = new JPanel();
-	private JLabel Descripcion = new JLabel("INFORMACION");
+	private JLabel Descripcion = new JLabel("                        INFORMACION");
 
 	public InformacionCuenta() {
 
@@ -29,13 +33,13 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 		panel_izq.setLayout(new BorderLayout(7, 15));
 		panel_der.setLayout(new BorderLayout(7, 15));
 		setPreferredSize(new Dimension(400, 400));
-		Titulo.setText("USUARIO ACTIVO");
+		Titulo.setText("USUARIO ACTIVO: "+activo.getUsuario());
 
 
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */
-		panel_izq.add(Titulo, BorderLayout.NORTH);
+		panel_izq.add(Titulo, BorderLayout.CENTER);
 		panel_izq.add(go, BorderLayout.SOUTH);
 
 		panel_der.add(Descripcion, BorderLayout.NORTH);
@@ -53,6 +57,15 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
+            
+           String[] infousuario = textoParaMostrar.split(" ");
+           JTextArea funcio = new JTextArea();
+           JScrollPane panelDescripcion = new JScrollPane(funcio);
+           funcio.append("User " + infousuario[0] + "\nSaldo " + infousuario[1]);
+           if (panel_der.getComponents().length == 2) {
+				panel_der.remove(1);
+			}
+            panel_der.add(panelDescripcion, BorderLayout.CENTER);
 
 	}
 
