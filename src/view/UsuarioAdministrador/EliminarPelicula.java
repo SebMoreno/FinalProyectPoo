@@ -31,7 +31,7 @@ public class EliminarPelicula extends JPanel implements InterfazPanel {
 		/* Operaciones Adicionales */
 		panel_izq.setLayout(new BorderLayout(7, 15));
 		Titulo.setText("                           ELIJA SU PELICULA");
-		setPreferredSize(new Dimension(600, 800));
+		setPreferredSize(new Dimension(500, 300));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

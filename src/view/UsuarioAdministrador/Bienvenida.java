@@ -16,7 +16,7 @@ import view.InterfazPanel;
  */
 public class Bienvenida extends JPanel implements InterfazPanel {
 	/* Empieza declaración de subobjetos pertenencientes a este objeto principal */
-	JLabel label = new JLabel("Bienvenido /n El equipo de /n CineX /n está entusiasmado /n con su visita /n DISFRUTE");
+	JLabel label = new JLabel("Bienvenido \n El equipo de \n CineX \n está entusiasmado \n con su visita \n DISFRUTE");
 	Panel panel = new Panel("fondo.gif");
 	JButton boton = new JButton("Continuar");
 	/* Fin declaración */
