@@ -16,12 +16,16 @@ import view.InterfazPanel;
 
 public class InformacionPeliculas extends JPanel implements InterfazPanel {
 
-	private JButton go = new JButton("GO");
+	private JButton go = new JButton("Ver información de ésta película");
 	private JLabel Descripcion = new JLabel();
 	private JComboBox elegir_pelicula = new JComboBox();
 	private JLabel Titulo = new JLabel();
 	private JPanel panel_izq = new JPanel();
 	private JPanel panel_der = new JPanel();
+
+	public JComboBox getPeliculaElegida() {
+		return elegir_pelicula;
+	}
 
 	/**
 	 * contructor de la clase , organiza los paneles
@@ -37,7 +41,6 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 		Titulo.setText("ELIJA SU PELICULA");
 		Descripcion.setText("INFORMACIÓN PELICULAS");
 
-		// TODO EL BOTON JComboBox HAY QUE LLENARLO CON LAS PELICULAS A ESCOGER
 		setPreferredSize(new Dimension(600, 800));
 		/* Fin Operaciones Adicionales */
 
@@ -76,15 +79,30 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
-		JTextArea funcio = new JTextArea();
-		JScrollPane panelDescripcion = new JScrollPane();
-		String[] datos = textoParaMostrar.split("\n");
-		for (int i = 0; i < datos.length; i++) {
-			String DatosCompletos = datos[0];
-			String data[] = DatosCompletos.split(" ");
-			funcio.append("TITULO PELICULA: " + data[0] + " GENERO: " + data[1] + " CLASIFICACION: " + data[2] + " DURACION: " + data[3]);
+
+
+		String[] peliculas = textoParaMostrar.split("\n");
+		String[] datospelicula;
+		if (peliculas[0].equals("Las_Peliculas_son:")) {
+
+
+			for (int i = 1; i < peliculas.length; i++) {
+				datospelicula = peliculas[i].split(" ");
+
+				elegir_pelicula.addItem(datospelicula[0]);
+			}
+
+		} else {
+			datospelicula = peliculas[0].split(" ");
+			JTextArea funcio = new JTextArea();
+			JScrollPane panelDescripcion = new JScrollPane();
+
+			funcio.append("TITULO PELICULA: " + datospelicula[0] + " GENERO: " + datospelicula[1] + " CLASIFICACION: " + datospelicula[2] + " DURACION: " + datospelicula[3] + " IDIOMA: " + datospelicula[4]);
+			if (panel_der.getComponents().length == 2) {
+				panel_der.remove(1);
+			}
+			panel_der.add(panelDescripcion, BorderLayout.CENTER);
 		}
-		panel_der.add(panelDescripcion, BorderLayout.CENTER);
 	}
 
 	public class PanelFunciones extends JPanel {

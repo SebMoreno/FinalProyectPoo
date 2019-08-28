@@ -7,19 +7,19 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.exceptionsapp.NotFillFieldsAdminException;
 import model.exceptionsapp.NotFillFieldsClientException;
 import model.exceptionsapp.WrongCredentialsException;
 import model.user.Administrador;
 import model.user.Cliente;
-import model.user.Usuario;
 import view.InterfazBotonInicio;
-import view.MenuRegistrado.InformacionFunciones;
-import view.UsuarioAdministrador.EliminarPelicula;
+import view.UsuarioAdministrador.AñadirPelicula;
+import view.UsuarioAdministrador.Bienvenida;
 import view.VistaPrincipal;
 
-public class ControlLogin implements ActionListener, ControladorVista {
+public class ControlLogin extends ControladorVista implements ActionListener{
 	private static int loginAdmin;
 	private static int loginCliente;
 	private static boolean initied = false;
@@ -51,10 +51,12 @@ public class ControlLogin implements ActionListener, ControladorVista {
 				try {
 					String clave = i.getClave();
 					String user = i.getUsuario();
-					Usuario.setUsuarioActivo(new Administrador(user, clave));
-					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new EliminarPelicula());//TODO Colocar ventana de bienvenida
+					ControladorVista.setUsuarioActivo(new Administrador(user, clave));
+					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new AñadirPelicula());//TODO Colocar ventana de bienvenida
+					JFrame actual = ControladorVista.getFrameActual();
+					actual.dispose();
+					ControladorVista.setFrameActual(inicia);
 					ControladorMenu.setControladoresMenu(inicia);
-					i.getActualFrame().dispose();
 					inicia.run();
 				} catch (NotFillFieldsAdminException | NotFillFieldsClientException e) {
 					i.mostrarError(e.getMessage(), "Algún campo está sin rellenar", JOptionPane.WARNING_MESSAGE);
@@ -71,10 +73,12 @@ public class ControlLogin implements ActionListener, ControladorVista {
 				try {
 					String clave = i.getClave();
 					String user = i.getUsuario();
-					Usuario.setUsuarioActivo(new Cliente(user, clave));
-					VistaPrincipal inicia = new VistaPrincipal(user, Cliente.getCapacidades(), new InformacionFunciones());//TODO Colocar ventana de bienvenida
+					ControladorVista.setUsuarioActivo(new Cliente(user, clave));
+					VistaPrincipal inicia = new VistaPrincipal(user, Cliente.getCapacidades(), new Bienvenida());//TODO Colocar ventana de bienvenida
+					ControladorVista.setFrameActual(inicia);
 					ControladorMenu.setControladoresMenu(inicia);
-					i.getActualFrame().dispose();
+					JFrame actual = ControladorVista.getFrameActual();
+					actual.dispose();
 					inicia.run();
 				} catch (NotFillFieldsAdminException | NotFillFieldsClientException e) {
 					i.mostrarError(e.getMessage(), "Algún campo está sin rellenar", JOptionPane.WARNING_MESSAGE);

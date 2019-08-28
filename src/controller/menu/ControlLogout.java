@@ -5,11 +5,11 @@ import controller.inicio.ControlLogin;
 import controller.inicio.ControladorInicio;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import model.user.Usuario;
+import javax.swing.JFrame;
 import view.Inicio;
 import view.VistaPrincipal;
 
-public class ControlLogout implements ControladorVista, ActionListener {
+public class ControlLogout extends ControladorVista implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
@@ -17,8 +17,9 @@ public class ControlLogout implements ControladorVista, ActionListener {
 		Inicio i = new Inicio();
 		ControladorInicio.setControladoresVistaInicial(i.getBotonSalir());
 		ControlLogin.reboot();
-		Usuario.setUsuarioActivo(null);
-		source.getActualFrame().dispose();
+		ControladorVista.setUsuarioActivo(null);
+		JFrame actual = ControladorVista.getFrameActual();
+		actual.dispose();
 		i.run();
 	}
 }

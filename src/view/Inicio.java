@@ -219,13 +219,15 @@ public class Inicio extends JFrame {
 			return isCampoLleno(aux);
 		}
 
+		@Override
+		public JFrame getActualFrame() {
+			return (JFrame) Inicio.this;
+		}
+
 		public void mostrarError(String error, String titulo, int icono) {
 			JOptionPane.showMessageDialog(Inicio.this, error, titulo, icono);
 		}
 
-		public JFrame getActualFrame() {
-			return Inicio.this;
-		}
 
 		private String isCampoLleno(String campo) throws NotFillFieldsAdminException, NotFillFieldsClientException {
 			if (campo.equals("")) {

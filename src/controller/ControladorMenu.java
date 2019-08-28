@@ -2,8 +2,10 @@ package controller;
 
 import controller.menu.ControlLogout;
 import controller.menu.ControladorMenuUserYHelp;
+import controller.menu.procesos.ControlInfoFuncionesYPeliculas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import model.database.Data;
 import view.InformacionCuenta;
 import view.InterfazPanel;
 import view.MenuRegistrado.InformacionFunciones;
@@ -16,7 +18,7 @@ import view.UsuarioAdministrador.EliminarPelicula;
 import view.UsuarioAdministrador.RecargarSaldo;
 import view.VistaPrincipal;
 
-public class ControladorMenu implements ControladorVista, ActionListener {
+public class ControladorMenu extends ControladorVista implements ActionListener {
 
 	public static void setControladoresMenu(InterfazPanel p) {
 		ControladorVista[] controladores = new ControladorVista[VistaPrincipal.MENU_ARCHIVO.length + VistaPrincipal.MENU_PROCESOS.length + VistaPrincipal.MENU_AYUDA.length];
@@ -35,31 +37,35 @@ public class ControladorMenu implements ControladorVista, ActionListener {
 		VistaPrincipal.MenuApp source = (VistaPrincipal.MenuApp) actionEvent.getSource();
 		switch (source.getText()) {
 			case "Listado de Películas":
-				source.setVistaActual(new InformacionPeliculas());
+				ControladorVista.setPantallaActual(new InformacionPeliculas());
+				ControladorVista.getPantallaActual().muestraDatos("Las_Peliculas_son:\n" + Data.getAllInTxt("peliculas.txt"));
+				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlInfoFuncionesYPeliculas()});
 				break;
 			case "Listado de Funciones":
-				source.setVistaActual(new InformacionFunciones());
+				ControladorVista.setPantallaActual(new InformacionFunciones());
+				ControladorVista.getPantallaActual().muestraDatos("Las_Funciones_son:\n" + Data.getAllInTxt("funciones.txt"));
+				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlInfoFuncionesYPeliculas()});
 				break;
 			case "Comprar Boleta":
-				source.setVistaActual(new ComprarBoleta());
+				ControladorVista.setPantallaActual(new ComprarBoleta());
 				break;
 			case "Mostrar la Información de mi cuenta":
-				source.setVistaActual(new InformacionCuenta());
+				ControladorVista.setPantallaActual(new InformacionCuenta());
 				break;
 			case "Recargar Saldo":
-				source.setVistaActual(new RecargarSaldo());
+				ControladorVista.setPantallaActual(new RecargarSaldo());
 				break;
 			case "Añadir Película":
-				source.setVistaActual(new AñadirPelicula());
+				ControladorVista.setPantallaActual(new AñadirPelicula());
 				break;
 			case "Eliminar Película":
-				source.setVistaActual(new EliminarPelicula());
+				ControladorVista.setPantallaActual(new EliminarPelicula());
 				break;
 			case "Crear Función":
-				source.setVistaActual(new CrearFuncion());
+				ControladorVista.setPantallaActual(new CrearFuncion());
 				break;
 			case "Eliminar Función":
-				source.setVistaActual(new EliminarFuncion());
+				ControladorVista.setPantallaActual(new EliminarFuncion());
 				break;
 		}
 	}

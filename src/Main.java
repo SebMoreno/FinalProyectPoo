@@ -1,4 +1,4 @@
-import controller.inicio.ControladorInicio;
+import controller.ControladorVista;
 import model.database.Data;
 import view.Inicio;
 
@@ -22,8 +22,7 @@ public class Main {
 		 */
 		Data.readAllTxt();
 		Inicio i = new Inicio();
-		ControladorInicio.setControladoresVistaInicial(i.getBotonSalir());
-
+		ControladorVista.setControladoresVistaInicial(i.getBotonSalir());
 		i.run();
 
 
@@ -31,6 +30,6 @@ public class Main {
 }
 
 /**
- * TODO faltan 2 funcionalidades
+ * TODO falta 1 funcionalidad
  * 3 exepciones nuevas : pelicula erronea , funcion erronea , saldo insuficiente
  */

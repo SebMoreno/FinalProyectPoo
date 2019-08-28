@@ -17,10 +17,10 @@ public interface InterfazBotonInicio extends InterfazPanel {
 
 	void mostrarError(String error, String titulo, int icono);
 
-	JFrame getActualFrame();
-
 	String getUsuario() throws NotFillFieldsAdminException, NotFillFieldsClientException;
 
 	String getClave() throws NotFillFieldsAdminException, NotFillFieldsClientException;
+
+	JFrame getActualFrame();
 
 }

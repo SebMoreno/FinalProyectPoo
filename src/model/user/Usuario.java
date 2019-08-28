@@ -15,7 +15,7 @@ esta sera mi super clase por eso tiene  lo que puede hacer un usuario
 */
 public abstract class Usuario {
 
-	private static Usuario usuarioActivo;
+
 	private static HashMap<String, String[]> usersList = new HashMap<>(); // key: usuario    value: clave, rol, nombre, email
 	private final String usuario;
 	private final String rol;
@@ -81,11 +81,4 @@ public abstract class Usuario {
 		this.clave = clave;
 	}
 
-	public static Usuario getUsuarioActivo() {
-		return usuarioActivo;
-	}
-
-	public static void setUsuarioActivo(Usuario usuarioActivo) {
-		Usuario.usuarioActivo = usuarioActivo;
-	}
 }

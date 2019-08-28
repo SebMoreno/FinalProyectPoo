@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import view.InterfazBotonInicio;
 import view.InterfazPanel;
 
-public class ControlSalida implements ActionListener, ControladorVista {
+public class ControlSalida extends ControladorVista implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
 		InterfazBotonInicio i = (InterfazBotonInicio) actionEvent.getSource();

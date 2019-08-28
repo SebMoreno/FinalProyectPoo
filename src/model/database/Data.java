@@ -21,6 +21,7 @@ import model.cine.Funcion;
 import model.cine.Pelicula;
 import model.cine.Sala;
 import model.cine.Silla;
+import model.exceptionsapp.DatoNoExistenteException;
 import model.exceptionsapp.WrongCredentialsException;
 import model.user.Cuenta;
 import model.user.Usuario;
@@ -201,6 +202,40 @@ public class Data {
 
 		}
 
+	}
+
+	public static String getAllInTxt(String archivo) {
+		try (BufferedReader br = new BufferedReader(new FileReader("temp/" + archivo))) {
+
+			StringBuilder all = new StringBuilder();
+			String line = br.readLine();
+			while (line != null) {
+				all.append(line);
+				all.append("\n");
+				line = br.readLine();
+			}
+			return all.toString();
+		} catch (IOException e) {
+			return null;
+		}
+	}
+
+	public static String searchInTxt(String archivo, String claveBusqueda) throws DatoNoExistenteException {
+		try (BufferedReader br = new BufferedReader(new FileReader("temp/" + archivo))) {
+
+			String[] datoActual;
+			String line = br.readLine();
+			while (line != null) {
+				datoActual = line.split(" ");
+				if (datoActual[0].equals(claveBusqueda)) {
+					return line;
+				}
+				line = br.readLine();
+			}
+			throw new DatoNoExistenteException();
+		} catch (IOException e) {
+			return null;
+		}
 	}
 
 	/**

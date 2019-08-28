@@ -13,13 +13,9 @@ import javax.swing.JPanel;
 public class VistaPrincipal extends JFrame implements InterfazPanel {
 	public static final String[] MENU_ARCHIVO = {"Usuario", "Salir"};
 	public static final String[] MENU_AYUDA = {"Acerca de"};
-	/*
-	 * public static final HashMap<String, OpcionDeMenu> menu_generico = new HashMap<>();  // HM con todas las opciones de menu existentes
-	 * private static MenuDeConsola menuInicial; //Un menu que se abra inicialmente
-	 * */
 	private static final String[] MENU_PRINCIPAL = {"Archivo", "Procesos y Consultas", "Ayuda"};
 	public static String[] MENU_PROCESOS;
-	private InterfazPanel pantallaActual;
+
 
 	public VistaPrincipal(String usuarioActivo, String[] capacidadesUsuario, InterfazPanel vistaActual) {
 		super(usuarioActivo);
@@ -27,18 +23,8 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 		setSize(100, 100);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setJMenuBar(capacidadesUsuario);
-		setVistaActual(vistaActual);
-	}
-
-	public InterfazPanel getPantallaActual() {
-		return pantallaActual;
-	}
-
-	public void setVistaActual(InterfazPanel vistaActual) {
-		getContentPane().removeAll();
 		add((JPanel) vistaActual);
-		pantallaActual = vistaActual;
-		this.pack();
+		pack();
 	}
 
 	public void run() {
@@ -101,7 +87,6 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
-		pantallaActual.muestraDatos(textoParaMostrar);
 	}
 
 	public class MenuApp extends JMenuItem {
@@ -122,14 +107,6 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 				String info[] = infoUsuario.split(" ");
 				JOptionPane.showMessageDialog(VistaPrincipal.this, "USER: " + info[0] + " ROL: " + info[1] + " NOMBRE: " + info[2] + " CORREO: " + info[3]);
 			}
-		}
-
-		public JFrame getActualFrame() {
-			return VistaPrincipal.this;
-		}
-
-		public void setVistaActual(InterfazPanel interfazPanel) {
-			VistaPrincipal.this.setVistaActual(interfazPanel);
 		}
 	}
 }

@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
-public class ControlFoto implements ActionListener, ControladorVista {
+public class ControlFoto extends ControladorVista implements ActionListener {
 	private int fotoActual = 1;
 
 	@Override
