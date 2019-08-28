@@ -1,4 +1,4 @@
-package controller.inicio;
+package controller.menu;
 
 import controller.ControladorVista;
 import java.awt.event.ActionEvent;

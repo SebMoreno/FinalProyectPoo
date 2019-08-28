@@ -1,4 +1,4 @@
-package model.ExceptionsApp;
+package model.exceptionsapp;
 
 public class NotFillFieldsAdminException extends LoginException {
 	public NotFillFieldsAdminException() {

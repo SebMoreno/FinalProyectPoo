@@ -30,10 +30,15 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 		setVistaActual(vistaActual);
 	}
 
+	public InterfazPanel getPantallaActual() {
+		return pantallaActual;
+	}
+
 	public void setVistaActual(InterfazPanel vistaActual) {
 		getContentPane().removeAll();
 		add((JPanel) vistaActual);
 		pantallaActual = vistaActual;
+		this.pack();
 	}
 
 	public void run() {
@@ -121,6 +126,10 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 
 		public JFrame getActualFrame() {
 			return VistaPrincipal.this;
+		}
+
+		public void setVistaActual(InterfazPanel interfazPanel) {
+			VistaPrincipal.this.setVistaActual(interfazPanel);
 		}
 	}
 }

@@ -1,4 +1,4 @@
-package model.ExceptionsApp;
+package model.exceptionsapp;
 
 public class LoginException extends ErrorAplicacion {
 	public LoginException(String message) {

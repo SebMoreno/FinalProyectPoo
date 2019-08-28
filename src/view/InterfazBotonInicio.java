@@ -2,8 +2,8 @@ package view;
 
 
 import javax.swing.JFrame;
-import model.ExceptionsApp.NotFillFieldsAdminException;
-import model.ExceptionsApp.NotFillFieldsClientException;
+import model.exceptionsapp.NotFillFieldsAdminException;
+import model.exceptionsapp.NotFillFieldsClientException;
 
 public interface InterfazBotonInicio extends InterfazPanel {
 

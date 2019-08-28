@@ -1,5 +1,6 @@
-package controller;
+package controller.menu;
 
+import controller.ControladorVista;
 import controller.inicio.ControlLogin;
 import controller.inicio.ControladorInicio;
 import java.awt.event.ActionEvent;

@@ -74,7 +74,8 @@ public class Bienvenida extends JPanel implements InterfazPanel {
 
 		public void paint(Graphics g) {
 			Dimension tamaño = getSize();
-			imagen = new ImageIcon(getClass().getResource("fondo.gif"));
+			imagen = new ImageIcon(getClass().getResource("fondo.gif"));//Antes
+			imagen = new ImageIcon("fondo.gif");//Despues
 			g.drawImage(imagen.getImage(), 0, 0, tamaño.width, tamaño.height, null);
 			setOpaque(false);
 			super.paint(g);

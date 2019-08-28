@@ -4,7 +4,7 @@ package model.user;
 //ESTRUCTURAS: estan en la clase padre
 
 import java.io.IOException;
-import model.ExceptionsApp.WrongCredentialsException;
+import model.exceptionsapp.WrongCredentialsException;
 
 public class Cliente extends Usuario {
 
