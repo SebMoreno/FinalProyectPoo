@@ -95,9 +95,10 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 		} else {
 			datospelicula = peliculas[0].split(" ");
 			JTextArea funcio = new JTextArea();
-			JScrollPane panelDescripcion = new JScrollPane();
+			JScrollPane panelDescripcion = new JScrollPane(funcio);
 
-			funcio.append("TITULO PELICULA: " + datospelicula[0] + " GENERO: " + datospelicula[1] + " CLASIFICACION: " + datospelicula[2] + " DURACION: " + datospelicula[3] + " IDIOMA: " + datospelicula[4]);
+			funcio.append("TITULO PELICULA: " + datospelicula[0] + "\n GENERO: " + datospelicula[1] + "\n CLASIFICACION: " + datospelicula[2] + "\n DURACION: " + datospelicula[3] + "\n IDIOMA: " + datospelicula[4]);
+			//panelDescripcion.add(funcio);
 			if (panel_der.getComponents().length == 2) {
 				panel_der.remove(1);
 			}
@@ -105,16 +106,16 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 		}
 	}
 
-	public class PanelFunciones extends JPanel {
+	public class PanelPelicula extends JPanel {
 
 		public JPanel auxiliar;
 
-		PanelFunciones() {
+		PanelPelicula() {
 			auxiliar = new JPanel();
 			setLayout(new BorderLayout(7, 15));
 			auxiliar.setBackground(Color.WHITE);
 			add(auxiliar);
-
+			//add(panel_der,BorderLayout.CENTER);
 			// TODO llenar el panel con la informacion de las funciones
 
 		}
