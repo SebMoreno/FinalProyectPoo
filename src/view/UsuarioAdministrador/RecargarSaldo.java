@@ -8,7 +8,6 @@ package view.UsuarioAdministrador;
 import controller.ControladorVista;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.Rectangle;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -47,7 +46,8 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 		/* Fin Layout */
 
 		/* Operaciones Adicionales */
-                campo_texto.setText("Ingrese aqui el saldo a recargar"); //cuando el usuario vaya a escribir se debe borrar
+                //campo_texto.setText("Ingrese aqui el saldo a recargar"); //cuando el usuario vaya a escribir se debe borrar
+                campo_texto.setPreferredSize(new Dimension(100,25));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

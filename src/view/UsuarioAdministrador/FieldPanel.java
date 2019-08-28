@@ -44,7 +44,7 @@ public class FieldPanel extends JPanel {
 
 			for (int i = 0; i < criterios.length; i++) {
 				panelForm.add(new JLabel(criterios[i]));
-				JTextField textField = new JTextField(valores[i]);
+				JTextField textField = new JTextField();
 				panelForm.add(textField);
 				TextFields.add(textField);
 			}
@@ -58,7 +58,7 @@ public class FieldPanel extends JPanel {
 
 		int index = 0;
 		for (int i = 0; i < Criterios.length; i++) {
-			if (Criterios[i] == criterio) {
+			if (Criterios[i].equals(criterio)) {
 				index = i;
 			}
 		}
