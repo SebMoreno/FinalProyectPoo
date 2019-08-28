@@ -102,13 +102,20 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 		public MenuApp(String nombre){
 			super(nombre);
 		}
-
+                /**
+                 * TODO , PONERLO BONITO
+                 * @param infoUsuario 
+                 */
 		public void mostrarInfoAuxiliar(String infoUsuario) {
-                    
-                    //no se cual boton lo activa , con amor mariana
+                    if (infoUsuario.equals("Acerca De")){
+                        JOptionPane.showMessageDialog(VistaPrincipal.this,"MARIANA BETANCUR ,CRISTIAN MEJIA , SEBASTIAN MORENO , JAIRO ANDRES") ;
+                    }
+                    else{
+                        
 			String info [] = infoUsuario.split(" ");
-                        JOptionPane.showMessageDialog(go,"USER: "+info[0]+" ROL: "+info[1]+" NOMBRE: "+info[2]+" CORREO: "+info[3]);
+                        JOptionPane.showMessageDialog(VistaPrincipal.this,"USER: "+info[0]+" ROL: "+info[1]+" NOMBRE: "+info[2]+" CORREO: "+info[3]);
 		}
+                }
 		public JFrame getActualFrame() {
 			return VistaPrincipal.this;
 		}
