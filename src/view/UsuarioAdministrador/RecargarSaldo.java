@@ -48,6 +48,7 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 		/* Operaciones Adicionales */
                 //campo_texto.setText("Ingrese aqui el saldo a recargar"); //cuando el usuario vaya a escribir se debe borrar
                 campo_texto.setPreferredSize(new Dimension(100,25));
+                setPreferredSize(new Dimension(600,800));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

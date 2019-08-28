@@ -7,6 +7,7 @@ package view.UsuarioAdministrador;
 
 import controller.ControladorVista;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -39,6 +40,7 @@ public class ComprarBoleta extends JPanel implements InterfazPanel {
 		panel_der_center.setLayout(new BorderLayout(7, 15));
 		panel_der.setLayout(new BorderLayout(7, 15));
 		Titulo.setText("Titulo");
+                setPreferredSize(new Dimension(600,800));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

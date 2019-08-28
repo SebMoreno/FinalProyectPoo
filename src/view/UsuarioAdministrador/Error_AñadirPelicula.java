@@ -1,6 +1,7 @@
 package view.UsuarioAdministrador;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -28,6 +29,7 @@ public class Error_AñadirPelicula extends JPanel {
 		/* Fin Layout */
 
 		/* Operaciones Adicionales */
+                setPreferredSize(new Dimension(600,800));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

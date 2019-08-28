@@ -16,6 +16,7 @@ import model.user.Cliente;
 import model.user.Usuario;
 import view.InterfazBotonInicio;
 import view.MenuRegistrado.Informacionfunciones;
+import view.UsuarioAdministrador.Bienvenida;
 import view.VistaPrincipal;
 
 public class ControlLogin implements ActionListener, ControladorVista {
@@ -51,7 +52,7 @@ public class ControlLogin implements ActionListener, ControladorVista {
 					String clave = i.getClave();
 					String user = i.getUsuario();
 					Usuario.setUsuarioActivo(new Administrador(user, clave));
-					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new Informacionfunciones());//TODO Colocar ventana de bienvenida
+					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new Bienvenida());//TODO Colocar ventana de bienvenida
 					ControladorMenu.setControladoresMenu(inicia);
 					i.getActualFrame().dispose();
 					inicia.run();
