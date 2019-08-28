@@ -5,6 +5,16 @@
  */
 package view.UsuarioAdministrador;
 
+import controller.ControladorVista;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import view.InterfazPanel;
+
 //inicio de la clase
 public class RecargarSaldo extends JPanel implements InterfazPanel {
 	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */

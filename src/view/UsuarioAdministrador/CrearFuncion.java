@@ -6,6 +6,16 @@
 
 package view.UsuarioAdministrador;
 
+import controller.ControladorVista;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import view.InterfazPanel;
+
 public class CrearFuncion extends JPanel implements InterfazPanel {
 	/* Empieza declaracion de subobjetos pertenencientes a este objeto principal */
 	private JLabel ingrese_datos = new JLabel("Ingrese los siguientes datos");

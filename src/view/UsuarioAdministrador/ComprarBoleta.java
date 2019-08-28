@@ -5,6 +5,16 @@
  */
 package view.UsuarioAdministrador;
 
+import controller.ControladorVista;
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import view.InterfazPanel;
+
 public class ComprarBoleta extends JPanel implements InterfazPanel {
 	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
 	public JTextField entrada = new JTextField(); // sera el campo de texto donde el usuario ingrese lo solicitado

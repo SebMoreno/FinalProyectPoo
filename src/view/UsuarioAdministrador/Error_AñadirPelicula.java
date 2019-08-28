@@ -1,5 +1,11 @@
 package view.UsuarioAdministrador;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 public class Error_AñadirPelicula extends JPanel {
 //Este panel aparecerá cuando se ingrese una pelicula ya ingresada en AñadirPelicula
 
