@@ -32,7 +32,7 @@ public class AñadirPelicula extends JPanel implements InterfazPanel {
 	 * Constructor de la clase agrega los objetos mencionados anteriormente al constructor
 	 */
 	public AñadirPelicula() {
-		setPreferredSize(new Dimension(600, 800));
+		setPreferredSize(new Dimension(500, 300));
 		/* Organización de Layout */
 		this.setLayout(new BorderLayout(7, 15));
 		panel_sup.setLayout(new BorderLayout(7, 15));
@@ -43,8 +43,8 @@ public class AñadirPelicula extends JPanel implements InterfazPanel {
 		panel_sup.add(ingrese_datos, BorderLayout.CENTER);
 		this.add(panel_sup, BorderLayout.NORTH);
 
-		//FieldPanel panelField = new FieldPanel(datos, lista_datos, valor, null);
-		//panel_center = panelField;
+		FieldPanel panelField = new FieldPanel(datos, lista_datos, valor, null, null);
+		panel_center = panelField;
 		this.add(panel_center, BorderLayout.CENTER);
 
 		panel_down.add(boton, BorderLayout.CENTER);
