@@ -77,6 +77,7 @@ public class ControladorVista {
 		}
 		return listado.toString();
 	}
+
 	public static String listadoFunciones() {//metodo interesante , lo que esa es imprimir las funciones
 		StringBuilder listado = new StringBuilder();
 		if (!Funcion.getFuncionesList().isEmpty()) {

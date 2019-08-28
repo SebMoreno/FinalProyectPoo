@@ -20,7 +20,7 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 
 	private JLabel elegir_usuario = new JLabel();
 	private JLabel Titulo = new JLabel();
-        Usuario activo = ControladorVista.getUsuarioActivo();
+	Usuario activo = ControladorVista.getUsuarioActivo();
 	private JPanel panel_izq = new JPanel();
 	private JPanel panel_der = new JPanel();
 	private JLabel Descripcion = new JLabel("                        INFORMACION");
@@ -33,7 +33,7 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 		panel_izq.setLayout(new BorderLayout(7, 15));
 		panel_der.setLayout(new BorderLayout(7, 15));
 		setPreferredSize(new Dimension(400, 400));
-		Titulo.setText("USUARIO ACTIVO: "+activo.getUsuario());
+		Titulo.setText("USUARIO ACTIVO: " + activo.getUsuario());
 
 
 		/* Fin Operaciones Adicionales */
@@ -57,15 +57,15 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
-            
-           String[] infousuario = textoParaMostrar.split(" ");
-           JTextArea funcio = new JTextArea();
-           JScrollPane panelDescripcion = new JScrollPane(funcio);
-           funcio.append("User " + infousuario[0] + "\nSaldo " + infousuario[1]);
-           if (panel_der.getComponents().length == 2) {
-				panel_der.remove(1);
-			}
-            panel_der.add(panelDescripcion, BorderLayout.CENTER);
+
+		String[] infousuario = textoParaMostrar.split(" ");
+		JTextArea funcio = new JTextArea();
+		JScrollPane panelDescripcion = new JScrollPane(funcio);
+		funcio.append("User " + infousuario[0] + "\nSaldo " + infousuario[1]);
+		if (panel_der.getComponents().length == 2) {
+			panel_der.remove(1);
+		}
+		panel_der.add(panelDescripcion, BorderLayout.CENTER);
 
 	}
 

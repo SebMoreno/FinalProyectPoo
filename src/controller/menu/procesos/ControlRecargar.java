@@ -20,7 +20,7 @@ public class ControlRecargar extends ControladorVista implements ActionListener 
 		((Cliente) ControladorVista.getUsuarioActivo()).getCuenta().setSaldo(saldonuevo);
 		Data.writeTxt("cuentas.txt", Cuenta.getCuentasList());
 		ControladorVista.getPantallaActual().muestraDatos("Se ha recargado su saldo con éxito");
-		((RecargarSaldo)ControladorVista.getPantallaActual()).getSaldo_actual().setText("Su saldo actual es: "+ saldonuevo);
+		((RecargarSaldo) ControladorVista.getPantallaActual()).getSaldo_actual().setText("Su saldo actual es: " + saldonuevo);
 		ControladorVista.packActualFrame();
 	}
 }

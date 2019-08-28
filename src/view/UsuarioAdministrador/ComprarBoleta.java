@@ -33,6 +33,7 @@ public class ComprarBoleta extends JPanel implements InterfazPanel {
 	private JPanel panel_der_center = new JPanel();
 	/* Fin declaraciÃ³n */
 	private JPanel panel_der = new JPanel();
+
 	/**
 	 * inicio implementacion metodos de la interfaz
 	 */
@@ -81,7 +82,7 @@ public class ComprarBoleta extends JPanel implements InterfazPanel {
 	 */
 	@Override
 	public void setController(ControladorVista[] controllers) {
-entrada.addActionListener((ActionListener) controllers[0]);
+		entrada.addActionListener((ActionListener) controllers[0]);
 	}
 
 	public JTextArea getImpresion() {

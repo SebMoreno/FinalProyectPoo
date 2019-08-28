@@ -54,7 +54,7 @@ public class ControladorMenu extends ControladorVista implements ActionListener 
 				break;
 			case "Comprar Boleta":
 				ControladorVista.setPantallaActual(new ComprarBoleta());
-				((ComprarBoleta)ControladorVista.getPantallaActual()).getImpresion().append(ControladorVista.listadoPeliculas());
+				((ComprarBoleta) ControladorVista.getPantallaActual()).getImpresion().append(ControladorVista.listadoPeliculas());
 				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlCompraBoletas()});
 				ControladorVista.packActualFrame();
 				break;
@@ -64,7 +64,7 @@ public class ControladorMenu extends ControladorVista implements ActionListener 
 				ControladorVista.packActualFrame();
 				break;
 			case "Recargar Saldo":
-				ControladorVista.setPantallaActual(new RecargarSaldo(((Cliente)ControladorVista.getUsuarioActivo()).getCuenta().getSaldo()));
+				ControladorVista.setPantallaActual(new RecargarSaldo(((Cliente) ControladorVista.getUsuarioActivo()).getCuenta().getSaldo()));
 				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlRecargar()});
 				ControladorVista.packActualFrame();
 				break;

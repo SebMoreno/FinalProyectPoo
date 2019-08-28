@@ -23,11 +23,11 @@ public class ControlCompraBoletas extends ControladorVista implements ActionList
 	public void actionPerformed(ActionEvent actionEvent) {
 		estadoTransaccion++;
 		String respuesta = ((JTextField) actionEvent.getSource()).getText();
-		switch (estadoTransaccion){
+		switch (estadoTransaccion) {
 			case 1:
-				((ComprarBoleta)ControladorVista.getPantallaActual()).getImpresion().setText(ControladorVista.listadoFunciones());
-				((ComprarBoleta)ControladorVista.getPantallaActual()).getTitulo().setText("Lista de Funciones");
-				((ComprarBoleta)ControladorVista.getPantallaActual()).getAnswer().setText("Escoja una funcion escribiendo el numero de la funcion:");
+				((ComprarBoleta) ControladorVista.getPantallaActual()).getImpresion().setText(ControladorVista.listadoFunciones());
+				((ComprarBoleta) ControladorVista.getPantallaActual()).getTitulo().setText("Lista de Funciones");
+				((ComprarBoleta) ControladorVista.getPantallaActual()).getAnswer().setText("Escoja una funcion escribiendo el numero de la funcion:");
 				ControladorVista.packActualFrame();
 				break;
 			case 2:
@@ -37,9 +37,9 @@ public class ControlCompraBoletas extends ControladorVista implements ActionList
 					ControladorVista.getPantallaActual().muestraDatos("La función que eligió no existe\nEl programa se cerrará para evitar conflictos");
 					System.exit(0);
 				}
-				((ComprarBoleta)ControladorVista.getPantallaActual()).getImpresion().setText(f.getSala().toString());
-				((ComprarBoleta)ControladorVista.getPantallaActual()).getTitulo().setText("Elección de Silla");
-				((ComprarBoleta)ControladorVista.getPantallaActual()).getAnswer().setText("Elija la silla que desee\n" +
+				((ComprarBoleta) ControladorVista.getPantallaActual()).getImpresion().setText(f.getSala().toString());
+				((ComprarBoleta) ControladorVista.getPantallaActual()).getTitulo().setText("Elección de Silla");
+				((ComprarBoleta) ControladorVista.getPantallaActual()).getAnswer().setText("Elija la silla que desee\n" +
 						"El significado de las letras es:\n" +
 						"P: premium, es decir, vibrosound y preferenciales a la vez\n" +
 						"        v: vibrosound\n" +
@@ -54,13 +54,13 @@ public class ControlCompraBoletas extends ControladorVista implements ActionList
 				break;
 			case 3:
 				cordV = respuesta;
-				((ComprarBoleta)ControladorVista.getPantallaActual()).getAnswer().setText("Ingrese la coordenada horizontal");
+				((ComprarBoleta) ControladorVista.getPantallaActual()).getAnswer().setText("Ingrese la coordenada horizontal");
 				ControladorVista.packActualFrame();
 				break;
 			case 4:
 				cordH = respuesta;
-				int precioBoleta =f.getSala().getPrecio() + f.getSala().getSilla(Integer.parseInt(cordV),Integer.parseInt(cordH)).getIncremento();
-				if (((Cliente)ControladorVista.getUsuarioActivo()).getCuenta().getSaldo() >= precioBoleta) {
+				int precioBoleta = f.getSala().getPrecio() + f.getSala().getSilla(Integer.parseInt(cordV), Integer.parseInt(cordH)).getIncremento();
+				if (((Cliente) ControladorVista.getUsuarioActivo()).getCuenta().getSaldo() >= precioBoleta) {
 					new Boleta(((Cliente) ControladorVista.getUsuarioActivo()).getCuenta(), f, f.getSala().getSilla(Integer.parseInt(cordH), Integer.parseInt(cordV)));
 					Data.writeTxt("boletas.txt", Boleta.getBoletasList());
 					int saldo_nuevo = ((Cliente) ControladorVista.getUsuarioActivo()).getCuenta().getSaldo() - precioBoleta;
@@ -70,7 +70,7 @@ public class ControlCompraBoletas extends ControladorVista implements ActionList
 					ocupadas++;//aumenta las silla ocupadas en la sala
 					f.setSillasOcupadas(ocupadas);
 					ControladorVista.getPantallaActual().muestraDatos("Su compra fue realizada con éxito");
-				}else {
+				} else {
 					ControladorVista.getPantallaActual().muestraDatos("Saldo insuficiente");
 				}
 				estadoTransaccion = 0;
