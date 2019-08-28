@@ -102,7 +102,7 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 			super(nombre);
 		}
 
-		public void mostrarInfoUser(String infoUsuario) {
+		public void mostrarInfoAuxiliar(String infoUsuario) {
 			//TODO hacer que se muestre en una ventana emergente la info del usuario que se pase por el String
 		}
 		public JFrame getActualFrame() {

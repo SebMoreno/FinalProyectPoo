@@ -101,7 +101,7 @@ public class Inicio extends JFrame {
 	private JPanel panelBotones = new JPanel();
 	private JScrollPane panelDescripcion = new JScrollPane(Descripcion);
 	private JPasswordField campoPass = new JPasswordField();
-	private FieldPanel FormularioInicio = new FieldPanel("Ingrese su código de usuario y su clave", new String[]{"Código de Usuario", "Clave"}, "", new String[]{"usuario", "contraseña"}, null);
+	private FieldPanel FormularioInicio = new FieldPanel("Ingrese su código de usuario y su clave", new String[]{"Código de Usuario", "Clave"}, "", new String[]{"", "contraseña"}, null);
 	private JButton botonAdmin = new SpecialButtonInicio("Administrador");
 	private JButton botonCliente = new SpecialButtonInicio("Usuario Común");
 	private JButton botonSalir = new SpecialButtonInicio("Salir del programa");
