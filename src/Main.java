@@ -32,6 +32,6 @@ public class Main {
 
 /**
  * TODO faltan 2 funcionalidades
- * Faltan - eliminar funcion y listado de funciones
+ * Faltan - listado de funciones
  * 3 exepciones nuevas : pelicula erronea , funcion erronea , saldo insuficiente
  */
