@@ -23,21 +23,24 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 	/**
 	 * cosas que contiene el panel
 	 */
-	private JButton go = new JButton("Ver información de ésta función");
+	private JButton go = new JButton("GO");
 	private JLabel Descripcion = new JLabel();
 	private JComboBox elegir_funcion = new JComboBox();
 	private JLabel Titulo = new JLabel();
 	private JPanel panel_izq = new JPanel();
 	private JPanel panel_der = new JPanel();
 
-
 	/**
 	 * contructor de la clase , organiza los paneles
+	 * 
 	 */
+	public JComboBox getFuncionElegida() {
+		return elegir_funcion;
+	}
+	
 	public InformacionFunciones() {
 
 		this.setLayout(new BorderLayout(7, 15));
-
 
 		/* Operaciones Adicionales */
 		panel_izq.setLayout(new BorderLayout(7, 15));
@@ -55,13 +58,9 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 
 		panel_der.add(Descripcion, BorderLayout.NORTH);
 
-
 		add(panel_izq, BorderLayout.WEST);
 		add(panel_der, BorderLayout.CENTER);
 		/* Fin Agregado de Componentes */
-	}
-	public JComboBox getFuncionElegida() {
-		return elegir_funcion;
 	}
 
 	/**
@@ -71,7 +70,10 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 	/**
 	 * Metodo de los controladores
 	 *
-	 * @param controllers se necesita un actionListener para el boton go este boton debe mostrar la informacion de las funciones seleccionadas anteriormente
+	 * @param controllers
+	 *            se necesita un actionListener para el boton go este boton debe
+	 *            mostrar la informacion de las funciones seleccionadas
+	 *            anteriormente
 	 */
 	@Override
 	public void setController(ControladorVista[] controllers) {
@@ -85,25 +87,22 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
+		String[] peliculas = textoParaMostrar.split("\n");
+		String[] datospelicula;
+		if (peliculas[0].equals("Las_Funciones_son:")) {
 
+			for (int i = 1; i < peliculas.length; i++) {
+				datospelicula = peliculas[i].split(" ");
 
-		String[] funciones = textoParaMostrar.split("\n");
-		String[] datosfuncion;
-		if (funciones[0].equals("Las_Funciones_son:")) {
-
-
-			for (int i = 1; i < funciones.length; i++) {
-				datosfuncion = funciones[i].split(" ");
-
-				elegir_funcion.addItem(datosfuncion[0]);
+				elegir_funcion.addItem(datospelicula[0]);
 			}
 
-		} else {// key: idFuncion     value: idSala, tituloPelicula, hora, sillasOcupadas
-			datosfuncion = funciones[0].split(" ");
+		} else {
+			datospelicula = peliculas[0].split(" ");
 			JTextArea funcio = new JTextArea();
-			JScrollPane panelDescripcion = new JScrollPane();
+			JScrollPane panelDescripcion = new JScrollPane(funcio);
 
-			funcio.append("TITULO PELICULA: " + datosfuncion[2] + " FUNCION: " + datosfuncion[0] + " SALA: " + datosfuncion[1] + " HORA: " + datosfuncion[3] + " SILLAS OCUPADAS: " + datosfuncion[4]);
+			funcio.append("TITULO PELICULA: "+ datospelicula[2] + "\nFUNCION: " + datospelicula[0] + "\nSALA: "+ datospelicula[1]+"\nHORA: " + datospelicula[3] );
 			if (panel_der.getComponents().length == 2) {
 				panel_der.remove(1);
 			}
@@ -111,27 +110,21 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 		}
 	}
 
-	private class PanelFunciones extends JPanel {
+		public class PanelPelicula extends JPanel {
 
-		public JPanel auxiliar;
+			public JPanel auxiliar;
 
-		PanelFunciones() {
-			auxiliar = new JPanel();
-			setLayout(new BorderLayout(7, 15));
-			auxiliar.setBackground(Color.WHITE);
-			add(auxiliar);
+			PanelPelicula() {
+				auxiliar = new JPanel();
+				setLayout(new BorderLayout(7, 15));
+				auxiliar.setBackground(Color.WHITE);
+				add(auxiliar);
+				// add(panel_der,BorderLayout.CENTER);
+				// TODO llenar el panel con la informacion de las funciones
 
-			//TODO llenar el panel con la informacion de las funciones
+			}
 
 		}
-
-
 	}
-
-
-}
-
-
-
 
 
