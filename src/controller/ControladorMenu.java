@@ -4,6 +4,7 @@ import controller.menu.ControlLogout;
 import controller.menu.ControladorMenuUserYHelp;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import view.InformacionCuenta;
 import view.InterfazPanel;
 import view.MenuRegistrado.InformacionFunciones;
 import view.MenuRegistrado.InformacionPeliculas;
@@ -42,7 +43,7 @@ public class ControladorMenu implements ControladorVista, ActionListener {
 				source.setVistaActual(new ComprarBoleta());
 				break;
 			case "Mostrar la Información de mi cuenta":
-				source.setVistaActual(new InformacionPeliculas());//TODO falta panel de la vista Informacion cuenta
+				source.setVistaActual(new InformacionCuenta());//TODO falta panel de la vista Informacion cuenta
 				break;
 			case "Recargar Saldo":
 				source.setVistaActual(new RecargarSaldo());
