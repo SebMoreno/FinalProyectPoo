@@ -45,3 +45,4 @@ build/classes/controller/ControladorMenu.class
 *.class
 *.class
 *.class
+nbproject/private/private.xml
