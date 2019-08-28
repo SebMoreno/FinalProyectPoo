@@ -30,10 +30,10 @@ public class FieldPanel extends JPanel {
 		try {
 			for (int i = 0; i < criterios.length; i++) {
 				JTextField textField = new JTextField(valores[i]);
-				if (!habilitado[i]) {
-					textField.setEditable(false);
-				} else {
+				if (habilitado[i]) {
 					textField.setEditable(true);
+				} else {
+					textField.setEditable(false);
 				}
 				panelForm.add(new JLabel(criterios[i]));
 				panelForm.add(textField);
@@ -45,6 +45,7 @@ public class FieldPanel extends JPanel {
 			for (int i = 0; i < criterios.length; i++) {
 				panelForm.add(new JLabel(criterios[i]));
 				JTextField textField = new JTextField();
+                                textField.setEnabled(true);
 				panelForm.add(textField);
 				TextFields.add(textField);
 			}
