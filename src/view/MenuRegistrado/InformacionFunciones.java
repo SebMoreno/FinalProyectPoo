@@ -23,7 +23,7 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 	/**
 	 * cosas que contiene el panel
 	 */
-	private JButton go = new JButton("GO");
+	private JButton go = new JButton("Ver información de ésta función");
 	private JLabel Descripcion = new JLabel();
 	private JComboBox elegir_funcion = new JComboBox();
 	private JLabel Titulo = new JLabel();
@@ -61,6 +61,9 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 		add(panel_der, BorderLayout.CENTER);
 		/* Fin Agregado de Componentes */
 	}
+	public JComboBox getFuncionElegida() {
+		return elegir_funcion;
+	}
 
 	/**
 	 * IMPLEMENTACION METODOS DE LA INTERFAZ
@@ -84,15 +87,29 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
 
-		JTextArea funcio = new JTextArea();
-		JScrollPane panelDescripcion = new JScrollPane();
-		String[] datos = textoParaMostrar.split("\n");
-		for (int i = 0; i < datos.length; i++) {
-			String DatosCompletos = datos[0];
-			String data[] = DatosCompletos.split(" ");
-			funcio.append("TITULO PELICULA: " + data[2] + " FUNCION: " + data[0] + " SALA: " + data[1] + " HORA: " + data[3]);
+
+		String[] funciones = textoParaMostrar.split("\n");
+		String[] datosfuncion;
+		if (funciones[0].equals("Las_Funciones_son:")) {
+
+
+			for (int i = 1; i < funciones.length; i++) {
+				datosfuncion = funciones[i].split(" ");
+
+				elegir_funcion.addItem(datosfuncion[0]);
+			}
+
+		} else {// key: idFuncion     value: idSala, tituloPelicula, hora, sillasOcupadas
+			datosfuncion = funciones[0].split(" ");
+			JTextArea funcio = new JTextArea();
+			JScrollPane panelDescripcion = new JScrollPane();
+
+			funcio.append("TITULO PELICULA: " + datosfuncion[2] + " FUNCION: " + datosfuncion[0] + " SALA: " + datosfuncion[1] + " HORA: " + datosfuncion[3] + " SILLAS OCUPADAS: " + datosfuncion[4]);
+			if (panel_der.getComponents().length == 2) {
+				panel_der.remove(1);
+			}
+			panel_der.add(panelDescripcion, BorderLayout.CENTER);
 		}
-		panel_der.add(panelDescripcion, BorderLayout.CENTER);
 	}
 
 	private class PanelFunciones extends JPanel {
