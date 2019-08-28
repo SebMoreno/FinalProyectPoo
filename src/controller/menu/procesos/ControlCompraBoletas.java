@@ -39,8 +39,8 @@ public class ControlCompraBoletas extends ControladorVista implements ActionList
 				}
 				((ComprarBoleta) ControladorVista.getPantallaActual()).getImpresion().setText(f.getSala().toString());
 				((ComprarBoleta) ControladorVista.getPantallaActual()).getTitulo().setText("Elección de Silla");
-				((ComprarBoleta) ControladorVista.getPantallaActual()).getAnswer().setText("Elija la silla que desee\n" +
-						"El significado de las letras es:\n" +
+				((ComprarBoleta) ControladorVista.getPantallaActual()).getAnswer().setText("Elija la silla que desee");
+				((ComprarBoleta) ControladorVista.getPantallaActual()).getImpresion().append("El significado de las letras es:\n" +
 						"P: premium, es decir, vibrosound y preferenciales a la vez\n" +
 						"        v: vibrosound\n" +
 						"        p: preferenciales\n" +

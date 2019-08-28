@@ -56,7 +56,7 @@ public class ComprarBoleta extends JPanel implements InterfazPanel {
 		panel_der_center.setLayout(new BorderLayout(7, 15));
 		panel_der.setLayout(new BorderLayout(7, 15));
 		Titulo.setText("Listado de Películas");
-		impresion.setPreferredSize(new Dimension(300, 800));
+		impresion.setPreferredSize(new Dimension(500, 400));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */
