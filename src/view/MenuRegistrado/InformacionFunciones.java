@@ -32,7 +32,12 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 
 	/**
 	 * contructor de la clase , organiza los paneles
+	 * 
 	 */
+	public JComboBox getFuncionElegida() {
+		return elegir_funcion;
+	}
+	
 	public InformacionFunciones() {
 
 		this.setLayout(new BorderLayout(7, 15));
@@ -98,7 +103,7 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 			JTextArea funcio = new JTextArea();
 			JScrollPane panelDescripcion = new JScrollPane(funcio);
 
-			funcio.append("TITULO PELICULA: "+ datospelicula[2] + " FUNCION: " + datospelicula[0] + " SALA: "+ datospelicula[1]+" HORA: "+ datospelicula[1] + " HORA: " + datospelicula[3] );
+			funcio.append("TITULO PELICULA: "+ datospelicula[2] + "\nFUNCION: " + datospelicula[0] + "\nSALA: "+ datospelicula[1]+"\nHORA: " + datospelicula[3] );
 			if (panel_der.getComponents().length == 2) {
 				panel_der.remove(1);
 			}
