@@ -108,7 +108,7 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
                  */
 		public void mostrarInfoAuxiliar(String infoUsuario) {
                     if (infoUsuario.equals("Acerca De")){
-                        JOptionPane.showMessageDialog(VistaPrincipal.this,"MARIANA BETANCUR ,CRISTIAN MEJIA , SEBASTIAN MORENO , JAIRO ANDRES") ;
+                        JOptionPane.showMessageDialog(VistaPrincipal.this,"AUTORES :  MARIANA BETANCUR ,CRISTIAN MEJIA , SEBASTIAN MORENO , JAIRO ANDRES") ;
                     }
                     else{
                         
