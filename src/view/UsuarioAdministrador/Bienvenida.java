@@ -28,7 +28,7 @@ public class Bienvenida extends JPanel implements InterfazPanel {
 		/* Fin Layout */
 
 		/* Operaciones Adicionales */
-		setPreferredSize(new Dimension(600, 800));
+		setPreferredSize(new Dimension(600,600));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */
