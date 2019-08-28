@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class VistaPrincipal extends JFrame implements InterfazPanel {
@@ -103,7 +104,10 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 		}
 
 		public void mostrarInfoAuxiliar(String infoUsuario) {
-			//TODO hacer que se muestre en una ventana emergente la info del usuario que se pase por el String
+                    
+                    //no se cual boton lo activa , con amor mariana
+			String info [] = infoUsuario.split(" ");
+                        JOptionPane.showMessageDialog(go,"USER: "+info[0]+" ROL: "+info[1]+" NOMBRE: "+info[2]+" CORREO: "+info[3]);
 		}
 		public JFrame getActualFrame() {
 			return VistaPrincipal.this;
