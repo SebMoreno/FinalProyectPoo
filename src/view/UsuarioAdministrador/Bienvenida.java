@@ -4,11 +4,13 @@ import controller.ControladorVista;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import view.InterfazPanel;
 
 /**
@@ -16,25 +18,51 @@ import view.InterfazPanel;
  */
 public class Bienvenida extends JPanel implements InterfazPanel {
 	/* Empieza declaración de subobjetos pertenencientes a este objeto principal */
-	JLabel label = new JLabel("Bienvenido /n El equipo de /n CineX /n está entusiasmado /n con su visita /n DISFRUTE");
-	Panel panel = new Panel("fondo.gif");
+	private JTextArea area = new JTextArea("                         ¡Bienvenido!\n" + 
+                "\n" + 
+                "                      El equipo de\n" + 
+                "\n" + 
+                "                            CineX\n" + 
+                "\n" + 
+                "                 está entusiasmado\n" + 
+                "\n" + 
+                "                      con su visita\n" + 
+                "\n" + 
+                "                       DISFRUTE");
+        private Image background;
 	JButton boton = new JButton("Continuar");
 	/* Fin declaración */
 
-	public Bienvenida() {
+	public Bienvenida(String imagePath) {
 		/* Organización de Layout */
-		this.setLayout(new BorderLayout(7, 15));
-		panel.setLayout(new BorderLayout(7, 15));
+		this.setLayout(new GridLayout(3, 3));
 		/* Fin Layout */
 
 		/* Operaciones Adicionales */
 		setPreferredSize(new Dimension(600, 600));
+                setBackground(imagePath);
+                area.setSize(200,200);
+                boton.setPreferredSize(new Dimension(70,50));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */
-		panel.add(label, BorderLayout.CENTER);
-		panel.add(boton, BorderLayout.SOUTH);
-		this.add(panel, BorderLayout.CENTER);
+                for(int i=0; i<9; i++){
+                    if (i==4){
+                        add(area);
+                    }
+                    else if (i==7){
+                        JPanel panel = new JPanel();
+                        panel.setLayout(new BorderLayout(7,15));
+                        panel.setOpaque(false);
+                        panel.add(boton, BorderLayout.SOUTH);
+                        add(panel);
+                    }
+                    else{
+                        JPanel panel = new JPanel();
+                        panel.setOpaque(false);
+                        this.add(panel);
+                    }
+                }
 		/* Fin Agregado de Componentes */
 
 
@@ -57,30 +85,34 @@ public class Bienvenida extends JPanel implements InterfazPanel {
 
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
-		//TERMINAR
+		
 	}
 
 	/* Metodos auxiliares */
-
-	/* Fin Metodos auxiliares */
-
-	class Panel extends JPanel {
-		ImageIcon imagen;
-		String nombre;
-
-		Panel(String nombre) {
-			this.nombre = nombre;
+        // Metodo que es llamado automaticamente por la maquina virtual Java cada vez que repinta
+	public void paintComponent(Graphics g) {
+ 
+		/* Obtenemos el tamaño del panel para hacer que se ajuste a este
+		cada vez que redimensionemos la ventana y se lo pasamos al drawImage */
+		int width = this.getSize().width;
+		int height = this.getSize().height;
+ 
+		// Mandamos que pinte la imagen en el panel
+		if (this.background != null) {
+			g.drawImage(this.background, 0, 0, width, height, null);
 		}
-
-		public void paint(Graphics g) {
-			Dimension tamaño = getSize();
-			imagen = new ImageIcon(getClass().getResource("fondo.gif"));//Antes
-			imagen = new ImageIcon("fondo.gif");//Despues
-			g.drawImage(imagen.getImage(), 0, 0, tamaño.width, tamaño.height, null);
-			setOpaque(false);
-			super.paint(g);
-		}
+ 
+		super.paintComponent(g);
 	}
-
+        
+        // Metodo donde le pasaremos la dirección de la imagen a cargar.
+	public void setBackground(String imagePath) {
+		
+		// Construimos la imagen y se la asignamos al atributo background.
+		this.setOpaque(false);
+		this.background = new ImageIcon(imagePath).getImage();
+		repaint();
+	}
+	/* Fin Metodos auxiliares */
 }
 

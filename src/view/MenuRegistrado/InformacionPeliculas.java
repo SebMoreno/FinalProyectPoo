@@ -41,7 +41,7 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 		Titulo.setText("ELIJA SU PELICULA");
 		Descripcion.setText("INFORMACIÓN PELICULAS");
 
-		setPreferredSize(new Dimension(600, 800));
+		setPreferredSize(new Dimension(400, 400));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

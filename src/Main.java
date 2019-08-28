@@ -32,4 +32,5 @@ public class Main {
 /**
  * TODO falta 1 funcionalidad
  * 3 exepciones nuevas : pelicula erronea , funcion erronea , saldo insuficiente
+ * Tener en cuenta: Constructor de Bienvenida new Bienvenida("temp\\fondo.gif");
  */
