@@ -29,3 +29,7 @@ public class Main {
 
 	}
 }
+
+/**
+ * TODO faltan 2 funcionalidades
+ * 3 exepciones nuevas : pelicula erronea , funcion erronea , saldo insuficiente

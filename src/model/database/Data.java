@@ -16,7 +16,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import model.ExceptionsApp.WrongCredentialsException;
+import model.exceptionsapp.WrongCredentialsException;
 import model.cine.Boleta;
 import model.cine.Funcion;
 import model.cine.Pelicula;

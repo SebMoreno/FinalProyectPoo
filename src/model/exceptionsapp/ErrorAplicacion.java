@@ -1,4 +1,4 @@
-package model.ExceptionsApp;
+package model.exceptionsapp;
 
 public class ErrorAplicacion extends Exception {
 	public ErrorAplicacion(String message) {

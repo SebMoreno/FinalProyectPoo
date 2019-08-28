@@ -2,7 +2,7 @@ package model.user;
 
 import java.io.IOException;
 import java.util.HashMap;
-import model.ExceptionsApp.WrongCredentialsException;
+import model.exceptionsapp.WrongCredentialsException;
 import model.database.Data;
 
 import static model.database.Data.readTxt;

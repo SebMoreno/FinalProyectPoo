@@ -8,14 +8,15 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
-import model.ExceptionsApp.NotFillFieldsAdminException;
-import model.ExceptionsApp.NotFillFieldsClientException;
-import model.ExceptionsApp.WrongCredentialsException;
+import model.exceptionsapp.NotFillFieldsAdminException;
+import model.exceptionsapp.NotFillFieldsClientException;
+import model.exceptionsapp.WrongCredentialsException;
 import model.user.Administrador;
 import model.user.Cliente;
 import model.user.Usuario;
 import view.InterfazBotonInicio;
-import view.MenuRegistrado.Informacionfunciones;
+import view.MenuRegistrado.InformacionFunciones;
+import view.UsuarioAdministrador.EliminarPelicula;
 import view.VistaPrincipal;
 
 public class ControlLogin implements ActionListener, ControladorVista {
@@ -51,7 +52,7 @@ public class ControlLogin implements ActionListener, ControladorVista {
 					String clave = i.getClave();
 					String user = i.getUsuario();
 					Usuario.setUsuarioActivo(new Administrador(user, clave));
-					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new Informacionfunciones());//TODO Colocar ventana de bienvenida
+					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new EliminarPelicula());//TODO Colocar ventana de bienvenida
 					ControladorMenu.setControladoresMenu(inicia);
 					i.getActualFrame().dispose();
 					inicia.run();
@@ -71,7 +72,7 @@ public class ControlLogin implements ActionListener, ControladorVista {
 					String clave = i.getClave();
 					String user = i.getUsuario();
 					Usuario.setUsuarioActivo(new Cliente(user, clave));
-					VistaPrincipal inicia = new VistaPrincipal(user, Cliente.getCapacidades(), new Informacionfunciones());//TODO Colocar ventana de bienvenida
+					VistaPrincipal inicia = new VistaPrincipal(user, Cliente.getCapacidades(), new InformacionFunciones());//TODO Colocar ventana de bienvenida
 					ControladorMenu.setControladoresMenu(inicia);
 					i.getActualFrame().dispose();
 					inicia.run();

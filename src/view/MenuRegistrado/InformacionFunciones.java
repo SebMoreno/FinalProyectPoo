@@ -18,7 +18,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import view.InterfazPanel;
 
-public class Informacionfunciones extends JPanel implements InterfazPanel {
+public class InformacionFunciones extends JPanel implements InterfazPanel {
 
 	/**
 	 * cosas que contiene el panel
@@ -34,7 +34,7 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
 	/**
 	 * contructor de la clase , organiza los paneles
 	 */
-	public Informacionfunciones() {
+	public InformacionFunciones() {
 
 		this.setLayout(new BorderLayout(7, 15));
 

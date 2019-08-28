@@ -16,8 +16,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
-import model.ExceptionsApp.NotFillFieldsAdminException;
-import model.ExceptionsApp.NotFillFieldsClientException;
+import model.exceptionsapp.NotFillFieldsAdminException;
+import model.exceptionsapp.NotFillFieldsClientException;
 import view.UsuarioAdministrador.FieldPanel;
 
 public class Inicio extends JFrame {
