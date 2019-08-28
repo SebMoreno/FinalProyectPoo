@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import view.InterfazPanel;
 
 public class InformacionCuenta extends JPanel implements InterfazPanel {
@@ -19,7 +20,7 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 	private JLabel Titulo = new JLabel();
 	private JPanel panel_izq = new JPanel();
 	private JPanel panel_der = new JPanel();
-	private JLabel Descripcion = new JLabel("INFORMACION");
+	private JLabel Descripcion = new JLabel("                        INFORMACION");
 
 	public InformacionCuenta() {
 
@@ -53,6 +54,11 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
+            
+           String[] infousuario = textoParaMostrar.split(" ");
+           JTextArea funcio = new JTextArea();
+           funcio.append("User " + infousuario[0] + "\nSaldo " + infousuario[1]);
+           panel_der.add(funcio, BorderLayout.CENTER);
 
 	}
 
