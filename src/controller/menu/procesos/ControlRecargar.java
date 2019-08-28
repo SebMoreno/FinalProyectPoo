@@ -9,6 +9,7 @@ import model.database.Data;
 import model.exceptionsapp.DatoNoExistenteException;
 import view.UsuarioAdministrador.RecargarSaldo;
 import controller.ControladorVista.*;
+import static java.lang.Integer.parseInt;
 import model.user.Usuario;
 
 
@@ -24,9 +25,11 @@ public class ControlRecargar extends ControladorVista implements ActionListener 
                 Usuario activo = ControladorVista.getUsuarioActivo();
                 String Valor;
                 Valor = panel.campo_texto.getText();
-                
+                String[] cuenta = model.user.Cuenta.getCuentasList().get(activo);
+                String saldo = cuenta[0];
                 try {
-				if (Data.deleteInTxt("funciones.txt",(String) panel.getFuncionElegida().getSelectedItem())) {
+				if (Data.searchInTxt("cuentas.txt", activo.getUsuario()).equals(activo + " " + saldo)) {
+                                        //saldo = toString(parseInt(saldo)+ parseInt(Valor));
 					ControladorVista.getPantallaActual().muestraDatos("Su saldo fue recargado con exito");
 					
 				}
