@@ -29,7 +29,7 @@ public class ControlAñadir extends ControladorVista implements ActionListener {
 				ControladorVista.getPantallaActual().muestraDatos("Película creada con éxito");
 			} catch (PeliculaYaExistenteException e) {
 				ControladorVista.getPantallaActual().muestraDatos(e.getMessage());
-			} catch (NotFillFieldsAdminException e){
+			} catch (NotFillFieldsAdminException e) {
 				ControladorVista.getPantallaActual().muestraDatos(e.getMessage());
 			}
 		} else {

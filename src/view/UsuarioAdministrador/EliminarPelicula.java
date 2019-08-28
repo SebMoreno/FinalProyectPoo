@@ -84,6 +84,7 @@ public class EliminarPelicula extends JPanel implements InterfazPanel {
 			JOptionPane.showMessageDialog(this, textoParaMostrar, "¡Alerta!", JOptionPane.WARNING_MESSAGE);
 		}
 	}
+
 	public JComboBox getPeliculaElegida() {
 		return elegir_pelicula;
 	}

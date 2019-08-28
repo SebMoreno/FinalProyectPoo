@@ -20,6 +20,7 @@ public class Administrador extends Usuario {
 	public Administrador(String usuario, String clave) throws WrongCredentialsException, IOException {
 		super(usuario, clave, "admin");
 	}
+
 	public static String[] getCapacidades() {
 		return capacidades;
 	}

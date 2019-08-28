@@ -41,7 +41,7 @@ public class Pelicula {
 	 */
 
 	public Pelicula(String titulo) throws DatoNoExistenteException {
-		Data.searchInTxt("peliculas.txt",titulo);
+		Data.searchInTxt("peliculas.txt", titulo);
 		genero = pelisList.get(titulo)[0];
 		clasificacion = pelisList.get(titulo)[1];
 		this.titulo = titulo;
@@ -60,7 +60,7 @@ public class Pelicula {
 	 * @see baseDeDatos.Data#writeTxt(java.lang.String, java.util.HashMap)
 	 */
 	public Pelicula(String titulo, String genero, String clasificacion, String duracion, String idioma) throws PeliculaYaExistenteException, NotFillFieldsAdminException {//contructor que escribe en los txt
-		if(!titulo.trim().equals("") && !genero.trim().equals("") && !clasificacion.trim().equals("") && !duracion.trim().equals("") && !idioma.trim().equals("")) {
+		if (!titulo.trim().equals("") && !genero.trim().equals("") && !clasificacion.trim().equals("") && !duracion.trim().equals("") && !idioma.trim().equals("")) {
 			try {
 				Data.searchInTxt("peliculas.txt", titulo);
 				throw new PeliculaYaExistenteException();
@@ -74,7 +74,7 @@ public class Pelicula {
 				pelisList.put(titulo, aux);
 				Data.writeTxt("peliculas.txt", pelisList);
 			}
-		}else {
+		} else {
 			throw new NotFillFieldsAdminException();
 		}
 	}
@@ -85,7 +85,6 @@ public class Pelicula {
 	 * @param titulo
 	 * @see baseDeDatos.Data#writeTxt(java.lang.String, java.util.HashMap)
 	 */
-
 
 
 	public String getGenero() {

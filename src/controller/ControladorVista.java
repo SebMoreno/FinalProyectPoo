@@ -5,7 +5,6 @@ import controller.inicio.ControlFoto;
 import controller.inicio.ControlLogin;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import model.database.Data;
 import model.user.Usuario;
 import view.InterfazBotonInicio;
 import view.InterfazPanel;
@@ -27,13 +26,14 @@ public class ControladorVista {
 
 	public static void setPantallaActual(InterfazPanel pantallaActual) {
 		ControladorVista.pantallaActual = pantallaActual;
-		JFrame actual = (JFrame)FrameActual;
+		JFrame actual = (JFrame) FrameActual;
 		actual.getContentPane().removeAll();
 		actual.add((JPanel) pantallaActual);
 		actual.pack();
 	}
-	public static void packActualFrame(){
-		JFrame actual = (JFrame)FrameActual;
+
+	public static void packActualFrame() {
+		JFrame actual = (JFrame) FrameActual;
 		actual.pack();
 	}
 

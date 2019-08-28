@@ -18,7 +18,7 @@ import view.InterfazBotonInicio;
 import view.UsuarioAdministrador.Bienvenida;
 import view.VistaPrincipal;
 
-public class ControlLogin extends ControladorVista implements ActionListener{
+public class ControlLogin extends ControladorVista implements ActionListener {
 	private static int loginAdmin;
 	private static int loginCliente;
 	private static boolean initied = false;

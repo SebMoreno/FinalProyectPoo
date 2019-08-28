@@ -1,33 +1,27 @@
 package view.MenuRegistrado;
-import controller.ControladorVista.*;
-import model.user.Usuario;
+
 import controller.ControladorVista;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import view.InterfazPanel;
-
-import controller.ControladorVista;
-import java.awt.Color;
-import javax.swing.JPanel;
-import view.InterfazPanel;
 import view.InterfazPanel;
 
 public class InformacionCuenta extends JPanel implements InterfazPanel {
-    
-    
-    private JButton go = new JButton("GO");
-	
+
+
+	private JButton go = new JButton("GO");
+
 	private JLabel elegir_usuario = new JLabel();
 	private JLabel Titulo = new JLabel();
 	private JPanel panel_izq = new JPanel();
 	private JPanel panel_der = new JPanel();
-        private JLabel Descripcion = new JLabel("INFORMACION");
-        public InformacionCuenta() {
+	private JLabel Descripcion = new JLabel("INFORMACION");
+
+	public InformacionCuenta() {
 
 		this.setLayout(new BorderLayout(7, 15));
 
@@ -36,7 +30,7 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 		panel_der.setLayout(new BorderLayout(7, 15));
 		setPreferredSize(new Dimension(400, 400));
 		Titulo.setText("USUARIO ACTIVO");
-		
+
 
 		/* Fin Operaciones Adicionales */
 
@@ -53,7 +47,7 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 
 	@Override
 	public void setController(ControladorVista[] controllers) {
-        go.addActionListener((ActionListener) controllers[0]);
+		go.addActionListener((ActionListener) controllers[0]);
 
 	}
 
@@ -61,22 +55,22 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 	public void muestraDatos(String textoParaMostrar) {
 
 	}
-        public class PanelCuenta extends JPanel {
 
-			public JPanel auxiliar;
+	public class PanelCuenta extends JPanel {
 
-			PanelCuenta() {
-				auxiliar = new JPanel();
-				setLayout(new BorderLayout(7, 15));
-				auxiliar.setBackground(Color.WHITE);
-				add(auxiliar);
-				// add(panel_der,BorderLayout.CENTER);
-				// TODO llenar el panel con la informacion de las funciones
+		public JPanel auxiliar;
 
-			}
+		PanelCuenta() {
+			auxiliar = new JPanel();
+			setLayout(new BorderLayout(7, 15));
+			auxiliar.setBackground(Color.WHITE);
+			add(auxiliar);
+			// add(panel_der,BorderLayout.CENTER);
+			// TODO llenar el panel con la informacion de las funciones
 
 		}
-        
-        
-        
+
+	}
+
+
 }

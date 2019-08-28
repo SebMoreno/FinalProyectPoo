@@ -32,12 +32,11 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 
 	/**
 	 * contructor de la clase , organiza los paneles
-	 * 
 	 */
 	public JComboBox getFuncionElegida() {
 		return elegir_funcion;
 	}
-	
+
 	public InformacionFunciones() {
 
 		this.setLayout(new BorderLayout(7, 15));
@@ -70,10 +69,9 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 	/**
 	 * Metodo de los controladores
 	 *
-	 * @param controllers
-	 *            se necesita un actionListener para el boton go este boton debe
-	 *            mostrar la informacion de las funciones seleccionadas
-	 *            anteriormente
+	 * @param controllers se necesita un actionListener para el boton go este boton debe
+	 *                    mostrar la informacion de las funciones seleccionadas
+	 *                    anteriormente
 	 */
 	@Override
 	public void setController(ControladorVista[] controllers) {
@@ -102,7 +100,7 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 			JTextArea funcio = new JTextArea();
 			JScrollPane panelDescripcion = new JScrollPane(funcio);
 
-			funcio.append("TITULO PELICULA: "+ datospelicula[2] + "\nFUNCION: " + datospelicula[0] + "\nSALA: "+ datospelicula[1]+"\nHORA: " + datospelicula[3] );
+			funcio.append("TITULO PELICULA: " + datospelicula[2] + "\nFUNCION: " + datospelicula[0] + "\nSALA: " + datospelicula[1] + "\nHORA: " + datospelicula[3]);
 			if (panel_der.getComponents().length == 2) {
 				panel_der.remove(1);
 			}
@@ -110,21 +108,21 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 		}
 	}
 
-		public class PanelPelicula extends JPanel {
+	public class PanelPelicula extends JPanel {
 
-			public JPanel auxiliar;
+		public JPanel auxiliar;
 
-			PanelPelicula() {
-				auxiliar = new JPanel();
-				setLayout(new BorderLayout(7, 15));
-				auxiliar.setBackground(Color.WHITE);
-				add(auxiliar);
-				// add(panel_der,BorderLayout.CENTER);
-				// TODO llenar el panel con la informacion de las funciones
-
-			}
+		PanelPelicula() {
+			auxiliar = new JPanel();
+			setLayout(new BorderLayout(7, 15));
+			auxiliar.setBackground(Color.WHITE);
+			add(auxiliar);
+			// add(panel_der,BorderLayout.CENTER);
+			// TODO llenar el panel con la informacion de las funciones
 
 		}
+
 	}
+}
 
 

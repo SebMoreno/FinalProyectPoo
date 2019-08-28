@@ -26,10 +26,12 @@ public class CrearFuncion extends JPanel implements InterfazPanel {
 	private FieldPanel panel_center;
 	private JPanel panel_down = new JPanel();
 	private JButton boton = new JButton("Ingresar Datos");
+
 	/* Fin declaracion */
 	public FieldPanel getFieldPanel() {
 		return panel_center;
 	}
+
 	/**
 	 * Constructor de la clase agrega los objetos mencionados anteriormente al constructor
 	 */
@@ -45,7 +47,7 @@ public class CrearFuncion extends JPanel implements InterfazPanel {
 		panel_sup.add(ingrese_datos, BorderLayout.CENTER);
 		this.add(panel_sup, BorderLayout.NORTH);
 
-		panel_center = new FieldPanel(datos, lista_datos, valor, new String[]{"codigo creado automáticamente", "","","","0"}, new boolean[]{false, true, true, true, false});
+		panel_center = new FieldPanel(datos, lista_datos, valor, new String[]{"codigo creado automáticamente", "", "", "", "0"}, new boolean[]{false, true, true, true, false});
 		this.add(panel_center, BorderLayout.CENTER);
 
 		panel_down.add(boton, BorderLayout.CENTER);
@@ -76,9 +78,9 @@ public class CrearFuncion extends JPanel implements InterfazPanel {
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
-		if (textoParaMostrar.equals("Funcion creada con éxito")){
+		if (textoParaMostrar.equals("Funcion creada con éxito")) {
 			JOptionPane.showMessageDialog(this, textoParaMostrar, "¡Felicidades!", JOptionPane.INFORMATION_MESSAGE);
-		}else {
+		} else {
 			JOptionPane.showMessageDialog(this, textoParaMostrar, "Oh no..", JOptionPane.WARNING_MESSAGE);
 		}
 	}
