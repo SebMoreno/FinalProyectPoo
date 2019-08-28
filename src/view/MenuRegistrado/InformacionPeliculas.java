@@ -1,16 +1,5 @@
 package view.MenuRegistrado;
 
-import controller.ControladorVista;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.event.ActionListener;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTextArea;
-import view.InterfazPanel;
 
 public class InformacionPeliculas extends JPanel implements InterfazPanel {
 
@@ -36,6 +25,7 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 		Descripcion.setText("INFORMACI�N PELICULAS");
 
 		// TODO EL BOTON JComboBox HAY QUE LLENARLO CON LAS PELICULAS A ESCOGER
+                setPreferredSize(new Dimension(600,800));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

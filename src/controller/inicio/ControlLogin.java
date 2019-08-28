@@ -1,23 +1,6 @@
 package controller.inicio;
 
 
-import controller.ControladorMenu;
-import controller.ControladorVista;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.io.IOException;
-import javax.swing.JButton;
-import javax.swing.JOptionPane;
-import model.ExceptionsApp.NotFillFieldsAdminException;
-import model.ExceptionsApp.NotFillFieldsClientException;
-import model.ExceptionsApp.WrongCredentialsException;
-import model.user.Administrador;
-import model.user.Cliente;
-import model.user.Usuario;
-import view.InterfazBotonInicio;
-import view.MenuRegistrado.Informacionfunciones;
-import view.UsuarioAdministrador.EliminarPelicula;
-import view.VistaPrincipal;
 
 public class ControlLogin implements ActionListener, ControladorVista {
 	private static int loginAdmin;
@@ -52,7 +35,7 @@ public class ControlLogin implements ActionListener, ControladorVista {
 					String clave = i.getClave();
 					String user = i.getUsuario();
 					Usuario.setUsuarioActivo(new Administrador(user, clave));
-					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new EliminarPelicula());//TODO Colocar ventana de bienvenida
+					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new Bienvenida());//TODO Colocar ventana de bienvenida
 					ControladorMenu.setControladoresMenu(inicia);
 					i.getActualFrame().dispose();
 					inicia.run();

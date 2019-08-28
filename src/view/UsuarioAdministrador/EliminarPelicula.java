@@ -1,16 +1,5 @@
 package view.UsuarioAdministrador;
 
-import controller.ControladorVista;
-import java.awt.BorderLayout;
-import java.awt.event.ActionListener;
-import java.util.HashMap;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import view.InterfazPanel;
-
 public class EliminarPelicula extends JPanel implements InterfazPanel {
 	/**
 	 * cosas que contiene el panel
@@ -30,7 +19,7 @@ public class EliminarPelicula extends JPanel implements InterfazPanel {
 		/* Operaciones Adicionales */
 		panel_izq.setLayout(new BorderLayout(7, 15));
 		Titulo.setText("                           ELIJA SU PELICULA");
-
+                setPreferredSize(new Dimension(600,800));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */
