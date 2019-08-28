@@ -24,7 +24,8 @@ public class Funcion {
 	private Short sillasOcupadas;
 
 	/**
-	 *Constructor para crear objetos que ya estan en los Txt, dado que se necesite para llamar algo metodo
+	 * Constructor para crear objetos que ya estan en los Txt, dado que se necesite para llamar algo metodo
+	 *
 	 * @param String
 	 */
 	public Funcion(String idFuncion) {
@@ -37,7 +38,8 @@ public class Funcion {
 	}
 
 	/**
-	 *metodo que permite crear objetos que si se quieren guardar en el txt
+	 * metodo que permite crear objetos que si se quieren guardar en el txt
+	 *
 	 * @param (Sala sala,String hora,Pelicula pelicula)
 	 * @see baseDeDatos.Data#writeTxt(java.lang.String, java.util.HashMap)
 	 */
@@ -60,7 +62,8 @@ public class Funcion {
 	}
 
 	/**
-	 *cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+	 * cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+	 *
 	 * @see baseDeDatos.Data#readTxt(String archivo, HashMap<String, String[]> lista)
 	 */
 
@@ -76,6 +79,7 @@ public class Funcion {
 
 	/**
 	 * El administrador puede hacer esto , entonces la remueve de el hashmap y en esa opcion de menu(en el ui main)vuelve a escribir el archivo
+	 *
 	 * @param id
 	 */
 	public static void deleteFuncion(String id) {

@@ -29,10 +29,9 @@ import model.user.Usuario;
 public class Data {
 	/**
 	 * hace que el pograma lea todos los txt al inicio del programa y tambien crea los menus
+	 *
 	 * @see #readAllTxt()----------presente mas abajo en el codigo(linea 175 )
 	 * @see #createFilesAndDirs()----------presente mas abajo en el codioo(linea 62 )
-	 *
-
 	 */
 	public static void initModel() {
 		createFilesAndDirs();
@@ -111,6 +110,7 @@ public class Data {
 
 	/**
 	 * Metodo para iniciar sesion dependiendo de la informacion ingresada por el usuario
+	 *
 	 * @param usuario
 	 * @param clave
 	 * @param rol
@@ -133,7 +133,8 @@ public class Data {
 	}
 
 	/**
-	 *metodo que lee todos los archivos txt
+	 * metodo que lee todos los archivos txt
+	 *
 	 * @see gestorAplicacion.usuario.Cuenta#RT()
 	 * @see gestorAplicacion.usuario.Usuario#RT()
 	 * @see gestorAplicacion.cine.Silla#RT()
@@ -141,7 +142,6 @@ public class Data {
 	 * @see gestorAplicacion.cine.Sala#RT()
 	 * @see gestorAplicacion.cine.Funcion#RT()
 	 * @see gestorAplicacion.cine.Boleta#RT()
-
 	 */
 
 	public static void readAllTxt() {
@@ -155,11 +155,10 @@ public class Data {
 	}
 
 	/**
-	 *metodo para escribir los archivos , utiliza un hashmap para el acceso de los valores dentro del programa
+	 * metodo para escribir los archivos , utiliza un hashmap para el acceso de los valores dentro del programa
+	 *
 	 * @param string archivo, HashMap<String, String[]> lista
-	 * @exception IOException e
-
-
+	 * @throws IOException e
 	 */
 
 	public static void writeTxt(String archivo, HashMap<String, String[]> lista) {//metodo para escribir los archivos , utiliza un hashmap para el acceso de los valores dentro del programa
@@ -179,12 +178,11 @@ public class Data {
 	}
 
 	/**
-	 *metodo para escribir los archivos , utiliza un hashmap para el acceso de los valores dentro del programa
+	 * metodo para escribir los archivos , utiliza un hashmap para el acceso de los valores dentro del programa
+	 *
 	 * @param String archivo, HashMap<String, String[]> lista
-	 * @exception IOException e
-	 * lee linea por linea el txt y lo guarda en el arreglo datos, luego utuliza aux como value del hash y el primer indice de datos com key
-
-
+	 * @throws IOException e
+	 *                     lee linea por linea el txt y lo guarda en el arreglo datos, luego utuliza aux como value del hash y el primer indice de datos com key
 	 */
 
 

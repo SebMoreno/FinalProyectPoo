@@ -31,7 +31,8 @@ public class Silla {
 	private final static HashMap<String, String[]> sillasList = new HashMap<>(); // key: idSilla     value: incremento, vibrosound, preferencial, ocupada, posicion, idSala
 
 	/**
-	 *cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+	 * cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+	 *
 	 * @see baseDeDatos.Data#readTxt(String, HashMap<String, String[]> lista)
 	 */
 	public static void RT() {////cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
@@ -40,6 +41,7 @@ public class Silla {
 
 	/**
 	 * Constructor para crear objetos que ya estan en los Txt
+	 *
 	 * @param idSilla
 	 * @param sala
 	 */
@@ -57,6 +59,7 @@ public class Silla {
 
 	/**
 	 * constructor al crear silla , tiene en cuenta el tipo para el incremento
+	 *
 	 * @param sala
 	 * @param posV
 	 * @param posH
@@ -97,6 +100,7 @@ public class Silla {
 
 	/**
 	 * Constructor que llama al constructor principal presente en el codio y llena los parametros necesarios por default
+	 *
 	 * @param sala
 	 * @param posV
 	 * @param posH
@@ -110,6 +114,7 @@ public class Silla {
 
 	/**
 	 * Constructor que llama a el constructor que tiene los 5 parametros presentadors en el this
+	 *
 	 * @param sala
 	 * @param posV
 	 * @param posH
@@ -121,6 +126,7 @@ public class Silla {
 
 	/**
 	 * boolean que dice si es o no es Vibrosound
+	 *
 	 * @return vibrosound
 	 */
 
@@ -130,6 +136,7 @@ public class Silla {
 
 	/**
 	 * boolean que dice si es o no es preferencial
+	 *
 	 * @return preferencial
 	 */
 	public boolean isPreferencial() {
@@ -139,6 +146,7 @@ public class Silla {
 
 	/**
 	 * Devuelve el incremento de la silla seleccionada
+	 *
 	 * @return incremento
 	 */
 	public Short getIncremento() {
@@ -147,6 +155,7 @@ public class Silla {
 
 	/**
 	 * Devuelve la sala a la que peretenece la silla
+	 *
 	 * @return sala
 	 */
 	public Sala getSala() {
@@ -155,6 +164,7 @@ public class Silla {
 
 	/**
 	 * Devuelve el registro de las sillas
+	 *
 	 * @return sillasList
 	 */
 
@@ -165,6 +175,7 @@ public class Silla {
 
 	/**
 	 * Si el boolean devuelve verdadero devuelve ocupada
+	 *
 	 * @return ocupada
 	 */
 	public boolean isOcupada() {
@@ -172,7 +183,8 @@ public class Silla {
 	}
 
 	/**
-	 *al momento de comprar se llama este metodo para cambiar el booleano que determina eso
+	 * al momento de comprar se llama este metodo para cambiar el booleano que determina eso
+	 *
 	 * @param ocupada
 	 */
 	public void setOcupada(boolean ocupada) {//al momento de comprar se llama este metodo para cambiar el booleano que determina eso
@@ -185,6 +197,7 @@ public class Silla {
 
 	/**
 	 * Devuleve la posicion
+	 *
 	 * @return posicion
 	 */
 
@@ -195,6 +208,7 @@ public class Silla {
 
 	/**
 	 * Devuelve el id de la silla
+	 *
 	 * @return IdSilla
 	 */
 

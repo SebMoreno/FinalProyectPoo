@@ -29,7 +29,7 @@ public class Error_AñadirPelicula extends JPanel {
 		/* Fin Layout */
 
 		/* Operaciones Adicionales */
-                setPreferredSize(new Dimension(600,800));
+		setPreferredSize(new Dimension(600, 800));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */

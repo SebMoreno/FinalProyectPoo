@@ -25,6 +25,7 @@ public class Sala {
 
 	/**
 	 * Constructor para crear objetos que ya estan en los Txt
+	 *
 	 * @param idSala
 	 */
 	public Sala(String idSala) {//Constructor para crear objetos que ya estan en los Txt
@@ -42,6 +43,7 @@ public class Sala {
 
 	/**
 	 * constructor para guardar en el txt, depende del tipo de la sala cambia el precio
+	 *
 	 * @param tipo
 	 * @param tamañoVertical
 	 * @param tamañoHorizontal
@@ -112,7 +114,8 @@ public class Sala {
 	}
 
 	/**
-	 *cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+	 * cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+	 *
 	 * @see baseDeDatos.Data#readTxt(String, HashMap<String, String[]> lista)
 	 */
 	public static void RT() {//cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
@@ -125,6 +128,7 @@ public class Sala {
 
 	/**
 	 * crea las matrices de silla y devuelve es matriz
+	 *
 	 * @param tamañoVertical
 	 * @param tamañoHorizontal
 	 * @param filasVibrosound
@@ -174,6 +178,7 @@ public class Sala {
 
 	/**
 	 * Devuelve el precio de la sala
+	 *
 	 * @return precio
 	 */
 
@@ -182,7 +187,8 @@ public class Sala {
 	}
 
 	/**
-	 *Devuelve el tipo de la sala
+	 * Devuelve el tipo de la sala
+	 *
 	 * @return
 	 */
 
@@ -192,6 +198,7 @@ public class Sala {
 
 	/**
 	 * Devulve la capacidad de la sala
+	 *
 	 * @return capacidad
 	 */
 	public int getCapacidad() {
@@ -200,6 +207,7 @@ public class Sala {
 
 	/**
 	 * Devuelve el ID de la sala
+	 *
 	 * @return
 	 */
 	public int getIdSala() {
@@ -209,6 +217,7 @@ public class Sala {
 	/**
 	 * busca la silla en la posicion indicada y devuelve null si no la encuentra
 	 * verifica que no entran errores en esta busqueda
+	 *
 	 * @param posicionX
 	 * @param posicionY
 	 * @return null si no encuentra la silla

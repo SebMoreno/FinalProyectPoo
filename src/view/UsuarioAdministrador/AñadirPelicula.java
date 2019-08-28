@@ -32,9 +32,9 @@ public class AñadirPelicula extends JPanel implements InterfazPanel {
 	 * Constructor de la clase agrega los objetos mencionados anteriormente al constructor
 	 */
 	public AñadirPelicula() {
-            
-                setPreferredSize(new Dimension(600,800));
-            
+
+		setPreferredSize(new Dimension(600, 800));
+
 		/* OrganizaciÃ³n de Layout */
 		this.setLayout(new BorderLayout(7, 15));
 		panel_sup.setLayout(new BorderLayout(7, 15));

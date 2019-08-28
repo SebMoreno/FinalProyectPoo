@@ -29,7 +29,7 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setJMenuBar(capacidadesUsuario);
 		setVistaActual(vistaActual);
-                setPreferredSize(new Dimension(600,800));
+		setPreferredSize(new Dimension(600, 800));
 	}
 
 	public void setVistaActual(InterfazPanel vistaActual) {

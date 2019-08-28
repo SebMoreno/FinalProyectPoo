@@ -23,7 +23,8 @@ public class Pelicula {
 
 
 	/**
-	 *cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+	 * cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+	 *
 	 * @see baseDeDatos.Data#readTxt(java.lang.String, java.util.HashMap)
 	 */
 	public static void RT() {
@@ -32,6 +33,7 @@ public class Pelicula {
 
 	/**
 	 * Constructor para crear objetos que ya estan en los Txt
+	 *
 	 * @param titulo
 	 */
 
@@ -45,6 +47,7 @@ public class Pelicula {
 
 	/**
 	 * contructor que escribe en los txt
+	 *
 	 * @param titulo
 	 * @param genero
 	 * @param clasificacion
@@ -65,6 +68,7 @@ public class Pelicula {
 
 	/**
 	 * metodo necesario para la opcion de administrador borrar pelicula
+	 *
 	 * @param titulo
 	 * @see baseDeDatos.Data#writeTxt(java.lang.String, java.util.HashMap)
 	 */

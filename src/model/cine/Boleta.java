@@ -28,9 +28,8 @@ public class Boleta {
 	 * Constructor para la clase boleta
 	 * constructor solo con id , accediendo al hash puede obtener usuario , clave , nombre , email,silla , precio,
 	 * ademas crea propietario con el booleano existe en true(explicacion en su respectivo contructor).
+	 *
 	 * @param idBoleta
-
-
 	 */
 
 
@@ -51,11 +50,11 @@ public class Boleta {
 	/**
 	 * Constructor para la clase boleta
 	 * Constructor originial de boleta y la guarda en su respectivo txt
+	 *
 	 * @param dueño
 	 * @param funcion
 	 * @param silla
 	 * @see baseDeDatos.Data#writeTxt(java.lang.String, java.util.HashMap)
-	 *
 	 */
 
 
@@ -87,7 +86,8 @@ public class Boleta {
 	}
 
 	/**
-	 *cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+	 * cada clase que tiene informacion en un archivo txt tiene este metodo para leer el respectivo archivoy guardarlo en su hashmap
+	 *
 	 * @see baseDeDatos.Data#readTxt(String, HashMap<String, String[]> lista)
 	 */
 	public static void RT() {
@@ -96,6 +96,7 @@ public class Boleta {
 
 	/**
 	 * Devuelve el hash de las boletas
+	 *
 	 * @return boletasList
 	 */
 
@@ -105,6 +106,7 @@ public class Boleta {
 
 	/**
 	 * Devuelve el dueño
+	 *
 	 * @return dueño
 	 */
 	public Cuenta getDuenio() {
@@ -114,6 +116,7 @@ public class Boleta {
 
 	/**
 	 * Devuelve la funcion
+	 *
 	 * @return funcion
 	 */
 
@@ -123,6 +126,7 @@ public class Boleta {
 
 	/**
 	 * Devuelve el precio
+	 *
 	 * @return precio
 	 */
 
