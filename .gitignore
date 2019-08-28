@@ -46,3 +46,4 @@ build/classes/controller/ControladorMenu.class
 *.class
 *.class
 nbproject/private/private.xml
+build/classes/view/MenuRegistrado/Informacionfunciones$PanelFunciones.class
