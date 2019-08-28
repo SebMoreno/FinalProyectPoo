@@ -42,6 +42,7 @@ public class Bienvenida extends JPanel implements InterfazPanel {
 		setPreferredSize(new Dimension(600, 600));
                 setBackground(imagePath);
                 area.setSize(200,200);
+                area.setEditable(false);
                 boton.setPreferredSize(new Dimension(70,50));
 		/* Fin Operaciones Adicionales */
 

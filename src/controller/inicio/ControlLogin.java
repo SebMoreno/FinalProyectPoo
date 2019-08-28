@@ -15,7 +15,6 @@ import model.exceptionsapp.WrongCredentialsException;
 import model.user.Administrador;
 import model.user.Cliente;
 import view.InterfazBotonInicio;
-import view.UsuarioAdministrador.AñadirPelicula;
 import view.UsuarioAdministrador.Bienvenida;
 import view.VistaPrincipal;
 
@@ -52,7 +51,7 @@ public class ControlLogin extends ControladorVista implements ActionListener{
 					String clave = i.getClave();
 					String user = i.getUsuario();
 					ControladorVista.setUsuarioActivo(new Administrador(user, clave));
-					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new AñadirPelicula());//TODO Colocar ventana de bienvenida
+					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new Bienvenida("temp/fondo.gif"));//TODO Colocar ventana de bienvenida
 					JFrame actual = ControladorVista.getFrameActual();
 					actual.dispose();
 					ControladorVista.setFrameActual(inicia);
@@ -74,11 +73,11 @@ public class ControlLogin extends ControladorVista implements ActionListener{
 					String clave = i.getClave();
 					String user = i.getUsuario();
 					ControladorVista.setUsuarioActivo(new Cliente(user, clave));
-					VistaPrincipal inicia = new VistaPrincipal(user, Cliente.getCapacidades(), new Bienvenida());//TODO Colocar ventana de bienvenida
-					ControladorVista.setFrameActual(inicia);
-					ControladorMenu.setControladoresMenu(inicia);
+					VistaPrincipal inicia = new VistaPrincipal(user, Cliente.getCapacidades(), new Bienvenida("temp/fondo.gif"));//TODO Colocar ventana de bienvenida
 					JFrame actual = ControladorVista.getFrameActual();
 					actual.dispose();
+					ControladorVista.setFrameActual(inicia);
+					ControladorMenu.setControladoresMenu(inicia);
 					inicia.run();
 				} catch (NotFillFieldsAdminException | NotFillFieldsClientException e) {
 					i.mostrarError(e.getMessage(), "Algún campo está sin rellenar", JOptionPane.WARNING_MESSAGE);
