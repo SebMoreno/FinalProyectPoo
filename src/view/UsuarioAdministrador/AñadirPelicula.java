@@ -22,8 +22,6 @@ public class AñadirPelicula extends JPanel implements InterfazPanel {
 	private String datos = "Datos";
 	private String valor = "Valor";
 	private String[] lista_datos = {"Nombre de la Película", "Género", "Clasificación", "Duración", "Idioma"};
-        private String[] lista_valor = new String[5];
-        private boolean[] habilitados = new boolean[5];
 	private JPanel panel_sup = new JPanel();
 	private JPanel panel_center = new JPanel();
 	private JPanel panel_down = new JPanel();
@@ -45,7 +43,7 @@ public class AñadirPelicula extends JPanel implements InterfazPanel {
 		panel_sup.add(ingrese_datos, BorderLayout.CENTER);
 		this.add(panel_sup, BorderLayout.NORTH);
 
-		FieldPanel panelField = new FieldPanel(datos, lista_datos, valor, lista_valor, habilitados);
+		FieldPanel panelField = new FieldPanel(datos, lista_datos, valor, null, null);
 		panel_center = panelField;
 		this.add(panel_center, BorderLayout.CENTER);
 

@@ -43,3 +43,4 @@ build/classes/controller/ControlSalida.class
 build/classes/controller/ControlLogout.class
 build/classes/controller/ControladorMenu.class
 *.class
+*.class
