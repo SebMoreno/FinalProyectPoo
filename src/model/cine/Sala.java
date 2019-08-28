@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import model.database.Data;
+import model.exceptionsapp.DatoNoExistenteException;
 
 //Campos de la clase
 public class Sala {
@@ -28,7 +29,8 @@ public class Sala {
 	 *
 	 * @param idSala
 	 */
-	public Sala(String idSala) {//Constructor para crear objetos que ya estan en los Txt
+	public Sala(String idSala) throws DatoNoExistenteException {//Constructor para crear objetos que ya estan en los Txt
+		Data.searchInTxt("salas.txt", idSala);
 		this.idSala = Integer.parseInt(idSala);
 		precio = Integer.parseInt(salasList.get(idSala)[0]);
 		tipo = salasList.get(idSala)[1];

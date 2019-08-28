@@ -5,6 +5,7 @@ import controller.inicio.ControlFoto;
 import controller.inicio.ControlLogin;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import model.database.Data;
 import model.user.Usuario;
 import view.InterfazBotonInicio;
 import view.InterfazPanel;

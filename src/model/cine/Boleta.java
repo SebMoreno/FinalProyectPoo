@@ -10,6 +10,7 @@ package model.cine;
 import java.util.HashMap;
 import java.util.Map;
 import model.database.Data;
+import model.exceptionsapp.DatoNoExistenteException;
 import model.user.Cliente;
 import model.user.Cuenta;
 import model.user.Usuario;
@@ -33,7 +34,7 @@ public class Boleta {
 	 */
 
 
-	public Boleta(String idBoleta) {
+	public Boleta(String idBoleta) throws DatoNoExistenteException {
 		String usuario = boletasList.get(idBoleta)[0];
 		String clave = Usuario.getUsersList().get(usuario)[0];
 		String nombre = Usuario.getUsersList().get(usuario)[2];

@@ -18,16 +18,18 @@ import view.InterfazPanel;
 
 public class CrearFuncion extends JPanel implements InterfazPanel {
 	/* Empieza declaracion de subobjetos pertenencientes a este objeto principal */
-	private JLabel ingrese_datos = new JLabel("Ingrese los siguientes datos");
+	private JLabel ingrese_datos = new JLabel("Ingresar datos para una nueva funcion");
 	private String datos = "Datos";
 	private String valor = "Valor";
 	private String[] lista_datos = {"Codigo de la funcion", "Sala", "Titulo pelicula", "Hora", "Sillas ocupadas"};
 	private JPanel panel_sup = new JPanel();
-	private JPanel panel_center = new JPanel();
+	private FieldPanel panel_center;
 	private JPanel panel_down = new JPanel();
 	private JButton boton = new JButton("Ingresar Datos");
 	/* Fin declaracion */
-
+	public FieldPanel getFieldPanel() {
+		return panel_center;
+	}
 	/**
 	 * Constructor de la clase agrega los objetos mencionados anteriormente al constructor
 	 */
@@ -43,8 +45,7 @@ public class CrearFuncion extends JPanel implements InterfazPanel {
 		panel_sup.add(ingrese_datos, BorderLayout.CENTER);
 		this.add(panel_sup, BorderLayout.NORTH);
 
-		FieldPanel panelField = new FieldPanel(datos, lista_datos, valor, null, null);
-		panel_center = panelField;
+		panel_center = new FieldPanel(datos, lista_datos, valor, new String[]{"codigo creado automáticamente", "","","","0"}, new boolean[]{false, true, true, true, false});
 		this.add(panel_center, BorderLayout.CENTER);
 
 		panel_down.add(boton, BorderLayout.CENTER);
@@ -75,11 +76,11 @@ public class CrearFuncion extends JPanel implements InterfazPanel {
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
-		//en caso de haber un error
-		JOptionPane.showMessageDialog(boton, textoParaMostrar, "ERROR", JOptionPane.WARNING_MESSAGE);
-		//en caso de exito
-		JOptionPane.showMessageDialog(boton, textoParaMostrar);
-
+		if (textoParaMostrar.equals("Funcion creada con éxito")){
+			JOptionPane.showMessageDialog(this, textoParaMostrar, "¡Felicidades!", JOptionPane.INFORMATION_MESSAGE);
+		}else {
+			JOptionPane.showMessageDialog(this, textoParaMostrar, "Oh no..", JOptionPane.WARNING_MESSAGE);
+		}
 	}
 
 

@@ -14,7 +14,7 @@ import model.user.Usuario;
 
 
 
-public class ControlRecagar extends ControladorVista implements ActionListener {
+public class ControlRecargar extends ControladorVista implements ActionListener {
     
     
     @Override
@@ -23,7 +23,7 @@ public class ControlRecagar extends ControladorVista implements ActionListener {
                 RecargarSaldo panel = (RecargarSaldo)ControladorVista.getPantallaActual();
                 Usuario activo = ControladorVista.getUsuarioActivo();
                 String Valor;
-                Valor = campo_texto.getText();
+                Valor = panel.campo_texto.getText();
                 
                 try {
 				if (Data.deleteInTxt("funciones.txt",(String) panel.getFuncionElegida().getSelectedItem())) {

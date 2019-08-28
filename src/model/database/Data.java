@@ -164,7 +164,7 @@ public class Data {
 	 */
 
 	public static void writeTxt(String archivo, HashMap<String, String[]> lista) {//metodo para escribir los archivos , utiliza un hashmap para el acceso de los valores dentro del programa
-		try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/temp/" + archivo))) {
+		try (BufferedWriter bw = new BufferedWriter(new FileWriter("temp/" + archivo))) {
 			for (Map.Entry<String, String[]> entry : lista.entrySet()) {
 				bw.write(entry.getKey());
 				for (String value : entry.getValue()) {

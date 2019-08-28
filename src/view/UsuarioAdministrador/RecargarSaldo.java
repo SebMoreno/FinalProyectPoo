@@ -27,7 +27,7 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 	private JLabel saldo_actual = new JLabel("Su saldo actual es: ");
 	private JLabel saldo = new JLabel("0"); //aqui hay que poner el saldo actual del cliente
 	private JLabel ingrese_saldo = new JLabel("Ingrese saldo a recargar");
-	private JTextField campo_texto = new JTextField(); //aqui el usuario ingresará el saldo a recargar
+	public JTextField campo_texto = new JTextField(); //aqui el usuario ingresará el saldo a recargar
 	//los eventos se controlarán cuando el usuario presione enter
 	/* Fin declaraciÃ³n */
 
