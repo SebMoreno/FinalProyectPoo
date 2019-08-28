@@ -1,4 +1,4 @@
-package view;
+package view.MenuRegistrado;
 import controller.ControladorVista.*;
 import model.user.Usuario;
 import controller.ControladorVista;
@@ -14,6 +14,8 @@ import view.InterfazPanel;
 import controller.ControladorVista;
 import java.awt.Color;
 import javax.swing.JPanel;
+import view.InterfazPanel;
+import view.InterfazPanel;
 
 public class InformacionCuenta extends JPanel implements InterfazPanel {
     
@@ -51,6 +53,7 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 
 	@Override
 	public void setController(ControladorVista[] controllers) {
+        go.addActionListener((ActionListener) controllers[0]);
 
 	}
 

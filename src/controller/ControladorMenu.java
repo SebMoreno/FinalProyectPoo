@@ -7,7 +7,7 @@ import controller.menu.procesos.ControlInfoFuncionesYPeliculas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.database.Data;
-import view.InformacionCuenta;
+import view.MenuRegistrado.InformacionCuenta;
 import view.InterfazPanel;
 import view.MenuRegistrado.InformacionFunciones;
 import view.MenuRegistrado.InformacionPeliculas;
