@@ -2,7 +2,9 @@ package view;
 
 import controller.ControladorVista;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
@@ -134,6 +136,8 @@ public class Inicio extends JFrame {
 		fotoAutores.setSize(638, 638);
 		fotoAutores.setContentAreaFilled(false);
 		fotoAutores.setIcon(new ImageIcon(new ImageIcon("temp\\1.gif").getImage().getScaledInstance(fotoAutores.getWidth(), fotoAutores.getHeight(), Image.SCALE_DEFAULT)));
+		Bienvenida.setPreferredSize(new Dimension(200, 50));
+		Bienvenida.setFont(new Font("Arial", Font.BOLD, 40));
 
 		panelBienvenida.add(Bienvenida, BorderLayout.CENTER);
 		panelFoto.add(fotoAutores, BorderLayout.CENTER);
