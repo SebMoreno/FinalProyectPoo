@@ -12,6 +12,7 @@ package model.cine;
 import java.util.HashMap;
 import java.util.Map;
 import model.database.Data;
+import model.exceptionsapp.DatoNoExistenteException;
 
 //Campos de la clase
 public class Funcion {
@@ -28,7 +29,7 @@ public class Funcion {
 	 *
 	 * @param String
 	 */
-	public Funcion(String idFuncion) {
+	public Funcion(String idFuncion) throws DatoNoExistenteException {
 		sala = new Sala(funcionesList.get(idFuncion)[0]);
 		pelicula = new Pelicula(funcionesList.get(idFuncion)[1]);
 		hora = funcionesList.get(idFuncion)[2];
@@ -82,14 +83,6 @@ public class Funcion {
 	 *
 	 * @param id
 	 */
-	public static void deleteFuncion(String id) {
-		if (funcionesList.containsKey(id)) {
-			funcionesList.remove(id);
-			System.out.println("La función ha sido eliminada exitosamente.");
-		} else {
-			System.out.println("No se ha enconrado ninguna fuinción\nNo se han realizado cambios.");
-		}
-	}
 
 	public Sala getSala() {
 		return sala;

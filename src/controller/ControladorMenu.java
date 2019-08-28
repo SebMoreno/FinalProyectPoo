@@ -2,12 +2,13 @@ package controller;
 
 import controller.menu.ControlLogout;
 import controller.menu.ControladorMenuUserYHelp;
+import controller.menu.procesos.ControlAñadir;
 import controller.menu.procesos.ControlEliminar;
 import controller.menu.procesos.ControlInfoFuncionesYPeliculas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.database.Data;
-import view.InformacionCuenta;
+import view.MenuRegistrado.InformacionCuenta;
 import view.InterfazPanel;
 import view.MenuRegistrado.InformacionFunciones;
 import view.MenuRegistrado.InformacionPeliculas;
@@ -58,16 +59,18 @@ public class ControladorMenu extends ControladorVista implements ActionListener 
 				break;
 			case "Añadir Película":  //TODO hacer funcionalidad
 				ControladorVista.setPantallaActual(new AñadirPelicula());
+				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlAñadir()});
 				break;
-			case "Eliminar Película":  //TODO hacer funcionalidad
+			case "Eliminar Película":
 				ControladorVista.setPantallaActual(new EliminarPelicula());
 				ControladorVista.getPantallaActual().muestraDatos("Las_Peliculas_son:\n" + Data.getAllInTxt("peliculas.txt"));
 				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlEliminar()});
 				break;
 			case "Crear Función":  //TODO hacer funcionalidad
 				ControladorVista.setPantallaActual(new CrearFuncion());
+				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlAñadir()});
 				break;
-			case "Eliminar Función":  //TODO hacer funcionalidad
+			case "Eliminar Función":
 				ControladorVista.setPantallaActual(new EliminarFuncion());
 				ControladorVista.getPantallaActual().muestraDatos("Las_Funciones_son:\n" + Data.getAllInTxt("funciones.txt"));
 				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlEliminar()});
