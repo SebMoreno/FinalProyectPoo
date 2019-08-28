@@ -1,5 +1,6 @@
-package controller;
+package controller.inicio;
 
+import controller.ControladorVista;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
