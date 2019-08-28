@@ -23,7 +23,7 @@ public class InformacionFunciones extends JPanel implements InterfazPanel {
 	/**
 	 * cosas que contiene el panel
 	 */
-	private JButton go = new JButton("GO");
+	private JButton go = new JButton("Ver información de ésta funcion");
 	private JLabel Descripcion = new JLabel();
 	private JComboBox elegir_funcion = new JComboBox();
 	private JLabel Titulo = new JLabel();
