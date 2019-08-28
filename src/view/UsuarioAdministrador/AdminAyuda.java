@@ -1,12 +1,5 @@
 package view.UsuarioAdministrador;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-
 public class AdminAyuda extends JPanel {
 	/* Empieza declaraciÃ³n de subobjetos pertenencientes a este objeto principal */
 	JLabel titulo = new JLabel("Autores");

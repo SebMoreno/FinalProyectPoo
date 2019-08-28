@@ -1,16 +1,6 @@
 package view;
 
 
-import controller.ControladorVista;
-import java.awt.Dimension;
-import java.awt.event.ActionListener;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-
 public class VistaPrincipal extends JFrame implements InterfazPanel {
 	public static final String[] MENU_ARCHIVO = {"Usuario", "Salir"};
 	public static final String[] MENU_AYUDA = {"Acerca de"};
@@ -29,7 +19,6 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setJMenuBar(capacidadesUsuario);
 		setVistaActual(vistaActual);
-		setPreferredSize(new Dimension(600, 800));
 	}
 
 	public void setVistaActual(InterfazPanel vistaActual) {
