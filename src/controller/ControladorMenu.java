@@ -3,6 +3,7 @@ package controller;
 import controller.menu.ControlLogout;
 import controller.menu.ControladorMenuUserYHelp;
 import controller.menu.procesos.ControlAñadir;
+import controller.menu.procesos.ControlCompraBoletas;
 import controller.menu.procesos.ControlEliminar;
 import controller.menu.procesos.ControlInfoFuncionesYPeliculas;
 import java.awt.event.ActionEvent;
@@ -48,8 +49,11 @@ public class ControladorMenu extends ControladorVista implements ActionListener 
 				ControladorVista.getPantallaActual().muestraDatos("Las_Funciones_son:\n" + Data.getAllInTxt("funciones.txt"));
 				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlInfoFuncionesYPeliculas()});
 				break;
-			case "Comprar Boleta":  //TODO hacer funcionalidad
+			case "Comprar Boleta":
 				ControladorVista.setPantallaActual(new ComprarBoleta());
+				((ComprarBoleta)ControladorVista.getPantallaActual()).getImpresion().append(ControladorVista.listadoPeliculas());
+				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlCompraBoletas()});
+				ControladorVista.packActualFrame();
 				break;
 			case "Mostrar la Información de mi cuenta":  //TODO hacer funcionalidad
 				ControladorVista.setPantallaActual(new InformacionCuenta());
@@ -57,7 +61,7 @@ public class ControladorMenu extends ControladorVista implements ActionListener 
 			case "Recargar Saldo":  //TODO hacer funcionalidad
 				ControladorVista.setPantallaActual(new RecargarSaldo());
 				break;
-			case "Añadir Película":  //TODO hacer funcionalidad
+			case "Añadir Película":
 				ControladorVista.setPantallaActual(new AñadirPelicula());
 				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlAñadir()});
 				break;
@@ -66,7 +70,7 @@ public class ControladorMenu extends ControladorVista implements ActionListener 
 				ControladorVista.getPantallaActual().muestraDatos("Las_Peliculas_son:\n" + Data.getAllInTxt("peliculas.txt"));
 				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlEliminar()});
 				break;
-			case "Crear Función":  //TODO hacer funcionalidad
+			case "Crear Función":
 				ControladorVista.setPantallaActual(new CrearFuncion());
 				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlAñadir()});
 				break;

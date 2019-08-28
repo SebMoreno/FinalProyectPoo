@@ -251,10 +251,10 @@ public class Sala {
 	 */
 	@Override
 	public String toString() {
-		StringBuilder sala = new StringBuilder("  ");
+		StringBuilder sala = new StringBuilder("   ");
 		;
 		for (int i = 0; i < this.sillas.length; i++) {
-			sala.append(i).append("  ");
+			sala.append(i).append("    ");
 		}
 		sala.append("\n");
 		for (int i = 0; i < this.sillas.length; i++) {

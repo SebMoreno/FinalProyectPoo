@@ -16,7 +16,7 @@ public class ControlInformacionCuenta extends ControladorVista implements Action
 
 		InformacionCuenta panel = (InformacionCuenta) ControladorVista.getPantallaActual();
 		try {
-			ControladorVista.getPantallaActual().muestraDatos(Data.searchInTxt("cuentas.txt", activo.getUsuario()));
+			ControladorVista.getPantallaActual().muestraDatos(Data.searchInTxt("cuentas.txt", ControladorVista.getUsuarioActivo().getUsuario()));
 			ControladorVista.packActualFrame();
 		} catch (DatoNoExistenteException e) {
 			//TODO que hacer cuando no se encuentra un dato de Pelicula
