@@ -2,8 +2,8 @@ package model.user;
 
 import java.io.IOException;
 import java.util.HashMap;
-import model.exceptionsapp.WrongCredentialsException;
 import model.database.Data;
+import model.exceptionsapp.WrongCredentialsException;
 
 import static model.database.Data.readTxt;
 import static model.database.Data.writeTxt;

@@ -45,7 +45,7 @@ public class FieldPanel extends JPanel {
 			for (int i = 0; i < criterios.length; i++) {
 				panelForm.add(new JLabel(criterios[i]));
 				JTextField textField = new JTextField();
-                                textField.setEnabled(true);
+				textField.setEnabled(true);
 				panelForm.add(textField);
 				TextFields.add(textField);
 			}

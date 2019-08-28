@@ -5,8 +5,8 @@ package model.user;
 //ESTRUCTURAS: estan en la clase padre
 
 import java.io.IOException;
-import model.exceptionsapp.WrongCredentialsException;
 import model.cine.Pelicula;
+import model.exceptionsapp.WrongCredentialsException;
 
 public class Administrador extends Usuario {
 
