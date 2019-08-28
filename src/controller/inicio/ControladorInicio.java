@@ -1,5 +1,7 @@
-package controller;
+package controller.inicio;
 
+import controller.ControlSalida;
+import controller.ControladorVista;
 import view.InterfazBotonInicio;
 
 public class ControladorInicio implements ControladorVista {

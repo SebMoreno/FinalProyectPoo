@@ -1,4 +1,4 @@
-import controller.ControladorInicio;
+import controller.inicio.ControladorInicio;
 import model.database.Data;
 import view.Inicio;
 
@@ -20,6 +20,7 @@ public class Main {
 		Data.readAllTxt();
 		Inicio i = new Inicio();
 		ControladorInicio.setControladoresVistaInicial(i.getBotonSalir());
+
 		i.run();
 
 

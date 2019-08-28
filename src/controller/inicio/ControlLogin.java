@@ -1,6 +1,8 @@
-package controller;
+package controller.inicio;
 
 
+import controller.ControladorMenu;
+import controller.ControladorVista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
@@ -20,6 +22,12 @@ public class ControlLogin implements ActionListener, ControladorVista {
 	private static int loginAdmin;
 	private static int loginCliente;
 	private static boolean initied = false;
+
+	public static void reboot() {
+		loginAdmin = 0;
+		loginCliente = 0;
+		initied = false;
+	}
 
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
@@ -44,6 +52,7 @@ public class ControlLogin implements ActionListener, ControladorVista {
 					String user = i.getUsuario();
 					Usuario.setUsuarioActivo(new Administrador(user, clave));
 					VistaPrincipal inicia = new VistaPrincipal(user, Administrador.getCapacidades(), new Informacionfunciones());//TODO Colocar ventana de bienvenida
+					ControladorMenu.setControladoresMenu(inicia);
 					i.getActualFrame().dispose();
 					inicia.run();
 				} catch (NotFillFieldsAdminException | NotFillFieldsClientException e) {
@@ -63,6 +72,7 @@ public class ControlLogin implements ActionListener, ControladorVista {
 					String user = i.getUsuario();
 					Usuario.setUsuarioActivo(new Cliente(user, clave));
 					VistaPrincipal inicia = new VistaPrincipal(user, Cliente.getCapacidades(), new Informacionfunciones());//TODO Colocar ventana de bienvenida
+					ControladorMenu.setControladoresMenu(inicia);
 					i.getActualFrame().dispose();
 					inicia.run();
 				} catch (NotFillFieldsAdminException | NotFillFieldsClientException e) {
