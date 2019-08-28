@@ -56,3 +56,4 @@ build/classes/view/MenuRegistrado/InformacionPeliculas$PanelFunciones.class
 build/classes/model/database/Data.class
 nbproject/private/private.xml
 build/classes/view/UsuarioAdministrador/EliminarPelicula.class
+*.class
