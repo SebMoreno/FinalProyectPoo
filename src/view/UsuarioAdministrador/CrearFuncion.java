@@ -59,8 +59,7 @@ public class CrearFuncion extends JPanel implements InterfazPanel {
 	/**
 	 * Metodo de los controladores
 	 *
-	 * @param controllers
-	 * TODO hay que programar el controlador boton que summit la informacion rellenada en lo campos anteriores y crea una funcion o activa el mensaje de error
+	 * @param controllers TODO hay que programar el controlador boton que summit la informacion rellenada en lo campos anteriores y crea una funcion o activa el mensaje de error
 	 */
 	@Override
 	public void setController(ControladorVista[] controllers) {
@@ -70,8 +69,7 @@ public class CrearFuncion extends JPanel implements InterfazPanel {
 	/**
 	 * METODO QUE MUESTRA TODA LA INFORMACION NECESARIA
 	 *
-	 * @param textoParaMostrar
-	 * TODO se tiene que verificar que la informacion suminisrada sea valida para ver cual option pane agregar
+	 * @param textoParaMostrar TODO se tiene que verificar que la informacion suminisrada sea valida para ver cual option pane agregar
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {

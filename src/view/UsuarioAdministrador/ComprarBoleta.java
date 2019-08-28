@@ -64,7 +64,6 @@ public class ComprarBoleta extends JPanel implements InterfazPanel {
 	 * Metodo de los controladores
 	 *
 	 * @param controllers
-	 *
 	 */
 	@Override
 	public void setController(ControladorVista[] controllers) {
@@ -75,7 +74,6 @@ public class ComprarBoleta extends JPanel implements InterfazPanel {
 	 * METODO QUE MUESTRA TODA LA INFORMACION NECESARIA
 	 *
 	 * @param textoParaMostrar
-	 *
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
@@ -85,7 +83,8 @@ public class ComprarBoleta extends JPanel implements InterfazPanel {
 }
 
 /**
- * clase auxiliar para la creacion de paneles 
+ * clase auxiliar para la creacion de paneles
+ *
  * @author Cristian mejia
  */
 

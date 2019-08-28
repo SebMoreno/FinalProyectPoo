@@ -1,5 +1,6 @@
 package view.MenuRegistrado;
 
+import controller.ControladorVista;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionListener;
@@ -9,10 +10,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-
-import controller.ControladorVista;
 import view.InterfazPanel;
-import view.MenuRegistrado.InformacionPeliculas.PanelFunciones;
 
 public class InformacionPeliculas extends JPanel implements InterfazPanel {
 
@@ -35,7 +33,7 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 		panel_der.setLayout(new BorderLayout(7, 15));
 
 		Titulo.setText("ELIJA SU PELICULA");
-		Descripcion.setText("INFORMACIÓN PELICULAS");
+		Descripcion.setText("INFORMACIï¿½N PELICULAS");
 
 		// TODO EL BOTON JComboBox HAY QUE LLENARLO CON LAS PELICULAS A ESCOGER
 		/* Fin Operaciones Adicionales */
@@ -59,10 +57,9 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 	/**
 	 * Metodo de los controladores
 	 *
-	 * @param controllers
-	 *            se necesita un actionListener para el boton go este boton debe
-	 *            mostrar la informacion de las funciones seleccionadas
-	 *            anteriormente
+	 * @param controllers se necesita un actionListener para el boton go este boton debe
+	 *                    mostrar la informacion de las funciones seleccionadas
+	 *                    anteriormente
 	 */
 	@Override
 	public void setController(ControladorVista[] controllers) {
@@ -79,10 +76,10 @@ public class InformacionPeliculas extends JPanel implements InterfazPanel {
 		JTextArea funcio = new JTextArea();
 		JScrollPane panelDescripcion = new JScrollPane();
 		String[] datos = textoParaMostrar.split("\n");
-		for(int i = 0; i<datos.length;i++) {
+		for (int i = 0; i < datos.length; i++) {
 			String DatosCompletos = datos[0];
-			String data [] = DatosCompletos.split(" ");
-			funcio.append("TITULO PELICULA: "+data[0]+ " GENERO: "+data[1]+" CLASIFICACION: "+data[2]+" DURACION: "+data[3]);
+			String data[] = DatosCompletos.split(" ");
+			funcio.append("TITULO PELICULA: " + data[0] + " GENERO: " + data[1] + " CLASIFICACION: " + data[2] + " DURACION: " + data[3]);
 		}
 		panel_der.add(panelDescripcion, BorderLayout.CENTER);
 	}

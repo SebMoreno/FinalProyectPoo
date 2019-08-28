@@ -15,7 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-
 import view.InterfazPanel;
 
 public class Informacionfunciones extends JPanel implements InterfazPanel {
@@ -55,7 +54,7 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
 		panel_izq.add(go, BorderLayout.SOUTH);
 
 		panel_der.add(Descripcion, BorderLayout.NORTH);
-		
+
 
 		add(panel_izq, BorderLayout.WEST);
 		add(panel_der, BorderLayout.CENTER);
@@ -87,20 +86,20 @@ public class Informacionfunciones extends JPanel implements InterfazPanel {
 		JTextArea funcio = new JTextArea();
 		JScrollPane panelDescripcion = new JScrollPane();
 		String[] datos = textoParaMostrar.split("\n");
-		for(int i = 0; i<datos.length;i++) {
+		for (int i = 0; i < datos.length; i++) {
 			String DatosCompletos = datos[0];
-			String data [] = DatosCompletos.split(" ");
-			funcio.append("TITULO PELICULA: "+data[2]+ " FUNCION: "+data[0]+" SALA: "+data[1]+" HORA: "+data[3]);
+			String data[] = DatosCompletos.split(" ");
+			funcio.append("TITULO PELICULA: " + data[2] + " FUNCION: " + data[0] + " SALA: " + data[1] + " HORA: " + data[3]);
 		}
 		panel_der.add(panelDescripcion, BorderLayout.CENTER);
 	}
 
 	private class PanelFunciones extends JPanel {
 
-		public JPanel auxiliar ;
+		public JPanel auxiliar;
 
 		PanelFunciones() {
-                        auxiliar = new JPanel();
+			auxiliar = new JPanel();
 			setLayout(new BorderLayout(7, 15));
 			auxiliar.setBackground(Color.WHITE);
 			add(auxiliar);

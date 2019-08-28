@@ -11,10 +11,10 @@ public class ControladorMenu implements ControladorVista {
 		controladores[0] = new ControladorMenuUserYHelp();
 		controladores[1] = new ControlLogout();
 
-		for (int i = 0; i < controladores.length-2; i++) {
+		for (int i = 0; i < controladores.length - 2; i++) {
 
 		}
-		controladores[controladores.length-1] = new ControladorMenuUserYHelp();
+		controladores[controladores.length - 1] = new ControladorMenuUserYHelp();
 		p.setController(controladores);
 	}
 

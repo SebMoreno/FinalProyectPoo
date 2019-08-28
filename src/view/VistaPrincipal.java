@@ -78,14 +78,14 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 			i++;
 			j++;
 		}
-		j=0;
+		j = 0;
 		for (String nombre :
 				MENU_PROCESOS) {
 			getJMenuBar().getMenu(1).getItem(j).addActionListener((ActionListener) controllers[i]);
 			i++;
 			j++;
 		}
-		j=0;
+		j = 0;
 		for (String nombre :
 				MENU_AYUDA) {
 			getJMenuBar().getMenu(2).getItem(j).addActionListener((ActionListener) controllers[i]);
@@ -98,24 +98,27 @@ public class VistaPrincipal extends JFrame implements InterfazPanel {
 	public void muestraDatos(String textoParaMostrar) {
 		pantallaActual.muestraDatos(textoParaMostrar);
 	}
-	public class MenuApp extends JMenuItem{
-		public MenuApp(String nombre){
+
+	public class MenuApp extends JMenuItem {
+		public MenuApp(String nombre) {
 			super(nombre);
 		}
-                /**
-                 * TODO , PONERLO BONITO
-                 * @param infoUsuario 
-                 */
+
+		/**
+		 * TODO , PONERLO BONITO
+		 *
+		 * @param infoUsuario
+		 */
 		public void mostrarInfoAuxiliar(String infoUsuario) {
-                    if (infoUsuario.equals("Acerca De")){
-                        JOptionPane.showMessageDialog(VistaPrincipal.this,"AUTORES :  MARIANA BETANCUR ,CRISTIAN MEJIA , SEBASTIAN MORENO , JAIRO ANDRES") ;
-                    }
-                    else{
-                        
-			String info [] = infoUsuario.split(" ");
-                        JOptionPane.showMessageDialog(VistaPrincipal.this,"USER: "+info[0]+" ROL: "+info[1]+" NOMBRE: "+info[2]+" CORREO: "+info[3]);
+			if (infoUsuario.equals("Acerca De")) {
+				JOptionPane.showMessageDialog(VistaPrincipal.this, "AUTORES :  MARIANA BETANCUR ,CRISTIAN MEJIA , SEBASTIAN MORENO , JAIRO ANDRES");
+			} else {
+
+				String info[] = infoUsuario.split(" ");
+				JOptionPane.showMessageDialog(VistaPrincipal.this, "USER: " + info[0] + " ROL: " + info[1] + " NOMBRE: " + info[2] + " CORREO: " + info[3]);
+			}
 		}
-                }
+
 		public JFrame getActualFrame() {
 			return VistaPrincipal.this;
 		}

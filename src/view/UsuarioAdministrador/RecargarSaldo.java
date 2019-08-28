@@ -21,8 +21,8 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 	private JPanel panel_sup = new JPanel();
 	private JPanel panel_center = new JPanel();
 	private JPanel panel_center_izq = new JPanel();
-        private JPanel panel_center_der = new JPanel();
-        private JPanel panel_down = new JPanel();
+	private JPanel panel_center_der = new JPanel();
+	private JPanel panel_down = new JPanel();
 	private JButton go = new JButton("Ingresar");//boton que usa el usuario cuando ya agrego el dinero necesario
 	private JLabel saldo_actual = new JLabel("Su saldo actual es: ");
 	private JLabel saldo = new JLabel("0"); //aqui hay que poner el saldo actual del cliente
@@ -34,20 +34,20 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 	/**
 	 * constructor que agrega al panel los objetos creados anteriormente
 	 */
-	public RecargarSaldo(){
+	public RecargarSaldo() {
 		/* OrganizaciÃ³n de Layout */
-                this.setSize(new Dimension(300, 200)); 
+		this.setSize(new Dimension(300, 200));
 		this.setLayout(new BorderLayout(7, 15));
 		panel_sup.setLayout(new BorderLayout(7, 15));
 		panel_center.setLayout(new BorderLayout(7, 15));
 		panel_center_izq.setLayout(new BorderLayout(7, 15));
 		panel_center_der.setLayout(new BorderLayout(7, 15));
-                panel_down.setLayout(new BorderLayout(7,15));
+		panel_down.setLayout(new BorderLayout(7, 15));
 		/* Fin Layout */
 
 		/* Operaciones Adicionales */
-                //campo_texto.setText("Ingrese aqui el saldo a recargar"); //cuando el usuario vaya a escribir se debe borrar
-                campo_texto.setPreferredSize(new Dimension(100,25));
+		//campo_texto.setText("Ingrese aqui el saldo a recargar"); //cuando el usuario vaya a escribir se debe borrar
+		campo_texto.setPreferredSize(new Dimension(100, 25));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */
@@ -59,11 +59,11 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 		panel_center.add(panel_center_izq, BorderLayout.WEST);
 
 		panel_center.add(panel_center_der, BorderLayout.EAST);
-                panel_center_der.add(campo_texto, BorderLayout.CENTER);
+		panel_center_der.add(campo_texto, BorderLayout.CENTER);
 		this.add(panel_center, BorderLayout.CENTER);
 
-                panel_down.add(go, BorderLayout.EAST);
-                this.add(panel_down, BorderLayout.SOUTH);
+		panel_down.add(go, BorderLayout.EAST);
+		this.add(panel_down, BorderLayout.SOUTH);
 	}
 
 	/**
@@ -72,7 +72,8 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 
 	/**
 	 * Metodo de los controladores
-	 *se necesita un controlador para cuando el usuario haga enter
+	 * se necesita un controlador para cuando el usuario haga enter
+	 *
 	 * @param controllers
 	 */
 	@Override
@@ -83,8 +84,7 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 	/**
 	 * METODO QUE MUESTRA TODA LA INFORMACION NECESARIA
 	 *
-	 * @param textoParaMostrar
-	 * Debe controlar si tiene la informacion valida o no
+	 * @param textoParaMostrar Debe controlar si tiene la informacion valida o no
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {

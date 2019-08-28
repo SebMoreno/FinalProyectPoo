@@ -12,7 +12,7 @@ public class ControladorMenuUserYHelp implements ControladorVista, ActionListene
 		VistaPrincipal.MenuApp source = (VistaPrincipal.MenuApp) actionEvent.getSource();
 		if (source.getText().equals("Usuario")) {
 			source.mostrarInfoAuxiliar(Usuario.getUsuarioActivo().getUsuario() + " " + Usuario.getUsuarioActivo().getRol() + " " + Usuario.getUsuarioActivo().getNombre() + " " + Usuario.getUsuarioActivo().getEmail());
-		}else{
+		} else {
 			source.mostrarInfoAuxiliar("Acerca De");
 		}
 	}

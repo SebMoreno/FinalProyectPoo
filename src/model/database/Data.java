@@ -1,7 +1,8 @@
 /**
- *Esta clase tiene como finalidad manejar todo lo relacionado con la base de datos y los menus (creacion y generacion de ellos en pantalla)
+ * Esta clase tiene como finalidad manejar todo lo relacionado con la base de datos y los menus (creacion y generacion de ellos en pantalla)
  * Estructuras relevantes :HashMap<String, OpcionDeMenu> menu_generico (contiene todas las opciones de menu),
  * ArrayList<OpcionDeMenu> options(neccesario para el constructor de menu de consola)
+ *
  * @author: Sebastian Moreno , Cristian Mejia
  */
 
@@ -26,15 +27,14 @@ import model.user.Usuario;
 
 //Campos de la clase
 public class Data {
- /**
+	/**
+	 * hace que el pograma lea todos los txt al inicio del programa y tambien crea los menus
+	 * @see #readAllTxt()----------presente mas abajo en el codigo(linea 175 )
+	 * @see #createFilesAndDirs()----------presente mas abajo en el codioo(linea 62 )
+	 *
 
-     * hace que el pograma lea todos los txt al inicio del programa y tambien crea los menus
-     * @see #readAllTxt()----------presente mas abajo en el codigo(linea 175 )
-     * @see #createFilesAndDirs()----------presente mas abajo en el codioo(linea 62 )
-     * 
-
-    */
-    public static void initModel() {
+	 */
+	public static void initModel() {
 		createFilesAndDirs();
 		readAllTxt();
 	}
@@ -107,17 +107,17 @@ public class Data {
 		Invitado.setMenu(new MenuDeConsola(options));
 	}
 */
-    
-    
-    /**
-     * Metodo para iniciar sesion dependiendo de la informacion ingresada por el usuario
-     * @param usuario
-     * @param clave
-     * @param rol
-     * @return
-     * @throws WrongCredentialsException
-     * @throws IOException 
-     */
+
+
+	/**
+	 * Metodo para iniciar sesion dependiendo de la informacion ingresada por el usuario
+	 * @param usuario
+	 * @param clave
+	 * @param rol
+	 * @return
+	 * @throws WrongCredentialsException
+	 * @throws IOException
+	 */
 	public static String[] login(String usuario, String clave, String rol) throws WrongCredentialsException, IOException {
 		BufferedReader br = new BufferedReader(new FileReader("temp/" + "usuarios.txt"));
 		String line = br.readLine();
@@ -131,18 +131,18 @@ public class Data {
 		}
 		throw new WrongCredentialsException();
 	}
-        /**
 
-     *metodo que lee todos los archivos txt
-     * @see gestorAplicacion.usuario.Cuenta#RT() 
-     * @see gestorAplicacion.usuario.Usuario#RT() 
-     * @see gestorAplicacion.cine.Silla#RT() 
-     * @see gestorAplicacion.cine.Pelicula#RT() 
-     * @see gestorAplicacion.cine.Sala#RT() 
-     * @see gestorAplicacion.cine.Funcion#RT() 
-     * @see gestorAplicacion.cine.Boleta#RT() 
-     
-      */
+	/**
+	 *metodo que lee todos los archivos txt
+	 * @see gestorAplicacion.usuario.Cuenta#RT()
+	 * @see gestorAplicacion.usuario.Usuario#RT()
+	 * @see gestorAplicacion.cine.Silla#RT()
+	 * @see gestorAplicacion.cine.Pelicula#RT()
+	 * @see gestorAplicacion.cine.Sala#RT()
+	 * @see gestorAplicacion.cine.Funcion#RT()
+	 * @see gestorAplicacion.cine.Boleta#RT()
+
+	 */
 
 	public static void readAllTxt() {
 		Usuario.RT();
@@ -153,15 +153,14 @@ public class Data {
 		Funcion.RT();
 		Boleta.RT();
 	}
-        
-          /**
 
-     *metodo para escribir los archivos , utiliza un hashmap para el acceso de los valores dentro del programa
-     * @param string archivo, HashMap<String, String[]> lista
-     * @exception IOException e
-     
-     
-    */
+	/**
+	 *metodo para escribir los archivos , utiliza un hashmap para el acceso de los valores dentro del programa
+	 * @param string archivo, HashMap<String, String[]> lista
+	 * @exception IOException e
+
+
+	 */
 
 	public static void writeTxt(String archivo, HashMap<String, String[]> lista) {//metodo para escribir los archivos , utiliza un hashmap para el acceso de los valores dentro del programa
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/temp/" + archivo))) {
@@ -174,21 +173,20 @@ public class Data {
 			}
 		} catch (IOException e) {
 
-			
+
 		}
 
 	}
-        
-         /**
 
-     *metodo para escribir los archivos , utiliza un hashmap para el acceso de los valores dentro del programa
-     * @param String archivo, HashMap<String, String[]> lista
-     * @exception IOException e 
-     * lee linea por linea el txt y lo guarda en el arreglo datos, luego utuliza aux como value del hash y el primer indice de datos com key 
-     
-     
-    */
-        
+	/**
+	 *metodo para escribir los archivos , utiliza un hashmap para el acceso de los valores dentro del programa
+	 * @param String archivo, HashMap<String, String[]> lista
+	 * @exception IOException e
+	 * lee linea por linea el txt y lo guarda en el arreglo datos, luego utuliza aux como value del hash y el primer indice de datos com key
+
+
+	 */
+
 
 	public static void readTxt(String archivo, HashMap<String, String[]> lista) {
 		try (BufferedReader br = new BufferedReader(new FileReader("temp/" + archivo))) {
@@ -202,14 +200,14 @@ public class Data {
 				line = br.readLine();
 			}
 		} catch (IOException e) {
-			
+
 		}
 
 	}
-        
-        /**
-         * metodo que permite crear archivos con la informacion de los txt de la base de datos
-         */
+
+	/**
+	 * metodo que permite crear archivos con la informacion de los txt de la base de datos
+	 */
 
 	public static void createFilesAndDirs() {
 		try {
@@ -226,7 +224,7 @@ public class Data {
 			new File(ruta + "sillas.txt").createNewFile();
 			new File(ruta + "usuarios.txt").createNewFile();
 		} catch (IOException e) {
-			
+
 		}
 	}
 }
