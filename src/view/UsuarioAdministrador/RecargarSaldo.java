@@ -11,6 +11,7 @@ import java.awt.Dimension;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import view.InterfazPanel;
@@ -24,8 +25,7 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 	private JPanel panel_center_der = new JPanel();
 	private JPanel panel_down = new JPanel();
 	private JButton go = new JButton("Ingresar");//boton que usa el usuario cuando ya agrego el dinero necesario
-	private JLabel saldo_actual = new JLabel("Su saldo actual es: ");
-	private JLabel saldo = new JLabel("0"); //aqui hay que poner el saldo actual del cliente
+	private JLabel saldo_actual = new JLabel();
 	private JLabel ingrese_saldo = new JLabel("Ingrese saldo a recargar");
 	public JTextField campo_texto = new JTextField(); //aqui el usuario ingresará el saldo a recargar
 	//los eventos se controlarán cuando el usuario presione enter
@@ -34,7 +34,7 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 	/**
 	 * constructor que agrega al panel los objetos creados anteriormente
 	 */
-	public RecargarSaldo() {
+	public RecargarSaldo(int saldo) {
 		/* OrganizaciÃ³n de Layout */
 		this.setSize(new Dimension(300, 200));
 		this.setLayout(new BorderLayout(7, 15));
@@ -47,13 +47,13 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 
 		/* Operaciones Adicionales */
 		//campo_texto.setText("Ingrese aqui el saldo a recargar"); //cuando el usuario vaya a escribir se debe borrar
+		ingrese_saldo.setText("Su saldo actual es: "+ saldo);
 		campo_texto.setPreferredSize(new Dimension(100, 25));
 		setPreferredSize(new Dimension(300, 200));
 		/* Fin Operaciones Adicionales */
 
 		/* Agregado de Componentes */
 		panel_sup.add(saldo_actual, BorderLayout.WEST);
-		panel_sup.add(saldo, BorderLayout.CENTER);
 		this.add(panel_sup, BorderLayout.NORTH);
 
 		panel_center_izq.add(ingrese_saldo, BorderLayout.CENTER);
@@ -89,14 +89,14 @@ public class RecargarSaldo extends JPanel implements InterfazPanel {
 	 */
 	@Override
 	public void muestraDatos(String textoParaMostrar) {
-		/*
-            //en caso de haber un error
-            JOptionPane.showMessageDialog(boton,textoParaMostrar, "ERROR", JOptionPane.WARNING_MESSAGE);
-            //en caso de exito
-            JOptionPane.showMessageDialog(boton,textoParaMostrar);
-            TODO Arreglar metodo
-		*/
+		JOptionPane.showMessageDialog(this, textoParaMostrar, "¡Atención!", JOptionPane.WARNING_MESSAGE);
 	}
 
+	public JLabel getSaldo_actual() {
+		return ingrese_saldo;
+	}
 
+	public JTextField getCampo_texto() {
+		return campo_texto;
+	}
 }

@@ -1,2 +1,2 @@
-cliente01 26000
+cliente01 32000
 cliente02 0

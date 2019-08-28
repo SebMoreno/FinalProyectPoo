@@ -16,7 +16,7 @@ import view.InterfazPanel;
 public class InformacionCuenta extends JPanel implements InterfazPanel {
 
 
-	private JButton go = new JButton("GO");
+	private JButton go = new JButton("Muestrame mis datos!");
 
 	private JLabel elegir_usuario = new JLabel();
 	private JLabel Titulo = new JLabel();
@@ -27,7 +27,7 @@ public class InformacionCuenta extends JPanel implements InterfazPanel {
 
 	public InformacionCuenta() {
 
-		this.setLayout(new BorderLayout(7, 15));
+		setLayout(new BorderLayout(7, 15));
 
 		/* Operaciones Adicionales */
 		panel_izq.setLayout(new BorderLayout(7, 15));

@@ -3,27 +3,21 @@ package controller.menu.procesos;
 import controller.ControladorVista;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JButton;
 import model.database.Data;
 import model.exceptionsapp.DatoNoExistenteException;
-import model.user.Usuario;
-import view.MenuRegistrado.InformacionCuenta;
 
 public class ControlInformacionCuenta extends ControladorVista implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent actionEvent) {
-		JButton source = (JButton) actionEvent.getSource();
-                Usuario activo = ControladorVista.getUsuarioActivo();
-                
-
-		InformacionCuenta panel = (InformacionCuenta) ControladorVista.getPantallaActual();
+		String cuenta = ControladorVista.getUsuarioActivo().getUsuario();
 		try {
-			ControladorVista.getPantallaActual().muestraDatos(Data.searchInTxt("cuentas.txt", ControladorVista.getUsuarioActivo().getUsuario()));
-			ControladorVista.packActualFrame();
-		} catch (DatoNoExistenteException e) {
-			//TODO que hacer cuando no se encuentra un dato de Pelicula
+			cuenta = Data.searchInTxt("cuentas.txt", ControladorVista.getUsuarioActivo().getUsuario());
+		} catch (DatoNoExistenteException ignored) {
+
 		}
+		ControladorVista.getPantallaActual().muestraDatos(cuenta);
+		ControladorVista.packActualFrame();
 	}
 
 

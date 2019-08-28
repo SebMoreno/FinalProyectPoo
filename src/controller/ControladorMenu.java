@@ -6,9 +6,12 @@ import controller.menu.procesos.ControlAñadir;
 import controller.menu.procesos.ControlCompraBoletas;
 import controller.menu.procesos.ControlEliminar;
 import controller.menu.procesos.ControlInfoFuncionesYPeliculas;
+import controller.menu.procesos.ControlInformacionCuenta;
+import controller.menu.procesos.ControlRecargar;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.database.Data;
+import model.user.Cliente;
 import view.InterfazPanel;
 import view.MenuRegistrado.InformacionCuenta;
 import view.MenuRegistrado.InformacionFunciones;
@@ -55,11 +58,15 @@ public class ControladorMenu extends ControladorVista implements ActionListener 
 				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlCompraBoletas()});
 				ControladorVista.packActualFrame();
 				break;
-			case "Mostrar la Información de mi cuenta":  //TODO hacer funcionalidad
+			case "Mostrar la Información de mi cuenta":
 				ControladorVista.setPantallaActual(new InformacionCuenta());
+				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlInformacionCuenta()});
+				ControladorVista.packActualFrame();
 				break;
-			case "Recargar Saldo":  //TODO hacer funcionalidad
-				ControladorVista.setPantallaActual(new RecargarSaldo());
+			case "Recargar Saldo":
+				ControladorVista.setPantallaActual(new RecargarSaldo(((Cliente)ControladorVista.getUsuarioActivo()).getCuenta().getSaldo()));
+				ControladorVista.getPantallaActual().setController(new ControladorVista[]{new ControlRecargar()});
+				ControladorVista.packActualFrame();
 				break;
 			case "Añadir Película":
 				ControladorVista.setPantallaActual(new AñadirPelicula());
